@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PM Skills Explorer & Assessment</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+        body { background-color: #f8fafc; font-family: 'Inter', sans-serif; }
+        .category-card:hover { transform: translateY(-5px); transition: all 0.3s ease; }
+        .active-tab { border-bottom: 4px solid #1e293b; color: #1e293b; font-weight: 800; }
+        .rating-option:checked + label { background-color: #1e293b; color: white; border-color: #1e293b; transform: scale(1.05); }
+        .fade-in { animation: fadeIn 0.3s ease-in; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .modal { transition: opacity 0.25s ease; }
+    </style>
+</head>
+<body>
+
+<div class="container mx-auto px-4 py-8">
+    <header class="mb-6 text-center">
+        <h1 class="text-4xl font-extrabold text-slate-800 mb-2">PM Skills Matrix</h1>
+        <p class="text-slate-600 italic">Master your competencies. Map your career.</p>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <div class="flex justify-center mb-10 border-b border-slate-200">
+        <button id="tab-explorer" onclick="switchTab('explorer')" class="px-8 py-3 text-slate-500 hover:text-slate-800 transition active-tab uppercase tracking-widest text-sm font-bold">Skill Explorer</button>
+        <button id="tab-test" onclick="switchTab('test')" class="px-8 py-3 text-slate-500 hover:text-slate-800 transition uppercase tracking-widest text-sm font-bold">Self-Assessment</button>
+    </div>
+
+    <!-- VIEW 1: EXPLORER -->
+    <div id="view-explorer" class="fade-in">
+        <div id="filters" class="flex flex-wrap justify-center gap-2 mb-12">
+            <!-- Buttons injected by JS -->
+        </div>
+        <div id="skills-grid" class="space-y-12">
+            <!-- Groups injected by JS -->
+        </div>
+    </div>
+
+    <!-- VIEW 2: STEP-BY-STEP ASSESSMENT -->
+    <div id="view-test" class="hidden max-w-3xl mx-auto fade-in">
+        <div class="mb-10">
+            <div class="flex justify-between text-[10px] font-black text-slate-400 mb-2 uppercase tracking-widest">
+                <span id="progress-text">Compétence 1 / 40</span>
+                <span id="progress-percent">0%</span>
+            </div>
+            <div class="w-full bg-slate-200 h-1.5 rounded-full overflow-hidden">
+                <div id="progress-bar" class="bg-blue-600 h-full transition-all duration-500" style="width: 0%"></div>
+            </div>
+        </div>
+
+        <div id="question-card" class="bg-white rounded-3xl shadow-xl p-10 border border-slate-100 relative overflow-hidden">
+            <div id="q-category" class="text-blue-600 font-bold text-xs uppercase mb-1">Category</div>
+            <div id="q-sub" class="text-slate-400 text-sm mb-6 pb-4 border-b border-slate-50">Sub-category</div>
+            
+            <h2 id="q-title" class="text-3xl font-black text-slate-800 mb-8 leading-tight">Skill Name</h2>
+            
+            <div class="space-y-6 mb-10">
+                <div class="bg-slate-50 p-5 rounded-2xl">
+                    <h4 class="text-[10px] font-bold text-slate-400 uppercase mb-2">Frameworks & Outils</h4>
+                    <p id="q-tools" class="text-slate-700 font-semibold"></p>
+                </div>
+                <div class="bg-amber-50 p-5 rounded-2xl border-l-4 border-amber-400">
+                    <h4 class="text-[10px] font-bold text-amber-600 uppercase mb-2">Situation Concrète</h4>
+                    <p id="q-situation" class="text-slate-700 text-sm italic leading-relaxed"></p>
+                </div>
+            </div>
+
+            <div class="pt-6 border-t border-slate-100 text-center">
+                <p class="text-slate-500 font-bold mb-6">Évaluez votre niveau sur ce sujet :</p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <div class="flex flex-col items-center">
+                        <input type="radio" id="r0" name="lvl" value="0" class="hidden rating-option" onclick="handleAnswer(0)">
+                        <label for="r0" class="w-14 h-14 flex items-center justify-center border-2 rounded-2xl font-black text-xl cursor-pointer hover:bg-slate-50 transition-all">0</label>
+                        <span class="text-[9px] mt-2 text-slate-400 font-bold uppercase">Inconnu</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <input type="radio" id="r1" name="lvl" value="1" class="hidden rating-option" onclick="handleAnswer(1)">
+                        <label for="r1" class="w-14 h-14 flex items-center justify-center border-2 rounded-2xl font-black text-xl cursor-pointer hover:bg-slate-50 transition-all">1</label>
+                        <span class="text-[9px] mt-2 text-slate-400 font-bold uppercase">Théorie</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <input type="radio" id="r2" name="lvl" value="2" class="hidden rating-option" onclick="handleAnswer(2)">
+                        <label for="r2" class="w-14 h-14 flex items-center justify-center border-2 rounded-2xl font-black text-xl cursor-pointer hover:bg-slate-50 transition-all">2</label>
+                        <span class="text-[9px] mt-2 text-slate-400 font-bold uppercase">Pratique</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <input type="radio" id="r3" name="lvl" value="3" class="hidden rating-option" onclick="handleAnswer(3)">
+                        <label for="r3" class="w-14 h-14 flex items-center justify-center border-2 rounded-2xl font-black text-xl cursor-pointer hover:bg-slate-50 transition-all">3</label>
+                        <span class="text-[9px] mt-2 text-slate-400 font-bold uppercase">Autonome</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <input type="radio" id="r4" name="lvl" value="4" class="hidden rating-option" onclick="handleAnswer(4)">
+                        <label for="r4" class="w-14 h-14 flex items-center justify-center border-2 rounded-2xl font-black text-xl cursor-pointer hover:bg-slate-50 transition-all">4</label>
+                        <span class="text-[9px] mt-2 text-slate-400 font-bold uppercase">Expert</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- VIEW 3: RESULTS -->
+    <div id="view-results" class="hidden max-w-6xl mx-auto fade-in">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+            <!-- Radar -->
+            <div class="lg:col-span-7 bg-white p-8 rounded-3xl shadow-xl border border-slate-100">
+                <h3 class="text-xl font-black text-slate-800 mb-8 flex items-center">
+                    <span class="w-2 h-8 bg-blue-600 mr-4 rounded-full"></span>
+                    Radar de Compétences
+                </h3>
+                <canvas id="radarChart"></canvas>
+            </div>
+            <!-- Profile Card -->
+            <div class="lg:col-span-5 flex flex-col gap-6">
+                <div id="profile-card" class="bg-slate-900 text-white p-10 rounded-3xl shadow-2xl relative overflow-hidden grow">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-blue-500 blur-[90px] opacity-30"></div>
+                    <h3 id="profile-name" class="text-blue-400 font-black uppercase tracking-widest text-[10px] mb-4">Profil Dominant</h3>
+                    <h2 id="profile-title" class="text-4xl font-black mb-6 leading-tight">...</h2>
+                    <p id="profile-desc" class="text-slate-400 leading-relaxed mb-10 text-lg">...</p>
+                    
+                    <div class="bg-slate-800/50 p-6 rounded-2xl border border-slate-700">
+                        <h4 class="text-blue-400 font-bold text-[10px] uppercase mb-2 tracking-widest">Exemple de mission type</h4>
+                        <p id="profile-mission" class="text-sm italic text-slate-200">...</p>
+                    </div>
+
+                    <button onclick="restartTest()" class="mt-12 text-slate-500 hover:text-white text-xs font-bold flex items-center transition uppercase tracking-widest">
+                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+                        Recommencer
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Explorer -->
+<div id="modal" class="modal opacity-0 pointer-events-none fixed w-full h-full top-0 left-0 flex items-center justify-center z-50">
+    <div class="modal-overlay absolute w-full h-full bg-slate-900/80 backdrop-blur-sm" onclick="closeModal()"></div>
+    <div class="modal-container bg-white w-11/12 md:max-w-3xl mx-auto rounded-3xl shadow-2xl z-50 overflow-hidden fade-in">
+        <div class="p-8">
+            <div class="flex justify-between items-start mb-6">
+                <div>
+                    <span id="modal-id" class="text-[10px] font-black text-blue-600 uppercase mb-1 block"></span>
+                    <h2 class="text-3xl font-black text-slate-800" id="modal-title"></h2>
+                </div>
+                <button onclick="closeModal()" class="text-slate-400 hover:text-slate-800 transition">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M18 6L6 18M6 6l12 12"></path></svg>
+                </button>
+            </div>
+            
+            <div class="space-y-6">
+                <div class="bg-slate-50 p-4 rounded-xl">
+                    <h4 class="text-[10px] font-bold text-slate-400 uppercase mb-1">Frameworks & Tools</h4>
+                    <p id="modal-frameworks" class="text-slate-700 font-semibold italic"></p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-green-50 p-5 rounded-2xl border border-green-100">
+                        <h5 class="text-[10px] font-black text-green-600 uppercase mb-2">Attente Junior</h5>
+                        <p id="modal-junior" class="text-sm text-slate-700 leading-relaxed"></p>
+                    </div>
+                    <div class="bg-purple-50 p-5 rounded-2xl border border-purple-100">
+                        <h5 class="text-[10px] font-black text-purple-600 uppercase mb-2">Attente Senior</h5>
+                        <p id="modal-senior" class="text-sm text-slate-700 leading-relaxed"></p>
+                    </div>
+                </div>
+                <div class="bg-amber-50 p-6 rounded-2xl border border-amber-200">
+                    <h5 class="text-[10px] font-black text-amber-600 uppercase mb-2 italic">Situation Réelle</h5>
+                    <p id="modal-situation" class="text-slate-700 text-sm italic leading-relaxed"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// --- DATASET (Make sure all IDs are unique) ---
+const skillsData = [
+     {
+        id: "0.1.1",
+        cat: "0. Leadership & Influence",
+        sub: "0.1 Communication & Influence",
+        skill: "0.1.1 Communication Stratégique & Storytelling",
+        tools: "Golden Circle (Why, How, What), Méthode STAR",
+        junior: "Communique de manière claire et concise au sein de son équipe et avec ses interlocuteurs directs. Sait présenter l'avancement de son périmètre.",
+        senior: "Maîtrise l'art du storytelling. Adapte son discours à son audience (C-level, développeurs, clients) pour inspirer, persuader et créer un alignement autour de la vision et de la stratégie.",
+        situation: "Face au comité de direction, le senior ne liste pas les fonctionnalités à venir. Il raconte l'histoire de l'utilisateur, explique son problème, et positionne la roadmap comme la solution narrative à ce problème, créant ainsi l'adhésion émotionnelle et rationnelle."
+    },
+    {
+        id: "0.1.2",
+        cat: "0. Leadership & Influence",
+        sub: "0.1 Communication & Influence",
+        skill: "0.1.2 Influence & Négociation",
+        tools: "Matrice Pouvoir/Intérêt, Négociation Raisonnée (Getting to Yes), Matrice RACI",
+        junior: "Sait argumenter pour défendre une priorité au sein de son équipe ou obtenir de l'aide d'une équipe adjacente.",
+        senior: "Négocie et obtient l'adhésion de parties prenantes complexes, même sans autorité hiérarchique. Sait dire \"non\" de manière constructive en expliquant les arbitrages et en préservant la relation.",
+        situation: "Un directeur commercial demande une fonctionnalité spécifique pour un client clé. Le senior, au lieu d'accepter ou de refuser, organise un atelier avec lui, lui présente les coûts d'opportunité et négocie une solution alternative qui répond à 80% du besoin sans dévier de la stratégie."
+    },
+    {
+        id: "0.2.1",
+        cat: "0. Leadership & Influence",
+        sub: "0.2 Collaboration & Développement Humain",
+        skill: "0.2.1 Facilitation & Animation d'Ateliers",
+        tools: "Animation d'ateliers (définir lesquels)",
+        junior: "Participe activement aux ateliers et peut co-animer un rituel simple (ex: rétrospective).",
+        senior: "Conçoit et facilite des ateliers complexes (ex: cadrage stratégique, idéation, User Story Mapping) avec des groupes multidisciplinaires et des participants de haut niveau, en s'assurant que l'objectif est atteint.",
+        situation: "Pour lancer un nouveau projet d'envergure, le senior conçoit et anime un kick-off de 2 jours avec 15 personnes (produit, tech, design, marketing, ventes) pour créer une vision partagée, identifier les risques et définir la feuille de route initiale."
+    },
+    {
+        id: "0.2.2",
+        cat: "0. Leadership & Influence",
+        sub: "0.2 Collaboration & Développement Humain",
+        skill: "0.2.2 Coaching & Mentorat",
+        tools: "GROW Model, Feedback Constructif (DESC), Communautés de Pratique",
+        junior: "Se concentre sur son propre développement. Partage ses connaissances de manière informelle avec ses pairs.",
+        senior: "Agit comme un coach pour l'équipe (en aidant les développeurs à mieux comprendre le \"pourquoi\") et comme un mentor pour les PMs plus juniors. Contribue activement à la montée en compétence de l'organisation produit.",
+        situation: "Le senior ne donne pas la solution à un PM junior bloqué sur une priorisation. Il lui pose des questions basées sur le modèle GROW (Goal, Reality, Options, Will) pour l'aider à structurer sa pensée et à trouver la solution par lui-même."
+    },
+    {
+        id: "1.1.1",
+        cat: "1. Stratégie & Vision Produit",
+        sub: "1.1 Élaboration de la Stratégie",
+        skill: "1.1.1 Analyse du Marché & Concurrence",
+        tools: "SWOT, PESTEL, Forces de Porter, Wardley Maps.",
+        junior: "Effectue une veille sur des concurrents directs et des fonctionnalités spécifiques à la demande de son manager.",
+        senior: "Mène une analyse continue et pro-active du marché (tendances macro, technologies émergentes, mouvements concurrentiels) pour identifier des opportunités de rupture et des menaces stratégiques.",
+        situation: "Le senior identifie une nouvelle technologie (ex: LLM open-source performant) comme une menace potentielle pour la position de leader, poussant à la création d'une nouvelle initiative R&D."
+    },
+    {
+        id: "1.1.2",
+        cat: "1. Stratégie & Vision Produit",
+        sub: "1.1 Élaboration de la Stratégie",
+        skill: "1.1.2 Vision Produit",
+        tools: "V2MOM, Golden Circle, Product Vision Board.",
+        junior: "Comprend, articule et peut expliquer la vision du produit à son équipe.",
+        senior: "Définit, possède et évangélise une vision produit inspirante sur 3-5 ans. Il s'assure qu'elle est comprise, partagée et qu'elle guide les décisions à tous les niveaux de l'entreprise.",
+        situation: "Lors d'une réunion \"all-hands\", le senior présente la vision avec un storytelling impactant, donnant un sens et une direction clairs à tous les employés."
+    },
+    {
+        id: "1.1.3",
+        cat: "1. Stratégie & Vision Produit",
+        sub: "1.1 Élaboration de la Stratégie",
+        skill: "1.1.3 Business & Modèle Éco.",
+        tools: "Business Model Canvas, Lean Canvas, Analyse de la chaîne de valeur.",
+        junior: "Comprend le modèle économique du produit et l'impact de son périmètre sur les KPIs principaux (ex: revenus, acquisition).",
+        senior: "Construit, modélise et optimise le modèle économique. Prend des décisions stratégiques (pricing, nouveaux marchés) en se basant sur une analyse financière approfondie (P&L, CAC, LTV).",
+        situation: "Le senior décide de pivoter d'un modèle de licence unique vers un abonnement (SaaS) en modélisant l'impact sur les revenus récurrents (MRR) et la valorisation de l'entreprise."
+    },
+    {
+        id: "1.2.1",
+        cat: "1. Stratégie & Vision Produit",
+        sub: "1.2 Communication & Alignement de la Stratégie",
+        skill: "1.2.1 Construction & Gestion de Roadmap",
+        tools: "Now-Next-Later Roadmap, Roadmap Thématique, OKRs",
+        junior: "Contribue à la roadmap de son équipe en fournissant des estimations pour son périmètre.",
+        senior: "Construit et maintient une roadmap stratégique basée sur les \"outcomes\" (résultats) et non les \"outputs\" (fonctionnalités). La présente et la défend au niveau exécutif.",
+        situation: "Le senior présente au comité de direction une roadmap axée sur des objectifs comme \"Augmenter la rétention de 15%\" plutôt qu'une liste de fonctionnalités, justifiant chaque initiative par son impact attendu."
+    },
+    {
+        id: "1.2.2",
+        cat: "1. Stratégie & Vision Produit",
+        sub: "1.2 Communication & Alignement de la Stratégie",
+        skill: "1.2.2 Alignement des Parties Prenantes",
+        tools: "Matrice RACI, Matrice Pouvoir/Intérêt.",
+        junior: "Identifie et communique régulièrement avec les parties prenantes directes de son équipe (support, marketing).",
+        senior: "Cartographie l'ensemble des parties prenantes (y compris C-level, juridique, ventes), comprend leurs enjeux et met en place une communication pro-active et adaptée pour obtenir leur adhésion et leur soutien.",
+        situation: "Avant de lancer un projet impactant l'équipe commerciale, le senior organise des ateliers avec leurs directeurs pour co-construire la solution et s'assurer qu'elle répond à leurs contraintes terrain."
+    },
+    {
+        id: "2.1.1",
+        cat: "2. Découverte (Discovery)",
+        sub: "2.1 Recherche & Génération d'Insights",
+        skill: "2.1.1 Recherche Utilisateur Qualitative",
+        tools: "Personas, JTBD, User Story Mapping, Interviews.",
+        junior: "Mène des entretiens utilisateurs et des tests d'utilisabilité en utilisant des scripts préparés.",
+        senior: "Définit la stratégie de recherche. Mène des entretiens complexes (ex: ethnographiques) pour découvrir des besoins latents et non exprimés.",
+        situation: "Le senior, en observant un utilisateur sur son lieu de travail, découvre un \"hack\" que celui-ci a mis en place, révélant un besoin profond que des entretiens classiques n'avaient pas fait émerger."
+    },
+    {
+        id: "2.1.2",
+        cat: "2. Découverte (Discovery)",
+        sub: "2.1 Recherche & Génération d'Insights",
+        skill: "2.1.2 Analyse de Données Quantitatives",
+        tools: "AARRR, HEART Framework, Analyse de cohortes.",
+        junior: "Sait utiliser les outils d'analyse (Mixpanel, GA) pour créer des dashboards et suivre l'adoption.",
+        senior: "Définit le plan de tracking. Maîtrise l'analyse de cohortes et sait croiser données quanti/quali pour formuler des hypothèses.",
+        situation: "Le senior remarque une chute dans le funnel de conversion. Il demande au junior de mener des entretiens ciblés sur les utilisateurs qui abandonnent pour comprendre le \"pourquoi\"."
+    },
+    {
+        id: "2.2.1",
+        cat: "2. Découverte (Discovery)",
+        sub: "2.2 Synthèse & Expérimentation",
+        skill: "2.2.1 Définition du Problème & Idéation",
+        tools: "Opportunity Solution Tree, How Might We, 5 Pourquoi.",
+        junior: "Participe à des ateliers de brainstorming. Sait formuler un problème utilisateur clairement.",
+        senior: "Facilite des ateliers de créativité. Maîtrise l'art de reformuler un problème pour ouvrir le champ des possibles.",
+        situation: "Face à une demande pour un bouton d'export Excel, le senior utilise les 5 Pourquoi pour comprendre que le besoin est de partager la performance, ouvrant d'autres solutions plus pertinentes."
+    },
+    {
+        id: "2.2.2",
+        cat: "2. Découverte (Discovery)",
+        sub: "2.2 Synthèse & Expérimentation",
+        skill: "2.2.2 Expérimentation & Validation",
+        tools: "Lean Startup, A/B Testing, Fake Door Test.",
+        junior: "Met en place et mesure des A/B tests simples pour optimiser un élément.",
+        senior: "Conçoit une stratégie d'expérimentation pour dé-risquer les 4 grands risques (valeur, utilisabilité, faisabilité, viabilité).",
+        situation: "Pour valider l'appétence pour une fonctionnalité complexe d'IA, le senior met en place une \"fausse porte\" pour valider l'intérêt avant d'écrire une seule ligne de code."
+    },
+    {
+        id: "3.1.1",
+        cat: "3. Conception & Livraison (Delivery)",
+        sub: "3.1 Planification & Priorisation",
+        skill: "3.1.1 Gestion de Backlog & Spécifications",
+        tools: "User Story, INVEST, Gherkin.",
+        junior: "Rédige des User Stories claires avec des critères d'acceptation précis. Maintient le backlog propre.",
+        senior: "Gère un backlog comme un outil de communication stratégique. Excelle dans le découpage en tranches de valeur livrables.",
+        situation: "Le senior transforme une demande épique floue en une série de petits incréments testables qui apportent de la valeur dès la première semaine de développement."
+    },
+    {
+        id: "3.1.2",
+        cat: "3. Conception & Livraison (Delivery)",
+        sub: "3.1 Planification & Priorisation",
+        skill: "3.1.2 Priorisation",
+        tools: "RICE, ICE, MoSCoW, Modèle de Kano",
+        junior: "Priorise le travail de son équipe au niveau du sprint.",
+        senior: "Maîtrise plusieurs frameworks de priorisation. Communique et défend ses choix de manière transparente et rationnelle.",
+        situation: "Le senior utilise le framework RICE pour arbitrer entre une initiative stratégique complexe et une série de petites améliorations rapides très demandées."
+    },
+    {
+        id: "3.2.1",
+        cat: "3. Conception & Livraison (Delivery)",
+        sub: "3.2 Exécution & Lancement",
+        skill: "3.2.1 Animation d'équipe & Rituels Agiles",
+        tools: "Scrum, Kanban, SAFE",
+        junior: "Participe activement aux rituels de son équipe (daily, planning, retro).",
+        senior: "Facilite les rituels et les rend plus efficaces. Agit comme un \"bouclier\" pour l'équipe en la protégeant des interruptions.",
+        situation: "Le senior recadre les dailies qui s'éternisent pour qu'ils soient focalisés sur les blocages et non sur un rapport d'activité."
+    },
+    {
+        id: "3.2.2",
+        cat: "3. Conception & Livraison (Delivery)",
+        sub: "3.2 Exécution & Lancement",
+        skill: "3.2.2 Stratégie de Qualité & Tests (QA)",
+        tools: "Test Pyramid, UAT, Bug Triage",
+        junior: "Participe aux phases de test. Effectue les tests d'acceptation utilisateur (UAT).",
+        senior: "Définit la stratégie de qualité globale. Arbitre sur la criticité des bugs en fonction de l'expérience utilisateur.",
+        situation: "Un bug est découvert avant la prod. Le senior analyse l'impact réel et décide soit de retarder le lancement, soit de lancer et corriger via un hotfix."
+    },
+    {
+        id: "3.2.3",
+        cat: "3. Conception & Livraison (Delivery)",
+        sub: "3.2 Exécution & Lancement",
+        skill: "3.2.3 Stratégie de Lancement (Go-to-Market)",
+        tools: "Feature Flags, Beta Programs, A/B Testing.",
+        junior: "Coordonne les lancements (notes de version, formation du support).",
+        senior: "Définit la stratégie de lancement complète : segmentation, communication, déploiement progressif.",
+        situation: "Pour un changement d'interface majeur, le senior déploie progressivement (1%, 10%, 50%) tout en monitorant les KPIs pour réagir rapidement."
+    },
+    {
+        id: "4.1.1",
+        cat: "4. Data Culture",
+        sub: "4.1 Définition de la Stratégie de Mesure",
+        skill: "4.1.1 Définition des KPIs & North Star Metric",
+        tools: "North Star Metric Framework, OKRs.",
+        junior: "Comprend et suit les KPIs définis pour son produit.",
+        senior: "Définit la \"North Star Metric\" du produit et la décline en un arbre de métriques actionnables.",
+        situation: "L'entreprise veut augmenter les revenus. Le senior définit la NSM comme le nombre d'équipes collaborant, car c'est le levier de rétention long terme."
+    },
+    {
+        id: "4.1.2",
+        cat: "4. Data Culture",
+        sub: "4.1 Définition de la Stratégie de Mesure",
+        skill: "4.1.2 Conception du Plan de Tracking",
+        tools: "Taxonomie d'événements, Data Dictionary",
+        junior: "Rédige des spécifications de tracking pour les nouvelles fonctionnalités.",
+        senior: "Conçoit le plan de tracking complet du produit. Définit une taxonomie claire et pérenne.",
+        situation: "Avant une refonte, le senior conçoit un plan qui mesurera l'adoption par segment et l'impact sur la rétention à 30 jours."
+    },
+    {
+        id: "4.2.1",
+        cat: "4. Data Culture",
+        sub: "4.2 Analyse & Interprétation",
+        skill: "4.2.1 Maîtrise des Outils d'Analyse",
+        tools: "SQL, Mixpanel, Amplitude, Tableau, Looker",
+        junior: "Maîtrise les outils d'analyse produit pour construire des dashboards et funnels simples.",
+        senior: "Sait écrire des requêtes SQL pour explorer la donnée brute et collabore sur des analyses statistiques complexes.",
+        situation: "Le junior constate une baisse. Le senior écrit un SQL pour isoler les users et découvre qu'ils sont tous sur une ancienne version de l'app."
+    },
+    {
+        id: "4.2.2",
+        cat: "4. Data Culture",
+        sub: "4.2 Analyse & Interprétation",
+        skill: "4.2.2 Transformation de la Donnée en Insight",
+        tools: "Storytelling par la donnée, Analyse de cohortes.",
+        junior: "Répond à des questions factuelles avec la donnée.",
+        senior: "Raconte une histoire avec la donnée, identifie des tendances de fond et transforme l'analyse en recommandation stratégique.",
+        situation: "Le junior note que 70% n'utilisent pas la feature X. Le senior montre que ceux qui l'utilisent ont une rétention 3x supérieure, créant une opportunité."
+    },
+    {
+        id: "4.3.1",
+        cat: "4. Data Culture",
+        sub: "4.3 Communication & Culture",
+        skill: "4.3.1 Visualisation & Communication",
+        tools: "BI Tools, Data Viz",
+        junior: "Sait créer des graphiques clairs et lisibles pour présenter des résultats.",
+        senior: "Maîtrise l'art de la visualisation. Conçoit des dashboards interactifs pour le management.",
+        situation: "Le senior conçoit un dashboard qui permet au management de filtrer par segment pour explorer les données par eux-mêmes."
+    },
+    {
+        id: "4.3.2",
+        cat: "4. Data Culture",
+        sub: "4.3 Communication & Culture",
+        skill: "4.3.2 Instaurer une Culture Data-Informed",
+        tools: "Rituels de revue de métriques",
+        junior: "Utilise la donnée dans ses spécifications pour justifier ses choix.",
+        senior: "Évangélise l'utilisation de la donnée à tous les niveaux. Met en place des rituels partagés.",
+        situation: "Le senior instaure une revue de métriques hebdomadaire où l'équipe analyse ensemble les performances passées."
+    },
+    {
+        id: "5.1.1",
+        cat: "5. Socle Tech & Design",
+        sub: "5.1 Maîtrise du Design",
+        skill: "5.1.1 Principes d'Ergonomie & Design d'Interaction",
+        tools: "Heuristiques de Nielsen, Lois UX, Gestalt.",
+        junior: "Comprend et sait appliquer les heuristiques d'ergonomie pour donner un feedback sur des maquettes.",
+        senior: "Maîtrise les patterns complexes. Sait challenger le designer pour pousser la simplicité au maximum.",
+        situation: "Face à un formulaire complexe, le senior propose de le scinder en plusieurs étapes via le principe de divulgation progressive."
+    },
+    {
+        id: "5.1.2",
+        cat: "5. Socle Tech & Design",
+        sub: "5.1 Maîtrise des principes de Product Design",
+        skill: "5.1.2 Compréhension du Processus de Design",
+        tools: "Design Thinking, Double Diamant, Design Sprints",
+        junior: "Comprend les différentes phases du processus (recherche, idéation, tests).",
+        senior: "Collabore pour définir la stratégie de design. Sait quand utiliser un Design Sprint ou un prototype basse fidélité.",
+        situation: "Face à un problème ambigu, le senior lance un Design Sprint d'une semaine avec les parties prenantes plutôt que de lancer des maquettes directes."
+    },
+    {
+        id: "5.1.3",
+        cat: "5. Socle Tech & Design",
+        sub: "5.1 Maîtrise des principes de Product Design",
+        skill: "5.1.3 Culture du Design System",
+        tools: "Atomic Design, Design Tokens.",
+        junior: "Utilise les composants du Design System existant dans ses spécifications.",
+        senior: "Agit comme sponsor du Design System. Arbitre entre création de nouveau composant et réutilisation.",
+        situation: "L'équipe demande un nouveau graphique. Le senior vérifie si le besoin est unique ou s'il justifie un nouvel atome réutilisable dans le système."
+    },
+    {
+        id: "5.2.1",
+        cat: "5. Socle Tech & Design",
+        sub: "5.2 Maîtrise des principes d'Ingénierie",
+        skill: "5.2.1 Compréhension de l'Architecture Logicielle",
+        tools: "CAP Theorem, API Gateway, Microservices.",
+        junior: "Comprend l'architecture de base (front, back, API, DB).",
+        senior: "A une compréhension stratégique des choix d'architecture et de leurs impacts sur la performance et le coût.",
+        situation: "Le senior challenge une solution qui créerait un couplage fort, proposant une architecture par événements pour la scalabilité future."
+    },
+    {
+        id: "5.2.2",
+        cat: "5. Socle Tech & Design",
+        sub: "5.2 Maîtrise des principes d'Ingénierie",
+        skill: "5.2.2 Compréhension du Cycle de Développement",
+        tools: "CI/CD, Test Pyramid, Git.",
+        junior: "Comprend ce qu'est une Pull Request et le versionnement.",
+        senior: "Comprend les enjeux de CI/CD et la dette technique. Sait négocier du temps pour le refactoring.",
+        situation: "Le senior justifie auprès de la direction la nécessité de dédier 20% du trimestre à la réduction de la dette pour accélérer le futur."
+    },
+    {
+        id: "6.1.1",
+        cat: "6. Product Ops",
+        sub: "6.1 Processus & Outils",
+        skill: "6.1.1 Standardisation des Processus",
+        tools: "Playbooks, Templates.",
+        junior: "Applique les processus et outils définis (templates de specs, process de release).",
+        senior: "Conçoit, déploie et améliore les processus de l'organisation pour garantir l'efficacité à l'échelle.",
+        situation: "Le senior met en place un Product Playbook centralisé pour accélérer l'onboarding des nouveaux PMs."
+    },
+    {
+        id: "6.2.1",
+        cat: "6. Product Ops",
+        sub: "6.2 Communication & Gouvernance",
+        skill: "6.2.1 Gouvernance de la Donnée Produit",
+        tools: "Data Dictionary",
+        junior: "S'assure que les données de son périmètre sont fiables.",
+        senior: "Met en place une gouvernance pour que tout le monde s'appuie sur une source de vérité unique.",
+        situation: "Le senior lance un projet de standardisation du nommage des événements de tracking pour toutes les équipes."
+    },
+    {
+        id: "6.2.2",
+        cat: "6. Product Ops",
+        sub: "6.2 Communication & Gouvernance",
+        skill: "6.2.2 Communication & Rituels d'Équipe",
+        tools: "Monthly Demos, Strategy Reviews.",
+        junior: "Prépare et partage les notes de version pour ses fonctionnalités.",
+        senior: "Anime les rituels de communication de l'organisation pour assurer l'alignement entre les équipes.",
+        situation: "Le senior instaure une Revue Produit mensuelle où chaque équipe présente ses apprentissages (succès et échecs)."
+    },
+    {
+        id: "7.1.1",
+        cat: "7. AI Product Builder",
+        sub: "7.1 Stratégie IA",
+        skill: "7.1.1 Compréhension Fondamentale de l'IA",
+        tools: "Machine Learning Canvas, LLM.",
+        junior: "Comprend les concepts de base (Supervisé, Modèle, API).",
+        senior: "Évalue les compromis entre modèle sur étagère, fine-tuning ou construction sur mesure.",
+        situation: "Le senior oriente l'équipe vers le fine-tuning d'un modèle open-source hébergé en interne pour des raisons de coût et de sécurité."
+    },
+    {
+        id: "7.1.2",
+        cat: "7. AI Product Builder",
+        sub: "7.1 Stratégie IA",
+        skill: "7.1.2 Identification de Cas d'Usage IA",
+        tools: "AI Value Proposition Canvas.",
+        junior: "Identifie des opportunités simples d'automatisation.",
+        senior: "Identifie des problèmes complexes ne pouvant être résolus que par l'IA. Pense AI-first.",
+        situation: "Le senior imagine un Agent Copilot qui écoute le support client en temps réel pour suggérer des réponses au conseiller."
+    },
+    {
+        id: "7.1.3",
+        cat: "7. AI Product Builder",
+        sub: "7.1 Stratégie IA",
+        skill: "7.1.3 Stratégie de Données pour l'IA",
+        tools: "Data Flywheel, Feedback Loops.",
+        junior: "Participe à la définition des données nécessaires pour un projet simple.",
+        senior: "Définit la stratégie d'acquisition comme un avantage concurrentiel (data moat). Met en place des boucles de rétroaction.",
+        situation: "Le senior conçoit une feature qui incite l'utilisateur à donner un feedback, lequel est utilisé pour ré-entraîner le modèle."
+    },
+    {
+        id: "7.2.1",
+        cat: "7. AI Product Builder",
+        sub: "7.2 MLOps",
+        skill: "7.2.1 Annotation & Préparation des Données",
+        tools: "Labelbox, Scale AI.",
+        junior: "Participe à des tâches de labellisation.",
+        senior: "Conçoit et supervise la stratégie d'annotation et le contrôle qualité.",
+        situation: "Le senior met en place un processus d'annotation externe suivi d'une validation par des experts internes."
+    },
+    {
+        id: "7.2.2",
+        cat: "7. AI Product Builder",
+        sub: "7.2 MLOps",
+        skill: "7.2.2 Entraînement & Évaluation du Modèle",
+        tools: "Confusion Matrix, ROC Curve.",
+        junior: "Comprend les métriques de base (Précision, Rappel).",
+        senior: "Définit les métriques d'évaluation liées à l'impact business et challenge les Data Scientists.",
+        situation: "Le senior demande d'optimiser le rappel sur un segment d'utilisateurs crucial où le modèle était défaillant."
+    },
+    {
+        id: "7.2.3",
+        cat: "7. AI Product Builder",
+        sub: "7.2 MLOps",
+        skill: "7.2.3 Déploiement & Monitoring en Production",
+        tools: "MLflow, Model Drift monitoring.",
+        junior: "Coordonne le déploiement d'une nouvelle version du modèle.",
+        senior: "Met en place un monitoring pour détecter les dérives du modèle (model drift) et planifie les ré-entraînements.",
+        situation: "Le senior crée un dashboard qui alerte si la distribution des données de prod s'éloigne de celle de l'entraînement."
+    },
+    {
+        id: "7.3.1",
+        cat: "7. AI Product Builder",
+        sub: "7.3 Expérience & Éthique",
+        skill: "7.3.1 Design d'Interaction pour l'IA",
+        tools: "Explainable AI (XAI), Human-in-the-loop.",
+        junior: "Participe à la conception d'interfaces claires pour l'IA.",
+        senior: "Maîtrise comment gérer l'incertitude et expliquer les décisions du modèle à l'utilisateur.",
+        situation: "Le senior conçoit une interface qui explique pourquoi un produit est recommandé (\"Parce que vous avez aimé X\")."
+    },
+    {
+        id: "7.3.2",
+        cat: "7. AI Product Builder",
+        sub: "7.3 Expérience & Éthique",
+        skill: "7.3.2 Éthique & IA Responsable",
+        tools: "Fairness checklists.",
+        junior: "Est sensibilisé aux biais potentiels dans les données.",
+        senior: "Intègre l'éthique au cœur du processus. Mène des analyses de risques Red Team.",
+        situation: "Avant de lancer un scoring de CV, le senior organise un atelier pour identifier et empêcher les biais de discrimination."
+    }
+
+];
+
+const profileRules = [
+    { cat: "0. Leadership", title: "Le Leader Inspirant", desc: "Vous excellez dans l'humain et la négociation. Votre force est d'aligner les équipes sans autorité hiérarchique.", mission: "Gérer une équipe de PMs ou transformer la culture produit d'une entreprise." },
+    { cat: "1. Stratégie", title: "Le Stratège Visionnaire", desc: "Le long-terme est votre terrain de jeu. Vous savez transformer des tendances en roadmap concrète.", mission: "Lancement d'une nouvelle ligne de business stratégique." },
+    { cat: "2. Discovery", title: "L'Explorateur d'Insights", desc: "Vous ne jurez que par l'utilisateur. Votre obsession est de dé-risquer avant de construire.", mission: "Mener la phase de discovery d'un produit complexe partant de zéro." },
+    { cat: "3. Delivery", title: "Le Maître de l'Exécution", desc: "Rien ne sort sans votre validation. Vous transformez le chaos en une machine de livraison fluide.", mission: "Optimisation de la vélocité et de la qualité d'une équipe technique." },
+    { cat: "4. Data Culture", title: "Le Data Thinker", desc: "Les chiffres parlent pour vous. Votre approche est purement rationnelle et basée sur l'évidence.", mission: "Mise en place d'une infrastructure de tracking et culture de l'expérimentation." },
+    { cat: "5. Socle Tech & Design", title: "Le Product Architect", desc: "Vous parlez couramment le 'Dev' et le 'Design'. Vous faites le pont entre faisabilité et esthétique.", mission: "Refonte d'un Design System ou d'une architecture monolithique." },
+    { cat: "6. Product Ops", title: "L'Organisateur d'Échelle", desc: "Votre passion est l'efficacité. Vous construisez les outils qui permettent aux autres de briller.", mission: "Scaling d'une orga produit de 5 à 50 PMs." },
+    { cat: "7. AI Product Builder", title: "L'AI Architect", desc: "L'IA est pour vous un levier concret. Vous savez où elle apporte de la valeur réelle.", mission: "Intégration de modèles prédictifs ou LLM dans un produit métier." }
+];
+
+// --- APP STATE ---
+let currentStep = 0;
+let userRatings = {};
+let myRadarChart = null;
+
+// --- NAVIGATION ---
+function switchTab(view) {
+    document.getElementById('view-explorer').classList.toggle('hidden', view !== 'explorer');
+    document.getElementById('view-test').classList.toggle('hidden', view !== 'test');
+    document.getElementById('view-results').classList.add('hidden');
+    document.getElementById('tab-explorer').classList.toggle('active-tab', view === 'explorer');
+    document.getElementById('tab-test').classList.toggle('active-tab', view === 'test');
+    
+    if (view === 'explorer') renderExplorer(skillsData);
+    if (view === 'test') renderQuestion();
+}
+
+// --- EXPLORER LOGIC ---
+function renderExplorer(data) {
+    const grid = document.getElementById('skills-grid');
+    grid.innerHTML = '';
+    
+    const grouped = data.reduce((acc, item) => {
+        if (!acc[item.sub]) acc[item.sub] = [];
+        acc[item.sub].push(item);
+        return acc;
+    }, {});
+
+    for (const subCat in grouped) {
+        const section = document.createElement('div');
+        section.innerHTML = `
+            <h2 class="text-xl font-black text-slate-700 border-b-2 border-slate-200 pb-2 mb-6 flex items-center">
+                <span class="bg-slate-200 text-slate-700 px-2 py-0.5 rounded text-[10px] mr-3 uppercase">Sub</span>
+                ${subCat}
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                ${grouped[subCat].map(item => `
+                    <div class="category-card bg-white p-6 rounded-2xl shadow-sm border border-slate-200 cursor-pointer hover:shadow-md hover:border-blue-300 transition-all" onclick='openModal(${JSON.stringify(item).replace(/'/g, "&apos;")})'>
+                        <div class="text-[10px] font-black text-blue-500 uppercase tracking-widest mb-1">${item.id}</div>
+                        <h3 class="text-lg font-black text-slate-800 mb-3 leading-tight">${item.skill.split(' ').slice(1).join(' ')}</h3>
+                        <p class="text-xs text-slate-400 line-clamp-2">${item.tools}</p>
+                    </div>
+                `).join('')}
+            </div>`;
+        grid.appendChild(section);
+    }
+}
+
+function filterSelection(cat) {
+    const buttons = document.querySelectorAll('#filters button');
+    buttons.forEach(btn => {
+        const match = btn.innerText === cat || (cat === 'all' && btn.innerText === 'All Categories');
+        btn.classList.toggle('bg-slate-800', match);
+        btn.classList.toggle('text-white', match);
+    });
+
+    if (cat === 'all') renderExplorer(skillsData);
+    else renderExplorer(skillsData.filter(i => i.cat.toLowerCase().includes(cat.toLowerCase())));
+}
+
+// --- ASSESSMENT LOGIC ---
+function renderQuestion() {
+    const skill = skillsData[currentStep];
+    const progress = Math.round((currentStep / skillsData.length) * 100);
+    
+    document.getElementById('progress-bar').style.width = progress + "%";
+    document.getElementById('progress-text').innerText = `Compétence ${currentStep + 1} / ${skillsData.length}`;
+    document.getElementById('progress-percent').innerText = progress + "%";
+    
+    document.getElementById('q-category').innerText = skill.cat;
+    document.getElementById('q-sub').innerText = skill.sub;
+    document.getElementById('q-title').innerText = skill.skill.split(' ').slice(1).join(' ');
+    document.getElementById('q-tools').innerText = skill.tools;
+    document.getElementById('q-situation').innerText = skill.situation;
+
+    document.querySelectorAll('.rating-option').forEach(r => r.checked = false);
+}
+
+function handleAnswer(val) {
+    const skill = skillsData[currentStep];
+    userRatings[skill.id] = { val: val, cat: skill.cat };
+    
+    setTimeout(() => {
+        if (currentStep < skillsData.length - 1) {
+            currentStep++;
+            renderQuestion();
+        } else {
+            showResults();
+        }
+    }, 300);
+}
+
+function showResults() {
+    document.getElementById('view-test').classList.add('hidden');
+    document.getElementById('view-results').classList.remove('hidden');
+
+    const catScores = {};
+    skillsData.forEach(s => {
+        if (!catScores[s.cat]) catScores[s.cat] = { sum: 0, count: 0 };
+        catScores[s.cat].sum += userRatings[s.id].val;
+        catScores[s.cat].count += 1;
+    });
+
+    const labels = Object.keys(catScores);
+    const averages = labels.map(l => (catScores[l].sum / catScores[l].count).toFixed(2));
+
+    const ctx = document.getElementById('radarChart').getContext('2d');
+    if(myRadarChart) myRadarChart.destroy();
+    myRadarChart = new Chart(ctx, {
+        type: 'radar',
+        data: {
+            labels: labels.map(l => l.split(' ').slice(1).join(' ')),
+            datasets: [{
+                label: 'Moyenne par pilier',
+                data: averages,
+                backgroundColor: 'rgba(37, 99, 235, 0.2)',
+                borderColor: 'rgba(37, 99, 235, 1)',
+                borderWidth: 4,
+                pointBackgroundColor: 'rgba(37, 99, 235, 1)',
+                pointRadius: 4
+            }]
+        },
+        options: { scales: { r: { min: 0, max: 4, ticks: { stepSize: 1, backdropColor: 'transparent' }, grid: { color: '#e2e8f0' } } }, plugins: { legend: { display: false } } }
+    });
+
+    let maxAvg = -1;
+    let dominantCat = "";
+    labels.forEach((l, i) => {
+        if(parseFloat(averages[i]) > maxAvg) {
+            maxAvg = parseFloat(averages[i]);
+            dominantCat = l;
+        }
+    });
+
+    const profile = profileRules.find(p => dominantCat.includes(p.cat)) || profileRules[0];
+    document.getElementById('profile-title').innerText = profile.title;
+    document.getElementById('profile-desc').innerText = profile.desc;
+    document.getElementById('profile-mission').innerText = profile.mission;
+}
+
+function restartTest() {
+    currentStep = 0;
+    userRatings = {};
+    switchTab('test');
+}
+
+// --- MODAL & INITIALIZATION ---
+function openModal(item) {
+    document.getElementById('modal-id').innerText = item.id;
+    document.getElementById('modal-title').innerText = item.skill.split(' ').slice(1).join(' ');
+    document.getElementById('modal-frameworks').innerText = item.tools;
+    document.getElementById('modal-junior').innerText = item.junior;
+    document.getElementById('modal-senior').innerText = item.senior;
+    document.getElementById('modal-situation').innerText = item.situation;
+    document.getElementById('modal').classList.remove('opacity-0', 'pointer-events-none');
+}
+
+function closeModal() {
+    document.getElementById('modal').classList.add('opacity-0', 'pointer-events-none');
+}
+
+function init() {
+    const filterContainer = document.getElementById('filters');
+    const cats = ["Leadership", "Stratégie", "Discovery", "Delivery", "Data", "Socle Tech & Design", "Product Ops", "AI Product builder"];
+    
+    const allBtn = document.createElement('button');
+    allBtn.className = "px-6 py-2 rounded-full bg-slate-800 text-white text-xs font-black uppercase tracking-widest transition";
+    allBtn.innerText = "All Categories";
+    allBtn.onclick = () => filterSelection('all');
+    filterContainer.appendChild(allBtn);
+
+    cats.forEach(cat => {
+        const btn = document.createElement('button');
+        btn.className = "px-6 py-2 rounded-full bg-white border border-slate-200 text-slate-500 text-xs font-black uppercase tracking-widest hover:bg-slate-50 transition";
+        btn.innerText = cat;
+        btn.onclick = () => filterSelection(cat);
+        filterContainer.appendChild(btn);
+    });
+
+    renderExplorer(skillsData);
+}
+
+init();
+</script>
+</body>
+</html>
