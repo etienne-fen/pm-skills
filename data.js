@@ -1,5 +1,8 @@
 // data.js
-const skillsData = [
+
+// ===== SKILL EXPLORER DATA =====
+// All available skills for the explorer view
+const explorerData = [
      {
         id: "0.1.1",
         cat: "0. Leadership & Influence",
@@ -403,13 +406,74 @@ const skillsData = [
 
 ];
 
+// ===== ASSESSMENT TEST DATA =====
+// Questions used in the self-assessment test (same structure as explorerData)
+const testQuestions = explorerData;
+
+// For backward compatibility
+const skillsData = explorerData;
+
+// ===== AVERAGE PM PROFILE BENCHMARK =====
+// Reference profile from aggregated assessments of successful PMs
+const averagePMProfile = {
+    "0. Leadership & Influence": 2.4,
+    "1. Stratégie & Vision Produit": 2.3,
+    "2. Découverte (Discovery)": 2.5,
+    "3. Conception & Livraison (Delivery)": 2.4,
+    "4. Data Culture": 2.2,
+    "5. Socle Tech & Design": 2.1,
+    "6. Product Ops & Scaling": 2.0,
+    "7. AI Product Builder": 1.8
+};
+
+// ===== PM PROFILE ARCHETYPES =====
 const profileRules = [
-    { cat: "0. Leadership", title: "Le Leader Inspirant", desc: "Vous excellez dans l'humain et la négociation. Votre force est d'aligner les équipes sans autorité hiérarchique.", mission: "Gérer une équipe de PMs ou transformer la culture produit d'une entreprise." },
-    { cat: "1. Stratégie", title: "Le Stratège Visionnaire", desc: "Le long-terme est votre terrain de jeu. Vous savez transformer des tendances en roadmap concrète.", mission: "Lancement d'une nouvelle ligne de business stratégique." },
-    { cat: "2. Discovery", title: "L'Explorateur d'Insights", desc: "Vous ne jurez que par l'utilisateur. Votre obsession est de dé-risquer avant de construire.", mission: "Mener la phase de discovery d'un produit complexe partant de zéro." },
-    { cat: "3. Delivery", title: "Le Maître de l'Exécution", desc: "Rien ne sort sans votre validation. Vous transformez le chaos en une machine de livraison fluide.", mission: "Optimisation de la vélocité et de la qualité d'une équipe technique." },
-    { cat: "4. Data Culture", title: "Le Data Thinker", desc: "Les chiffres parlent pour vous. Votre approche est purement rationnelle et basée sur l'évidence.", mission: "Mise en place d'une infrastructure de tracking et culture de l'expérimentation." },
-    { cat: "5. Socle Tech & Design", title: "Le Product Architect", desc: "Vous parlez couramment le 'Dev' et le 'Design'. Vous faites le pont entre faisabilité et esthétique.", mission: "Refonte d'un Design System ou d'une architecture monolithique." },
-    { cat: "6. Product Ops", title: "L'Organisateur d'Échelle", desc: "Votre passion est l'efficacité. Vous construisez les outils qui permettent aux autres de briller.", mission: "Scaling d'une orga produit de 5 à 50 PMs." },
-    { cat: "7. AI Product Builder", title: "L'AI Architect", desc: "L'IA est pour vous un levier concret. Vous savez où elle apporte de la valeur réelle.", mission: "Intégration de modèles prédictifs ou LLM dans un produit métier." }
+    { 
+        cat: "0. Leadership & Influence", 
+        title: "Le Leader Inspirant", 
+        desc: "Vous excellez dans l'humain et la négociation. Votre force est d'aligner les équipes sans autorité hiérarchique. Vous créez de l'engagement émotionnel autour de la vision.", 
+        mission: "Gérer une équipe de PMs ou transformer la culture produit d'une entreprise." 
+    },
+    { 
+        cat: "1. Stratégie & Vision Produit", 
+        title: "Le Stratège Visionnaire", 
+        desc: "Le long-terme est votre terrain de jeu. Vous savez transformer des tendances en roadmap concrète. Vous naviguez la complexité avec clarté.", 
+        mission: "Lancement d'une nouvelle ligne de business stratégique." 
+    },
+    { 
+        cat: "2. Découverte (Discovery)", 
+        title: "L'Explorateur d'Insights", 
+        desc: "Vous ne jurez que par l'utilisateur. Votre obsession est de dé-risquer avant de construire. Vous découvrez les opportunités cachées.", 
+        mission: "Mener la phase de discovery d'un produit complexe partant de zéro." 
+    },
+    { 
+        cat: "3. Conception & Livraison (Delivery)", 
+        title: "Le Maître de l'Exécution", 
+        desc: "Rien ne sort sans votre validation. Vous transformez le chaos en une machine de livraison fluide. Votre rigueur est exemplaire.", 
+        mission: "Optimisation de la vélocité et de la qualité d'une équipe technique." 
+    },
+    { 
+        cat: "4. Data Culture", 
+        title: "Le Data Thinker", 
+        desc: "Les chiffres parlent pour vous. Votre approche est purement rationnelle et basée sur l'évidence. Vous construisez une culture expérimentale.", 
+        mission: "Mise en place d'une infrastructure de tracking et culture de l'expérimentation." 
+    },
+    { 
+        cat: "5. Socle Tech & Design", 
+        title: "Le Product Architect", 
+        desc: "Vous parlez couramment le 'Dev' et le 'Design'. Vous faites le pont entre faisabilité et esthétique. Vous pensez en termes d'architecture.", 
+        mission: "Refonte d'un Design System ou d'une architecture monolithique." 
+    },
+    { 
+        cat: "6. Product Ops", 
+        title: "L'Organisateur d'Échelle", 
+        desc: "Votre passion est l'efficacité. Vous construisez les outils qui permettent aux autres de briller. Vous scalez les processus.", 
+        mission: "Scaling d'une orga produit de 5 à 50 PMs." 
+    },
+    { 
+        cat: "7. AI Product Builder", 
+        title: "L'AI Architect", 
+        desc: "L'IA est pour vous un levier concret. Vous savez où elle apporte de la valeur réelle. Vous intégrez l'IA de manière stratégique.", 
+        mission: "Intégration de modèles prédictifs ou LLM dans un produit métier." 
+    }
 ];
