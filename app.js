@@ -3,6 +3,7 @@
 let currentStep = 0;
 let userRatings = {};
 let myRadarChart = null;
+let currentFilter = 'all';
 
 // --- NAVIGATION ---
 function switchTab(view) {
@@ -19,7 +20,7 @@ function switchTab(view) {
         explorerTab.classList.add('border-blue-600', 'text-blue-600');
         testTab.classList.remove('border-blue-600', 'text-blue-600');
         testTab.classList.add('border-transparent');
-        renderExplorer(explorerData);
+        filterSelection(currentFilter);
     } else if (view === 'test') {
         testTab.classList.remove('border-transparent');
         testTab.classList.add('border-blue-600', 'text-blue-600');
@@ -62,6 +63,7 @@ function renderExplorer(data) {
 }
 
 function filterSelection(cat) {
+    currentFilter = cat;
     const buttons = document.querySelectorAll('#filters button');
     buttons.forEach(btn => {
         const match = btn.innerText === cat || (cat === 'all' && btn.innerText === 'All Categories');
