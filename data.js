@@ -432,48 +432,72 @@ const profileRules = [
         cat: "0. Leadership & Influence", 
         title: "Le Leader Inspirant", 
         desc: "Vous excellez dans l'humain et la négociation. Votre force est d'aligner les équipes sans autorité hiérarchique. Vous créez de l'engagement émotionnel autour de la vision.", 
-        mission: "Gérer une équipe de PMs ou transformer la culture produit d'une entreprise." 
+        mission: "Gérer une équipe de PMs ou transformer la culture produit d'une entreprise.",
+        improve: "Renforcer votre leadership à travers une meilleure communication stratégique et influence auprès des parties prenantes.",
+        improveWhy: "Un leader inspirant doit savoir inspirer, persuader et créer l'adhésion émotionnelle. Cette compétence est critique pour aligner les équipes cross-fonctionnelles et transformer la vision en action collective.",
+        improveMission: "Diriger la transformation culturelle d'une orga produit, animer des ateliers stratégiques, ou négocier l'accès à des ressources clés avec la direction générale."
     },
     { 
         cat: "1. Stratégie & Vision Produit", 
         title: "Le Stratège Visionnaire", 
         desc: "Le long-terme est votre terrain de jeu. Vous savez transformer des tendances en roadmap concrète. Vous naviguez la complexité avec clarté.", 
-        mission: "Lancement d'une nouvelle ligne de business stratégique." 
+        mission: "Lancement d'une nouvelle ligne de business stratégique.",
+        improve: "Développer votre capacité à penser long-terme et à transformer les tendances marché en stratégie produit robuste.",
+        improveWhy: "La pensée stratégique est fondamentale pour anticiper les disruptions, identifier les opportunités de croissance et définir une direction claire pour le produit sur 3-5 ans.",
+        improveMission: "Définir la roadmap stratégique d'un produit en phase de croissance, mener une analyse SWOT approfondie, ou piloter une refonte de business model."
     },
     { 
         cat: "2. Découverte (Discovery)", 
         title: "L'Explorateur d'Insights", 
         desc: "Vous ne jurez que par l'utilisateur. Votre obsession est de dé-risquer avant de construire. Vous découvrez les opportunités cachées.", 
-        mission: "Mener la phase de discovery d'un produit complexe partant de zéro." 
+        mission: "Mener la phase de discovery d'un produit complexe partant de zéro.",
+        improve: "Améliorer vos compétences en recherche utilisateur qualitative et quantitative pour découvrir les besoins non-exprimés.",
+        improveWhy: "Une bonne discovery réduit les risques de développement coûteux, identifie les vrais besoins utilisateurs au-delà de ce qu'ils demandent, et valide les hypothèses avant de construire.",
+        improveMission: "Mener une étude ethnographique avec les utilisateurs, valider une hypothèse produit via des tests A/B, ou construire un MVP minimum viable pour dé-risquer une nouvelle fonctionnalité."
     },
     { 
         cat: "3. Conception & Livraison (Delivery)", 
         title: "Le Maître de l'Exécution", 
         desc: "Rien ne sort sans votre validation. Vous transformez le chaos en une machine de livraison fluide. Votre rigueur est exemplaire.", 
-        mission: "Optimisation de la vélocité et de la qualité d'une équipe technique." 
+        mission: "Optimisation de la vélocité et de la qualité d'une équipe technique.",
+        improve: "Renforcer votre rigueur opérationnelle et votre capacité à piloter l'exécution pour garantir une livraison de qualité en temps voulu.",
+        improveWhy: "L'excellence opérationnelle assure que les projets sortent à temps, en qualité et dans le budget. C'est la différence entre une bonne idée et un produit livré aux utilisateurs.",
+        improveMission: "Optimiser le processus de livraison d'une équipe technique, implémenter un système de gestion des risques projet, ou mettre en place une culture de qualité."
     },
     { 
         cat: "4. Data Culture", 
         title: "Le Data Thinker", 
         desc: "Les chiffres parlent pour vous. Votre approche est purement rationnelle et basée sur l'évidence. Vous construisez une culture expérimentale.", 
-        mission: "Mise en place d'une infrastructure de tracking et culture de l'expérimentation." 
+        mission: "Mise en place d'une infrastructure de tracking et culture de l'expérimentation.",
+        improve: "Construire une culture data-driven et maîtriser les méthodes d'analyse pour prendre des décisions basées sur l'évidence plutôt que l'intuition.",
+        improveWhy: "Une culture data permet d'itérer rapidement, de mesurer l'impact réel des décisions, et d'allouer les ressources aux initiatives à fort ROI. C'est la base de la croissance scalable.",
+        improveMission: "Mettre en place un système de tracking et de reporting des KPIs clés, lancer un programme d'expérimentation structuré, ou former l'équipe aux méthodes d'analyse."
     },
     { 
         cat: "5. Socle Tech & Design", 
         title: "Le Product Architect", 
         desc: "Vous parlez couramment le 'Dev' et le 'Design'. Vous faites le pont entre faisabilité et esthétique. Vous pensez en termes d'architecture.", 
-        mission: "Refonte d'un Design System ou d'une architecture monolithique." 
+        mission: "Refonte d'un Design System ou d'une architecture monolithique.",
+        improve: "Approfondir votre compréhension technique et design pour mieux anticiper les impacts et les contraintes de faisabilité.",
+        improveWhy: "Une bonne compréhension tech-design permet d'optimiser les trade-offs, de prendre des décisions architecturales robustes, et d'accélérer le time-to-market grâce à une meilleure collaboration avec l'équipe technique.",
+        improveMission: "Piloter une refonte d'architecture système, redesigner un Design System existant, ou implémenter une approche scalable pour la base de code."
     },
     { 
         cat: "6. Product Ops", 
         title: "L'Organisateur d'Échelle", 
         desc: "Votre passion est l'efficacité. Vous construisez les outils qui permettent aux autres de briller. Vous scalez les processus.", 
-        mission: "Scaling d'une orga produit de 5 à 50 PMs." 
+        mission: "Scaling d'une orga produit de 5 à 50 PMs.",
+        improve: "Maîtriser les frameworks de Product Ops et build les processus et outils qui permettent de scaler l'organisation sans perdre l'agilité.",
+        improveWhy: "Product Ops crée de la cohérence, réduit les frictions, et multiplie l'efficacité de chaque PM. C'est critique quand l'orga grandit pour éviter le chaos et la duplication.",
+        improveMission: "Construire un framework de gestion de portefeuille produit pour une orga multi-produits, mettre en place un système de priorisation, ou standardiser les processus de roadmapping."
     },
     { 
         cat: "7. AI Product Builder", 
         title: "L'AI Architect", 
         desc: "L'IA est pour vous un levier concret. Vous savez où elle apporte de la valeur réelle. Vous intégrez l'IA de manière stratégique.", 
-        mission: "Intégration de modèles prédictifs ou LLM dans un produit métier." 
+        mission: "Intégration de modèles prédictifs ou LLM dans un produit métier.",
+        improve: "Développer votre expertise en IA/ML et savoir identifier les cas d'usage où l'IA crée réellement de la valeur.",
+        improveWhy: "L'IA est un multiplicateur de capacités unique. Les PMs qui savent l'exploiter de manière stratégique créent des avantages compétitifs durables et proposent des expériences différenciantes.",
+        improveMission: "Intégrer un LLM (ChatGPT-like) pour personnaliser l'expérience utilisateur, mettre en place un système de recommandation ML, ou automatiser des tâches répétitives via l'IA."
     }
 ];
