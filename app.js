@@ -331,7 +331,7 @@ function showResults() {
     const improvementDiv = document.getElementById('profile-improvement') || createImprovementArea();
     improvementDiv.innerHTML = `
         <h3 class="text-orange-700 font-black uppercase tracking-widest text-[10px] mb-4">🎯 Domaine à Développer</h3>
-        <h2 class="text-2xl font-black text-orange-800 mb-4 leading-tight">${improvementProfile.title}</h2>
+        <h2 class="text-2xl font-black text-orange-800 mb-4 leading-tight">${improvementProfile.cat}</h2>
         
         <div class="space-y-5">
             <div class="bg-white/70 p-5 rounded-2xl border border-orange-200">
