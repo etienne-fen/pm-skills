@@ -1,4 +1,4 @@
-// app.js
+﻿// app.js
 // --- APP STATE ---
 let currentStep = 0;
 let userRatings = {};
@@ -54,7 +54,7 @@ function renderExplorer(data) {
                         <div class="text-[11px] font-black text-blue-600 uppercase tracking-widest mb-2">${item.id}</div>
                         <h3 class="text-lg font-black text-slate-800 mb-3 leading-tight group-hover:text-blue-600 transition-colors">${item.skill.split(' ').slice(1).join(' ')}</h3>
                         <p class="text-xs text-slate-500 line-clamp-2 mb-4">${item.tools}</p>
-                        <div class="inline-block text-blue-600 text-xs font-bold opacity-0 group-hover:opacity-100 transition-opacity">Voir d?tails ?</div>
+                        <div class="inline-block text-blue-600 text-xs font-bold opacity-0 group-hover:opacity-100 transition-opacity">Voir détails →</div>
                     </div>
                 `).join('')}
             </div>`;
@@ -84,7 +84,7 @@ function renderQuestion() {
     const progress = Math.round((currentStep / testQuestions.length) * 100);
     
     document.getElementById('progress-bar').style.width = progress + "%";
-    document.getElementById('progress-text').innerText = `Comp?tence ${currentStep + 1} / ${testQuestions.length}`;
+    document.getElementById('progress-text').innerText = `Compétence ${currentStep + 1} / ${testQuestions.length}`;
     document.getElementById('progress-percent').innerText = progress + "%";
     
     document.getElementById('q-category').innerText = skill.cat;
@@ -152,7 +152,7 @@ function showResults() {
     // Check if we have data for all categories
     if (labels.length === 0) {
         console.error('No categories found!');
-        alert('Erreur: Aucune cat?gorie trouv?e. Les donn?es ne sont pas charg?es correctement.');
+        alert('Erreur: Aucune catégorie trouvée. Les données ne sont pas chargées correctement.');
         return;
     }
 
@@ -265,7 +265,7 @@ function showResults() {
     console.log('Chart created successfully');
     } catch (error) {
         console.error('Error creating chart:', error);
-        alert('Erreur lors de la cr?ation du graphique: ' + error.message);
+        alert('Erreur lors de la création du graphique: ' + error.message);
     }
 
     // Display two-category profile analysis
@@ -299,14 +299,12 @@ function showResults() {
     // Display secondary profile
     const secondaryDiv = document.getElementById('profile-secondary') || createSecondaryProfile();
     secondaryDiv.innerHTML = `
-        <div class="mt-6">
-            <h3 class="text-slate-500 font-black uppercase tracking-widest text-[10px] mb-3">?? Profil Secondaire</h3>
-            <h2 class="text-2xl font-black text-slate-800 mb-4 leading-tight">${secondProfile.title}</h2>
-            <p class="text-slate-600 leading-relaxed mb-4 text-sm">${secondProfile.desc}</p>
-            
-            <div class="bg-gray-50 p-5 rounded-2xl border border-gray-200">
-                <h4 class="text-slate-700 font-bold text-xs uppercase mb-2 tracking-widest">Type de Mission</h4>
-                <p class="text-slate-700 text-xs italic">${secondProfile.mission}</p>
+        <div class="bg-slate-700/50 text-white p-8 rounded-3xl shadow-lg border border-slate-600">
+            <h3 class="text-slate-300 font-black uppercase tracking-widest text-[10px] mb-3">Profil Secondaire</h3>
+            <h3 class="text-2xl font-black mb-4 leading-tight">${secondProfile.title}</h3>
+            <p class="text-slate-300 leading-relaxed mb-6 text-sm">${secondProfile.desc}</p>
+            <div class="bg-slate-600/40 p-4 rounded-xl border border-slate-600/60">
+                <p class="text-slate-200 text-xs italic">${secondProfile.mission}</p>
             </div>
         </div>
     `;
@@ -338,55 +336,6 @@ function showResults() {
             </div>
         </div>
     `;
-
-    // Find and display lowest scoring category (area for improvement)
-    const lowestCategory = categoryScores[categoryScores.length - 1]; // Already sorted descending, so last is lowest
-    const improvementProfile = profileRules.find(p => lowestCategory.category.includes(p.cat)) || profileRules[0];
-
-    // Get common tools for the category
-    const skillsInCategory = testQuestions.filter(s => s.cat === lowestCategory.category);
-    const commonTools = [...new Set(skillsInCategory.map(s => s.tools))].join(', ');
-    
-    // Get common tools for the category
-    const skillsInCategory = testQuestions.filter(s => s.cat === lowestCategory.category);
-    const commonTools = [...new Set(skillsInCategory.map(s => s.tools))].join(', ');
-    
-    const improvementDiv = document.getElementById('profile-improvement') || createImprovementArea();
-    improvementDiv.innerHTML = `
-        <h3 class="text-orange-700 font-black uppercase tracking-widest text-[10px] mb-4">?? Domaine � D�velopper</h3>
-        <h2 class="text-2xl font-black text-orange-800 mb-4 leading-tight">${lowestCategory.category.split(' ').slice(1).join(' ')}</h2>
-        
-        <div class="space-y-5">
-            <div class="bg-white/70 p-5 rounded-2xl border border-orange-200">
-                <h4 class="text-orange-700 font-bold text-xs uppercase mb-2 tracking-widest">Outils Communs</h4>
-                <p class="text-slate-700 text-sm leading-relaxed">${commonTools}</p>
-            </div>
-            
-            <div class="bg-white/70 p-5 rounded-2xl border border-orange-200">
-                <h4 class="text-orange-700 font-bold text-xs uppercase mb-2 tracking-widest">Domaines ? Renforcer</h4>
-                <p class="text-slate-700 text-sm leading-relaxed">${improvementProfile.improve}</p>
-            </div>
-            
-            <div class="bg-white/70 p-5 rounded-2xl border border-orange-200">
-                <h4 class="text-orange-700 font-bold text-xs uppercase mb-2 tracking-widest">Pourquoi c'est Important</h4>
-                <p class="text-slate-700 text-sm leading-relaxed">${improvementProfile.improveWhy}</p>
-            </div>
-            
-            <div class="bg-white/70 p-5 rounded-2xl border border-orange-200">
-                <h4 class="text-orange-700 font-bold text-xs uppercase mb-2 tracking-widest">Contexts & Opportunit?s</h4>
-                <p class="text-slate-700 text-sm leading-relaxed">${improvementProfile.improveMission}</p>
-            </div>
-        </div>
-    `;
-}
-
-function createImprovementArea() {
-    const container = document.getElementById('view-results');
-    const div = document.createElement('div');
-    div.id = 'profile-improvement';
-    div.className = 'mt-8 bg-gradient-to-br from-orange-50 to-red-50 rounded-3xl shadow-lg border-2 border-orange-200 p-8';
-    container.appendChild(div);
-    return div;
 }
 
 function createSecondaryProfile() {
@@ -428,7 +377,7 @@ function closeModal() {
 
 function init() {
     const filterContainer = document.getElementById('filters');
-    const cats = ["Leadership", "Strat?gie", "Discovery", "Delivery", "Data", "Socle Tech & Design", "Product Ops", "AI Product builder"];
+    const cats = ["Leadership", "Stratégie", "Discovery", "Delivery", "Data", "Socle Tech & Design", "Product Ops", "AI Product builder"];
     
     const allBtn = document.createElement('button');
     allBtn.className = "px-6 py-2.5 rounded-full bg-white border-2 border-slate-200 text-slate-600 text-xs font-black uppercase tracking-widest hover:border-blue-400 hover:text-blue-600 transition duration-200 filter-btn";
