@@ -1,9 +1,85 @@
-// app.js
+﻿// app.js
 // --- APP STATE ---
 let currentStep = 0;
 let userRatings = {};
 let myRadarChart = null;
 let currentFilter = 'all';
+
+// --- PROFILE RULES ---
+const profileRules = [
+    {
+        cat: "Leadership",
+        title: "Leader Inspirant",
+        desc: "Vous excellez dans le leadership et l'influence. Vous savez motiver, aligner et développer votre équipe autour d'une vision commune.",
+        mission: "Diriger une équipe produit de 5-10 personnes, définir la culture et les valeurs de l'équipe.",
+        improve: "Développer vos compétences en communication stratégique, négociation et facilitation d'ateliers.",
+        improveWhy: "Le leadership est le socle de toute équipe produit performante. Sans leadership, même les meilleures idées restent lettre morte.",
+        improveMission: "Animer des ateliers de vision, négocier avec des stakeholders difficiles, ou coacher des PM juniors."
+    },
+    {
+        cat: "Stratégie",
+        title: "Visionnaire Stratégique",
+        desc: "Votre force est la stratégie produit. Vous savez analyser le marché, définir la vision et construire des roadmaps alignées.",
+        mission: "Définir la stratégie produit pour une entreprise de 50M€ de CA.",
+        improve: "Maîtriser l'analyse de marché, la construction de business model et l'alignement des parties prenantes.",
+        improveWhy: "La stratégie guide toutes les décisions. Une mauvaise stratégie peut couler un produit prometteur.",
+        improveMission: "Conduire une analyse de marché concurrentielle, construire un business model canvas, ou présenter une roadmap au comité de direction."
+    },
+    {
+        cat: "Discovery",
+        title: "Explorateur Utilisateur",
+        desc: "Vous êtes un expert de la découverte. Vous savez identifier les vrais besoins utilisateurs et valider des hypothèses.",
+        mission: "Mener la découverte pour un produit B2B complexe avec 1000 utilisateurs.",
+        improve: "Maîtriser les méthodes de recherche utilisateur qualitative et quantitative, et l'expérimentation.",
+        improveWhy: "La découverte permet d'éviter de construire le mauvais produit. 70% des échecs produits viennent d'une mauvaise compréhension du besoin.",
+        improveMission: "Conduire des entretiens utilisateurs, analyser des données quantitatives, ou mettre en place des tests A/B."
+    },
+    {
+        cat: "Delivery",
+        title: "Maître de la Livraison",
+        desc: "Vous excellez dans l'exécution. Vous savez planifier, prioriser et livrer de la valeur de manière itérative.",
+        mission: "Gérer la livraison d'un produit SaaS avec 4 équipes de développement.",
+        improve: "Maîtriser la gestion de backlog, les méthodes agiles et les stratégies de qualité.",
+        improveWhy: "La livraison est ce qui transforme les idées en réalité. Sans livraison, les meilleures stratégies restent théoriques.",
+        improveMission: "Prioriser un backlog complexe, animer des rituels agiles, ou mettre en place une stratégie de lancement."
+    },
+    {
+        cat: "Data",
+        title: "Data-Driven Product Manager",
+        desc: "Vous maîtrisez l'analyse de données. Vous savez mesurer l'impact et prendre des décisions basées sur les faits.",
+        mission: "Définir la stratégie de mesure pour un produit mobile avec 1M d'utilisateurs actifs.",
+        improve: "Maîtriser les outils d'analyse, la définition de KPIs et l'interprétation de données.",
+        improveWhy: "Les données permettent de valider les hypothèses et d'optimiser en continu. Sans données, on navigue à l'aveugle.",
+        improveMission: "Construire un plan de tracking, analyser des cohortes utilisateurs, ou présenter des insights à l'équipe."
+    },
+    {
+        cat: "Socle Tech & Design",
+        title: "Architecte Technique",
+        desc: "Vous comprenez les contraintes techniques et design. Vous savez collaborer efficacement avec les équipes tech et design.",
+        mission: "Coordonner le développement d'une plateforme technique complexe avec 20 développeurs.",
+        improve: "Développer votre compréhension des principes d'ingénierie et de design.",
+        improveWhy: "La technique et le design sont les outils de réalisation. Sans cette compréhension, les PMs restent déconnectés de la réalité de l'exécution.",
+        improveMission: "Comprendre une architecture microservices, appliquer des principes de design thinking, ou collaborer sur un système de design."
+    },
+    {
+        cat: "Product Ops",
+        title: "Organisateur d'Échelle",
+        desc: "Votre passion est l'efficacité. Vous construisez les outils qui permettent aux autres de briller. Vous scalez les processus.",
+        mission: "Scaling d'une orga produit de 5 à 50 PMs.",
+        improve: "Maîtriser les frameworks de Product Ops et build les processus et outils qui permettent de scaler l'organisation sans perdre l'agilité.",
+        improveWhy: "Product Ops crée de la cohérence, réduit les frictions, et multiplie l'efficacité de chaque PM. C'est critique quand l'orga grandit pour éviter le chaos et la duplication.",
+        improveMission: "Construire un framework de gestion de portefeuille produit pour une orga multi-produits, mettre en place un système de priorisation, ou standardiser les processus de roadmapping."
+    },
+    {
+        cat: "AI Product Builder",
+        title: "AI Architect",
+        desc: "L'IA est pour vous un levier concret. Vous savez où elle apporte de la valeur réelle. Vous intégrez l'IA de manière stratégique.",
+        mission: "Intégration de modèles prédictifs ou LLM dans un produit métier.",
+        improve: "Développer votre expertise en IA/ML et savoir identifier les cas d'usage où l'IA crée réellement de la valeur.",
+        improveWhy: "L'IA est un multiplicateur de capacités unique. Les PMs qui savent l'exploiter de manière stratégique créent des avantages compétitifs durables et proposent des expériences différenciantes.",
+        improveMission: "Intégrer un LLM (ChatGPT-like) pour personnaliser l'expérience utilisateur, mettre en place un système de recommandation ML, ou automatiser des tâches répétitives via l'IA."
+    }
+];
 
 // --- NAVIGATION ---
 function switchTab(view) {
@@ -54,7 +130,7 @@ function renderExplorer(data) {
                         <div class="text-[11px] font-black text-blue-600 uppercase tracking-widest mb-2">${item.id}</div>
                         <h3 class="text-lg font-black text-slate-800 mb-3 leading-tight group-hover:text-blue-600 transition-colors">${item.skill.split(' ').slice(1).join(' ')}</h3>
                         <p class="text-xs text-slate-500 line-clamp-2 mb-4">${item.tools}</p>
-                        <div class="inline-block text-blue-600 text-xs font-bold opacity-0 group-hover:opacity-100 transition-opacity">Voir d�tails ?</div>
+                        <div class="inline-block text-blue-600 text-xs font-bold opacity-0 group-hover:opacity-100 transition-opacity">Voir d�tails ?</div>
                     </div>
                 `).join('')}
             </div>`;
@@ -84,7 +160,7 @@ function renderQuestion() {
     const progress = Math.round((currentStep / testQuestions.length) * 100);
     
     document.getElementById('progress-bar').style.width = progress + "%";
-    document.getElementById('progress-text').innerText = `Comp�tence ${currentStep + 1} / ${testQuestions.length}`;
+    document.getElementById('progress-text').innerText = `Comp�tence ${currentStep + 1} / ${testQuestions.length}`;
     document.getElementById('progress-percent').innerText = progress + "%";
     
     document.getElementById('q-category').innerText = skill.cat;
@@ -152,7 +228,7 @@ function showResults() {
     // Check if we have data for all categories
     if (labels.length === 0) {
         console.error('No categories found!');
-        alert('Erreur: Aucune cat�gorie trouv�e. Les donn�es ne sont pas charg�es correctement.');
+        alert('Erreur: Aucune cat�gorie trouv�e. Les donn�es ne sont pas charg�es correctement.');
         return;
     }
 
@@ -265,7 +341,7 @@ function showResults() {
     console.log('Chart created successfully');
     } catch (error) {
         console.error('Error creating chart:', error);
-        alert('Erreur lors de la cr�ation du graphique: ' + error.message);
+        alert('Erreur lors de la cr�ation du graphique: ' + error.message);
     }
 
     // Display two-category profile analysis
@@ -348,7 +424,7 @@ function showResults() {
     
     const improvementDiv = document.getElementById('profile-improvement') || createImprovementArea();
     improvementDiv.innerHTML = `
-        <h3 class="text-orange-700 font-black uppercase tracking-widest text-[10px] mb-4">?? Domaine � D�velopper</h3>
+        <h3 class="text-orange-700 font-black uppercase tracking-widest text-[10px] mb-4">?? Domaine � D�velopper</h3>
         <h2 class="text-2xl font-black text-orange-800 mb-4 leading-tight">${lowestCategory.category.split(' ').slice(1).join(' ')}</h2>
         
         <div class="space-y-5">
@@ -358,7 +434,7 @@ function showResults() {
             </div>
             
             <div class="bg-white/70 p-5 rounded-2xl border border-orange-200">
-                <h4 class="text-orange-700 font-bold text-xs uppercase mb-2 tracking-widest">Domaines � Renforcer</h4>
+                <h4 class="text-orange-700 font-bold text-xs uppercase mb-2 tracking-widest">Domaines � Renforcer</h4>
                 <p class="text-slate-700 text-sm leading-relaxed">${improvementProfile.improve}</p>
             </div>
             
@@ -368,7 +444,7 @@ function showResults() {
             </div>
             
             <div class="bg-white/70 p-5 rounded-2xl border border-orange-200">
-                <h4 class="text-orange-700 font-bold text-xs uppercase mb-2 tracking-widest">Contexts & Opportunit�s</h4>
+                <h4 class="text-orange-700 font-bold text-xs uppercase mb-2 tracking-widest">Contexts & Opportunit�s</h4>
                 <p class="text-slate-700 text-sm leading-relaxed">${improvementProfile.improveMission}</p>
             </div>
         </div>
