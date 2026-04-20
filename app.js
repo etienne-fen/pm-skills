@@ -252,7 +252,7 @@ function showResults() {
                             const value = context.parsed.r;
                             if (context.datasetIndex === 0) {
                                 const benchValue = context.chart.data.datasets[1].data[context.dataIndex];
-                                return `${label}: ${value} (Moyenne PM: ${benchValue})`;
+                                return `${label}: ${value}\nMoyenne PM: ${benchValue}`;
                             } else {
                                 return null;
                             }

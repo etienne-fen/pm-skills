@@ -7,221 +7,221 @@ const explorerData = [
         id: "0.1.1",
         cat: "0. Leadership & Influence",
         sub: "0.1 Communication & Influence",
-        skill: "0.1.1 Communication StratÃ©gique & Storytelling",
-        tools: "Golden Circle (Why, How, What), MÃ©thode STAR",
-        junior: "Communique de maniÃ¨re claire et concise au sein de son Ã©quipe et avec ses interlocuteurs directs. Sait prÃ©senter l'avancement de son pÃ©rimÃ¨tre.",
-        senior: "MaÃ®trise l'art du storytelling. Adapte son discours Ã  son audience (C-level, dÃ©veloppeurs, clients) pour inspirer, persuader et crÃ©er un alignement autour de la vision et de la stratÃ©gie.",
-        situation: "Face au comitÃ© de direction, le senior ne liste pas les fonctionnalitÃ©s Ã  venir. Il raconte l'histoire de l'utilisateur, explique son problÃ¨me, et positionne la roadmap comme la solution narrative Ã  ce problÃ¨me, crÃ©ant ainsi l'adhÃ©sion Ã©motionnelle et rationnelle."
+        skill: "0.1.1 Communication Stratégique & Storytelling",
+        tools: "Golden Circle (Why, How, What), Méthode STAR",
+        junior: "Communique de manière claire et concise au sein de son équipe et avec ses interlocuteurs directs. Sait présenter l'avancement de son périmètre.",
+        senior: "Maà®trise l'art du storytelling. Adapte son discours à  son audience (C-level, développeurs, clients) pour inspirer, persuader et créer un alignement autour de la vision et de la stratégie.",
+        situation: "Face au comité de direction, le senior ne liste pas les fonctionnalités à  venir. Il raconte l'histoire de l'utilisateur, explique son problème, et positionne la roadmap comme la solution narrative à  ce problème, créant ainsi l'adhésion émotionnelle et rationnelle."
     },
     {
         id: "0.1.2",
         cat: "0. Leadership & Influence",
         sub: "0.1 Communication & Influence",
-        skill: "0.1.2 Influence & NÃ©gociation",
-        tools: "Matrice Pouvoir/IntÃ©rÃªt, NÃ©gociation RaisonnÃ©e (Getting to Yes), Matrice RACI",
-        junior: "Sait argumenter pour dÃ©fendre une prioritÃ© au sein de son Ã©quipe ou obtenir de l'aide d'une Ã©quipe adjacente.",
-        senior: "NÃ©gocie et obtient l'adhÃ©sion de parties prenantes complexes, mÃªme sans autoritÃ© hiÃ©rarchique. Sait dire \"non\" de maniÃ¨re constructive en expliquant les arbitrages et en prÃ©servant la relation.",
-        situation: "Un directeur commercial demande une fonctionnalitÃ© spÃ©cifique pour un client clÃ©. Le senior, au lieu d'accepter ou de refuser, organise un atelier avec lui, lui prÃ©sente les coÃ»ts d'opportunitÃ© et nÃ©gocie une solution alternative qui rÃ©pond Ã  80% du besoin sans dÃ©vier de la stratÃ©gie."
+        skill: "0.1.2 Influence & Négociation",
+        tools: "Matrice Pouvoir/Intéràªt, Négociation Raisonnée (Getting to Yes), Matrice RACI",
+        junior: "Sait argumenter pour défendre une priorité au sein de son équipe ou obtenir de l'aide d'une équipe adjacente.",
+        senior: "Négocie et obtient l'adhésion de parties prenantes complexes, màªme sans autorité hiérarchique. Sait dire \"non\" de manière constructive en expliquant les arbitrages et en préservant la relation.",
+        situation: "Un directeur commercial demande une fonctionnalité spécifique pour un client clé. Le senior, au lieu d'accepter ou de refuser, organise un atelier avec lui, lui présente les coûts d'opportunité et négocie une solution alternative qui répond à  80% du besoin sans dévier de la stratégie."
     },
     {
         id: "0.2.1",
         cat: "0. Leadership & Influence",
-        sub: "0.2 Collaboration & DÃ©veloppement Humain",
+        sub: "0.2 Collaboration & Développement Humain",
         skill: "0.2.1 Facilitation & Animation d'Ateliers",
-        tools: "Animation d'ateliers (dÃ©finir lesquels)",
-        junior: "Participe activement aux ateliers et peut co-animer un rituel simple (ex: rÃ©trospective).",
-        senior: "ConÃ§oit et facilite des ateliers complexes (ex: cadrage stratÃ©gique, idÃ©ation, User Story Mapping) avec des groupes multidisciplinaires et des participants de haut niveau, en s'assurant que l'objectif est atteint.",
-        situation: "Pour lancer un nouveau projet d'envergure, le senior conÃ§oit et anime un kick-off de 2 jours avec 15 personnes (produit, tech, design, marketing, ventes) pour crÃ©er une vision partagÃ©e, identifier les risques et dÃ©finir la feuille de route initiale."
+        tools: "Animation d'ateliers (définir lesquels)",
+        junior: "Participe activement aux ateliers et peut co-animer un rituel simple (ex: rétrospective).",
+        senior: "Conçoit et facilite des ateliers complexes (ex: cadrage stratégique, idéation, User Story Mapping) avec des groupes multidisciplinaires et des participants de haut niveau, en s'assurant que l'objectif est atteint.",
+        situation: "Pour lancer un nouveau projet d'envergure, le senior conçoit et anime un kick-off de 2 jours avec 15 personnes (produit, tech, design, marketing, ventes) pour créer une vision partagée, identifier les risques et définir la feuille de route initiale."
     },
     {
         id: "0.2.2",
         cat: "0. Leadership & Influence",
-        sub: "0.2 Collaboration & DÃ©veloppement Humain",
+        sub: "0.2 Collaboration & Développement Humain",
         skill: "0.2.2 Coaching & Mentorat",
-        tools: "GROW Model, Feedback Constructif (DESC), CommunautÃ©s de Pratique",
-        junior: "Se concentre sur son propre dÃ©veloppement. Partage ses connaissances de maniÃ¨re informelle avec ses pairs.",
-        senior: "Agit comme un coach pour l'Ã©quipe (en aidant les dÃ©veloppeurs Ã  mieux comprendre le \"pourquoi\") et comme un mentor pour les PMs plus juniors. Contribue activement Ã  la montÃ©e en compÃ©tence de l'organisation produit.",
-        situation: "Le senior ne donne pas la solution Ã  un PM junior bloquÃ© sur une priorisation. Il lui pose des questions basÃ©es sur le modÃ¨le GROW (Goal, Reality, Options, Will) pour l'aider Ã  structurer sa pensÃ©e et Ã  trouver la solution par lui-mÃªme."
+        tools: "GROW Model, Feedback Constructif (DESC), Communautés de Pratique",
+        junior: "Se concentre sur son propre développement. Partage ses connaissances de manière informelle avec ses pairs.",
+        senior: "Agit comme un coach pour l'équipe (en aidant les développeurs à  mieux comprendre le \"pourquoi\") et comme un mentor pour les PMs plus juniors. Contribue activement à  la montée en compétence de l'organisation produit.",
+        situation: "Le senior ne donne pas la solution à  un PM junior bloqué sur une priorisation. Il lui pose des questions basées sur le modèle GROW (Goal, Reality, Options, Will) pour l'aider à  structurer sa pensée et à  trouver la solution par lui-màªme."
     },
     {
         id: "1.1.1",
-        cat: "1. StratÃ©gie & Vision Produit",
-        sub: "1.1 Ã‰laboration de la StratÃ©gie",
-        skill: "1.1.1 Analyse du MarchÃ© & Concurrence",
+        cat: "1. Stratégie & Vision Produit",
+        sub: "1.1 Élaboration de la Stratégie",
+        skill: "1.1.1 Analyse du Marché & Concurrence",
         tools: "SWOT, PESTEL, Forces de Porter, Wardley Maps.",
-        junior: "Effectue une veille sur des concurrents directs et des fonctionnalitÃ©s spÃ©cifiques Ã  la demande de son manager.",
-        senior: "MÃ¨ne une analyse continue et pro-active du marchÃ© (tendances macro, technologies Ã©mergentes, mouvements concurrentiels) pour identifier des opportunitÃ©s de rupture et des menaces stratÃ©giques.",
-        situation: "Le senior identifie une nouvelle technologie (ex: LLM open-source performant) comme une menace potentielle pour la position de leader, poussant Ã  la crÃ©ation d'une nouvelle initiative R&D."
+        junior: "Effectue une veille sur des concurrents directs et des fonctionnalités spécifiques à  la demande de son manager.",
+        senior: "Mène une analyse continue et pro-active du marché (tendances macro, technologies émergentes, mouvements concurrentiels) pour identifier des opportunités de rupture et des menaces stratégiques.",
+        situation: "Le senior identifie une nouvelle technologie (ex: LLM open-source performant) comme une menace potentielle pour la position de leader, poussant à  la création d'une nouvelle initiative R&D."
     },
     {
         id: "1.1.2",
-        cat: "1. StratÃ©gie & Vision Produit",
-        sub: "1.1 Ã‰laboration de la StratÃ©gie",
+        cat: "1. Stratégie & Vision Produit",
+        sub: "1.1 Élaboration de la Stratégie",
         skill: "1.1.2 Vision Produit",
         tools: "V2MOM, Golden Circle, Product Vision Board.",
-        junior: "Comprend, articule et peut expliquer la vision du produit Ã  son Ã©quipe.",
-        senior: "DÃ©finit, possÃ¨de et Ã©vangÃ©lise une vision produit inspirante sur 3-5 ans. Il s'assure qu'elle est comprise, partagÃ©e et qu'elle guide les dÃ©cisions Ã  tous les niveaux de l'entreprise.",
-        situation: "Lors d'une rÃ©union \"all-hands\", le senior prÃ©sente la vision avec un storytelling impactant, donnant un sens et une direction clairs Ã  tous les employÃ©s."
+        junior: "Comprend, articule et peut expliquer la vision du produit à  son équipe.",
+        senior: "Définit, possède et évangélise une vision produit inspirante sur 3-5 ans. Il s'assure qu'elle est comprise, partagée et qu'elle guide les décisions à  tous les niveaux de l'entreprise.",
+        situation: "Lors d'une réunion \"all-hands\", le senior présente la vision avec un storytelling impactant, donnant un sens et une direction clairs à  tous les employés."
     },
     {
         id: "1.1.3",
-        cat: "1. StratÃ©gie & Vision Produit",
-        sub: "1.1 Ã‰laboration de la StratÃ©gie",
-        skill: "1.1.3 Business & ModÃ¨le Ã‰co.",
-        tools: "Business Model Canvas, Lean Canvas, Analyse de la chaÃ®ne de valeur.",
-        junior: "Comprend le modÃ¨le Ã©conomique du produit et l'impact de son pÃ©rimÃ¨tre sur les KPIs principaux (ex: revenus, acquisition).",
-        senior: "Construit, modÃ©lise et optimise le modÃ¨le Ã©conomique. Prend des dÃ©cisions stratÃ©giques (pricing, nouveaux marchÃ©s) en se basant sur une analyse financiÃ¨re approfondie (P&L, CAC, LTV).",
-        situation: "Le senior dÃ©cide de pivoter d'un modÃ¨le de licence unique vers un abonnement (SaaS) en modÃ©lisant l'impact sur les revenus rÃ©currents (MRR) et la valorisation de l'entreprise."
+        cat: "1. Stratégie & Vision Produit",
+        sub: "1.1 Élaboration de la Stratégie",
+        skill: "1.1.3 Business & Modèle Éco.",
+        tools: "Business Model Canvas, Lean Canvas, Analyse de la chaà®ne de valeur.",
+        junior: "Comprend le modèle économique du produit et l'impact de son périmètre sur les KPIs principaux (ex: revenus, acquisition).",
+        senior: "Construit, modélise et optimise le modèle économique. Prend des décisions stratégiques (pricing, nouveaux marchés) en se basant sur une analyse financière approfondie (P&L, CAC, LTV).",
+        situation: "Le senior décide de pivoter d'un modèle de licence unique vers un abonnement (SaaS) en modélisant l'impact sur les revenus récurrents (MRR) et la valorisation de l'entreprise."
     },
     {
         id: "1.2.1",
-        cat: "1. StratÃ©gie & Vision Produit",
-        sub: "1.2 Communication & Alignement de la StratÃ©gie",
+        cat: "1. Stratégie & Vision Produit",
+        sub: "1.2 Communication & Alignement de la Stratégie",
         skill: "1.2.1 Construction & Gestion de Roadmap",
-        tools: "Now-Next-Later Roadmap, Roadmap ThÃ©matique, OKRs",
-        junior: "Contribue Ã  la roadmap de son Ã©quipe en fournissant des estimations pour son pÃ©rimÃ¨tre.",
-        senior: "Construit et maintient une roadmap stratÃ©gique basÃ©e sur les \"outcomes\" (rÃ©sultats) et non les \"outputs\" (fonctionnalitÃ©s). La prÃ©sente et la dÃ©fend au niveau exÃ©cutif.",
-        situation: "Le senior prÃ©sente au comitÃ© de direction une roadmap axÃ©e sur des objectifs comme \"Augmenter la rÃ©tention de 15%\" plutÃ´t qu'une liste de fonctionnalitÃ©s, justifiant chaque initiative par son impact attendu."
+        tools: "Now-Next-Later Roadmap, Roadmap Thématique, OKRs",
+        junior: "Contribue à  la roadmap de son équipe en fournissant des estimations pour son périmètre.",
+        senior: "Construit et maintient une roadmap stratégique basée sur les \"outcomes\" (résultats) et non les \"outputs\" (fonctionnalités). La présente et la défend au niveau exécutif.",
+        situation: "Le senior présente au comité de direction une roadmap axée sur des objectifs comme \"Augmenter la rétention de 15%\" plutôt qu'une liste de fonctionnalités, justifiant chaque initiative par son impact attendu."
     },
     {
         id: "1.2.2",
-        cat: "1. StratÃ©gie & Vision Produit",
-        sub: "1.2 Communication & Alignement de la StratÃ©gie",
+        cat: "1. Stratégie & Vision Produit",
+        sub: "1.2 Communication & Alignement de la Stratégie",
         skill: "1.2.2 Alignement des Parties Prenantes",
-        tools: "Matrice RACI, Matrice Pouvoir/IntÃ©rÃªt.",
-        junior: "Identifie et communique rÃ©guliÃ¨rement avec les parties prenantes directes de son Ã©quipe (support, marketing).",
-        senior: "Cartographie l'ensemble des parties prenantes (y compris C-level, juridique, ventes), comprend leurs enjeux et met en place une communication pro-active et adaptÃ©e pour obtenir leur adhÃ©sion et leur soutien.",
-        situation: "Avant de lancer un projet impactant l'Ã©quipe commerciale, le senior organise des ateliers avec leurs directeurs pour co-construire la solution et s'assurer qu'elle rÃ©pond Ã  leurs contraintes terrain."
+        tools: "Matrice RACI, Matrice Pouvoir/Intéràªt.",
+        junior: "Identifie et communique régulièrement avec les parties prenantes directes de son équipe (support, marketing).",
+        senior: "Cartographie l'ensemble des parties prenantes (y compris C-level, juridique, ventes), comprend leurs enjeux et met en place une communication pro-active et adaptée pour obtenir leur adhésion et leur soutien.",
+        situation: "Avant de lancer un projet impactant l'équipe commerciale, le senior organise des ateliers avec leurs directeurs pour co-construire la solution et s'assurer qu'elle répond à  leurs contraintes terrain."
     },
     {
         id: "2.1.1",
-        cat: "2. DÃ©couverte (Discovery)",
-        sub: "2.1 Recherche & GÃ©nÃ©ration d'Insights",
+        cat: "2. Découverte (Discovery)",
+        sub: "2.1 Recherche & Génération d'Insights",
         skill: "2.1.1 Recherche Utilisateur Qualitative",
         tools: "Personas, JTBD, User Story Mapping, Interviews.",
-        junior: "MÃ¨ne des entretiens utilisateurs et des tests d'utilisabilitÃ© en utilisant des scripts prÃ©parÃ©s.",
-        senior: "DÃ©finit la stratÃ©gie de recherche. MÃ¨ne des entretiens complexes (ex: ethnographiques) pour dÃ©couvrir des besoins latents et non exprimÃ©s.",
-        situation: "Le senior, en observant un utilisateur sur son lieu de travail, dÃ©couvre un \"hack\" que celui-ci a mis en place, rÃ©vÃ©lant un besoin profond que des entretiens classiques n'avaient pas fait Ã©merger."
+        junior: "Mène des entretiens utilisateurs et des tests d'utilisabilité en utilisant des scripts préparés.",
+        senior: "Définit la stratégie de recherche. Mène des entretiens complexes (ex: ethnographiques) pour découvrir des besoins latents et non exprimés.",
+        situation: "Le senior, en observant un utilisateur sur son lieu de travail, découvre un \"hack\" que celui-ci a mis en place, révélant un besoin profond que des entretiens classiques n'avaient pas fait émerger."
     },
     {
         id: "2.1.2",
-        cat: "2. DÃ©couverte (Discovery)",
-        sub: "2.1 Recherche & GÃ©nÃ©ration d'Insights",
-        skill: "2.1.2 Analyse de DonnÃ©es Quantitatives",
+        cat: "2. Découverte (Discovery)",
+        sub: "2.1 Recherche & Génération d'Insights",
+        skill: "2.1.2 Analyse de Données Quantitatives",
         tools: "AARRR, HEART Framework, Analyse de cohortes.",
-        junior: "Sait utiliser les outils d'analyse (Mixpanel, GA) pour crÃ©er des dashboards et suivre l'adoption.",
-        senior: "DÃ©finit le plan de tracking. MaÃ®trise l'analyse de cohortes et sait croiser donnÃ©es quanti/quali pour formuler des hypothÃ¨ses.",
-        situation: "Le senior remarque une chute dans le funnel de conversion. Il demande au junior de mener des entretiens ciblÃ©s sur les utilisateurs qui abandonnent pour comprendre le \"pourquoi\"."
+        junior: "Sait utiliser les outils d'analyse (Mixpanel, GA) pour créer des dashboards et suivre l'adoption.",
+        senior: "Définit le plan de tracking. Maà®trise l'analyse de cohortes et sait croiser données quanti/quali pour formuler des hypothèses.",
+        situation: "Le senior remarque une chute dans le funnel de conversion. Il demande au junior de mener des entretiens ciblés sur les utilisateurs qui abandonnent pour comprendre le \"pourquoi\"."
     },
     {
         id: "2.2.1",
-        cat: "2. DÃ©couverte (Discovery)",
-        sub: "2.2 SynthÃ¨se & ExpÃ©rimentation",
-        skill: "2.2.1 DÃ©finition du ProblÃ¨me & IdÃ©ation",
+        cat: "2. Découverte (Discovery)",
+        sub: "2.2 Synthèse & Expérimentation",
+        skill: "2.2.1 Définition du Problème & Idéation",
         tools: "Opportunity Solution Tree, How Might We, 5 Pourquoi.",
-        junior: "Participe Ã  des ateliers de brainstorming. Sait formuler un problÃ¨me utilisateur clairement.",
-        senior: "Facilite des ateliers de crÃ©ativitÃ©. MaÃ®trise l'art de reformuler un problÃ¨me pour ouvrir le champ des possibles.",
-        situation: "Face Ã  une demande pour un bouton d'export Excel, le senior utilise les 5 Pourquoi pour comprendre que le besoin est de partager la performance, ouvrant d'autres solutions plus pertinentes."
+        junior: "Participe à  des ateliers de brainstorming. Sait formuler un problème utilisateur clairement.",
+        senior: "Facilite des ateliers de créativité. Maà®trise l'art de reformuler un problème pour ouvrir le champ des possibles.",
+        situation: "Face à  une demande pour un bouton d'export Excel, le senior utilise les 5 Pourquoi pour comprendre que le besoin est de partager la performance, ouvrant d'autres solutions plus pertinentes."
     },
     {
         id: "2.2.2",
-        cat: "2. DÃ©couverte (Discovery)",
-        sub: "2.2 SynthÃ¨se & ExpÃ©rimentation",
-        skill: "2.2.2 ExpÃ©rimentation & Validation",
+        cat: "2. Découverte (Discovery)",
+        sub: "2.2 Synthèse & Expérimentation",
+        skill: "2.2.2 Expérimentation & Validation",
         tools: "Lean Startup, A/B Testing, Fake Door Test.",
-        junior: "Met en place et mesure des A/B tests simples pour optimiser un Ã©lÃ©ment.",
-        senior: "ConÃ§oit une stratÃ©gie d'expÃ©rimentation pour dÃ©-risquer les 4 grands risques (valeur, utilisabilitÃ©, faisabilitÃ©, viabilitÃ©).",
-        situation: "Pour valider l'appÃ©tence pour une fonctionnalitÃ© complexe d'IA, le senior met en place une \"fausse porte\" pour valider l'intÃ©rÃªt avant d'Ã©crire une seule ligne de code."
+        junior: "Met en place et mesure des A/B tests simples pour optimiser un élément.",
+        senior: "Conçoit une stratégie d'expérimentation pour dé-risquer les 4 grands risques (valeur, utilisabilité, faisabilité, viabilité).",
+        situation: "Pour valider l'appétence pour une fonctionnalité complexe d'IA, le senior met en place une \"fausse porte\" pour valider l'intéràªt avant d'écrire une seule ligne de code."
     },
     {
         id: "3.1.1",
         cat: "3. Conception & Livraison (Delivery)",
         sub: "3.1 Planification & Priorisation",
-        skill: "3.1.1 Gestion de Backlog & SpÃ©cifications",
+        skill: "3.1.1 Gestion de Backlog & Spécifications",
         tools: "User Story, INVEST, Gherkin.",
-        junior: "RÃ©dige des User Stories claires avec des critÃ¨res d'acceptation prÃ©cis. Maintient le backlog propre.",
-        senior: "GÃ¨re un backlog comme un outil de communication stratÃ©gique. Excelle dans le dÃ©coupage en tranches de valeur livrables.",
-        situation: "Le senior transforme une demande Ã©pique floue en une sÃ©rie de petits incrÃ©ments testables qui apportent de la valeur dÃ¨s la premiÃ¨re semaine de dÃ©veloppement."
+        junior: "Rédige des User Stories claires avec des critères d'acceptation précis. Maintient le backlog propre.",
+        senior: "Gère un backlog comme un outil de communication stratégique. Excelle dans le découpage en tranches de valeur livrables.",
+        situation: "Le senior transforme une demande épique floue en une série de petits incréments testables qui apportent de la valeur dès la première semaine de développement."
     },
     {
         id: "3.1.2",
         cat: "3. Conception & Livraison (Delivery)",
         sub: "3.1 Planification & Priorisation",
         skill: "3.1.2 Priorisation",
-        tools: "RICE, ICE, MoSCoW, ModÃ¨le de Kano",
-        junior: "Priorise le travail de son Ã©quipe au niveau du sprint.",
-        senior: "MaÃ®trise plusieurs frameworks de priorisation. Communique et dÃ©fend ses choix de maniÃ¨re transparente et rationnelle.",
-        situation: "Le senior utilise le framework RICE pour arbitrer entre une initiative stratÃ©gique complexe et une sÃ©rie de petites amÃ©liorations rapides trÃ¨s demandÃ©es."
+        tools: "RICE, ICE, MoSCoW, Modèle de Kano",
+        junior: "Priorise le travail de son équipe au niveau du sprint.",
+        senior: "Maà®trise plusieurs frameworks de priorisation. Communique et défend ses choix de manière transparente et rationnelle.",
+        situation: "Le senior utilise le framework RICE pour arbitrer entre une initiative stratégique complexe et une série de petites améliorations rapides très demandées."
     },
     {
         id: "3.2.1",
         cat: "3. Conception & Livraison (Delivery)",
-        sub: "3.2 ExÃ©cution & Lancement",
-        skill: "3.2.1 Animation d'Ã©quipe & Rituels Agiles",
+        sub: "3.2 Exécution & Lancement",
+        skill: "3.2.1 Animation d'équipe & Rituels Agiles",
         tools: "Scrum, Kanban, SAFE",
-        junior: "Participe activement aux rituels de son Ã©quipe (daily, planning, retro).",
-        senior: "Facilite les rituels et les rend plus efficaces. Agit comme un \"bouclier\" pour l'Ã©quipe en la protÃ©geant des interruptions.",
-        situation: "Le senior recadre les dailies qui s'Ã©ternisent pour qu'ils soient focalisÃ©s sur les blocages et non sur un rapport d'activitÃ©."
+        junior: "Participe activement aux rituels de son équipe (daily, planning, retro).",
+        senior: "Facilite les rituels et les rend plus efficaces. Agit comme un \"bouclier\" pour l'équipe en la protégeant des interruptions.",
+        situation: "Le senior recadre les dailies qui s'éternisent pour qu'ils soient focalisés sur les blocages et non sur un rapport d'activité."
     },
     {
         id: "3.2.2",
         cat: "3. Conception & Livraison (Delivery)",
-        sub: "3.2 ExÃ©cution & Lancement",
-        skill: "3.2.2 StratÃ©gie de QualitÃ© & Tests (QA)",
+        sub: "3.2 Exécution & Lancement",
+        skill: "3.2.2 Stratégie de Qualité & Tests (QA)",
         tools: "Test Pyramid, UAT, Bug Triage",
         junior: "Participe aux phases de test. Effectue les tests d'acceptation utilisateur (UAT).",
-        senior: "DÃ©finit la stratÃ©gie de qualitÃ© globale. Arbitre sur la criticitÃ© des bugs en fonction de l'expÃ©rience utilisateur.",
-        situation: "Un bug est dÃ©couvert avant la prod. Le senior analyse l'impact rÃ©el et dÃ©cide soit de retarder le lancement, soit de lancer et corriger via un hotfix."
+        senior: "Définit la stratégie de qualité globale. Arbitre sur la criticité des bugs en fonction de l'expérience utilisateur.",
+        situation: "Un bug est découvert avant la prod. Le senior analyse l'impact réel et décide soit de retarder le lancement, soit de lancer et corriger via un hotfix."
     },
     {
         id: "3.2.3",
         cat: "3. Conception & Livraison (Delivery)",
-        sub: "3.2 ExÃ©cution & Lancement",
-        skill: "3.2.3 StratÃ©gie de Lancement (Go-to-Market)",
+        sub: "3.2 Exécution & Lancement",
+        skill: "3.2.3 Stratégie de Lancement (Go-to-Market)",
         tools: "Feature Flags, Beta Programs, A/B Testing.",
         junior: "Coordonne les lancements (notes de version, formation du support).",
-        senior: "DÃ©finit la stratÃ©gie de lancement complÃ¨te : segmentation, communication, dÃ©ploiement progressif.",
-        situation: "Pour un changement d'interface majeur, le senior dÃ©ploie progressivement (1%, 10%, 50%) tout en monitorant les KPIs pour rÃ©agir rapidement."
+        senior: "Définit la stratégie de lancement complète : segmentation, communication, déploiement progressif.",
+        situation: "Pour un changement d'interface majeur, le senior déploie progressivement (1%, 10%, 50%) tout en monitorant les KPIs pour réagir rapidement."
     },
     {
         id: "4.1.1",
         cat: "4. Data Culture",
-        sub: "4.1 DÃ©finition de la StratÃ©gie de Mesure",
-        skill: "4.1.1 DÃ©finition des KPIs & North Star Metric",
+        sub: "4.1 Définition de la Stratégie de Mesure",
+        skill: "4.1.1 Définition des KPIs & North Star Metric",
         tools: "North Star Metric Framework, OKRs.",
-        junior: "Comprend et suit les KPIs dÃ©finis pour son produit.",
-        senior: "DÃ©finit la \"North Star Metric\" du produit et la dÃ©cline en un arbre de mÃ©triques actionnables.",
-        situation: "L'entreprise veut augmenter les revenus. Le senior dÃ©finit la NSM comme le nombre d'Ã©quipes collaborant, car c'est le levier de rÃ©tention long terme."
+        junior: "Comprend et suit les KPIs définis pour son produit.",
+        senior: "Définit la \"North Star Metric\" du produit et la décline en un arbre de métriques actionnables.",
+        situation: "L'entreprise veut augmenter les revenus. Le senior définit la NSM comme le nombre d'équipes collaborant, car c'est le levier de rétention long terme."
     },
     {
         id: "4.1.2",
         cat: "4. Data Culture",
-        sub: "4.1 DÃ©finition de la StratÃ©gie de Mesure",
+        sub: "4.1 Définition de la Stratégie de Mesure",
         skill: "4.1.2 Conception du Plan de Tracking",
-        tools: "Taxonomie d'Ã©vÃ©nements, Data Dictionary",
-        junior: "RÃ©dige des spÃ©cifications de tracking pour les nouvelles fonctionnalitÃ©s.",
-        senior: "ConÃ§oit le plan de tracking complet du produit. DÃ©finit une taxonomie claire et pÃ©renne.",
-        situation: "Avant une refonte, le senior conÃ§oit un plan qui mesurera l'adoption par segment et l'impact sur la rÃ©tention Ã  30 jours."
+        tools: "Taxonomie d'événements, Data Dictionary",
+        junior: "Rédige des spécifications de tracking pour les nouvelles fonctionnalités.",
+        senior: "Conçoit le plan de tracking complet du produit. Définit une taxonomie claire et pérenne.",
+        situation: "Avant une refonte, le senior conçoit un plan qui mesurera l'adoption par segment et l'impact sur la rétention à  30 jours."
     },
     {
         id: "4.2.1",
         cat: "4. Data Culture",
-        sub: "4.2 Analyse & InterprÃ©tation",
-        skill: "4.2.1 MaÃ®trise des Outils d'Analyse",
+        sub: "4.2 Analyse & Interprétation",
+        skill: "4.2.1 Maà®trise des Outils d'Analyse",
         tools: "SQL, Mixpanel, Amplitude, Tableau, Looker",
-        junior: "MaÃ®trise les outils d'analyse produit pour construire des dashboards et funnels simples.",
-        senior: "Sait Ã©crire des requÃªtes SQL pour explorer la donnÃ©e brute et collabore sur des analyses statistiques complexes.",
-        situation: "Le junior constate une baisse. Le senior Ã©crit un SQL pour isoler les users et dÃ©couvre qu'ils sont tous sur une ancienne version de l'app."
+        junior: "Maà®trise les outils d'analyse produit pour construire des dashboards et funnels simples.",
+        senior: "Sait écrire des requàªtes SQL pour explorer la donnée brute et collabore sur des analyses statistiques complexes.",
+        situation: "Le junior constate une baisse. Le senior écrit un SQL pour isoler les users et découvre qu'ils sont tous sur une ancienne version de l'app."
     },
     {
         id: "4.2.2",
         cat: "4. Data Culture",
-        sub: "4.2 Analyse & InterprÃ©tation",
-        skill: "4.2.2 Transformation de la DonnÃ©e en Insight",
-        tools: "Storytelling par la donnÃ©e, Analyse de cohortes.",
-        junior: "RÃ©pond Ã  des questions factuelles avec la donnÃ©e.",
-        senior: "Raconte une histoire avec la donnÃ©e, identifie des tendances de fond et transforme l'analyse en recommandation stratÃ©gique.",
-        situation: "Le junior note que 70% n'utilisent pas la feature X. Le senior montre que ceux qui l'utilisent ont une rÃ©tention 3x supÃ©rieure, crÃ©ant une opportunitÃ©."
+        sub: "4.2 Analyse & Interprétation",
+        skill: "4.2.2 Transformation de la Donnée en Insight",
+        tools: "Storytelling par la donnée, Analyse de cohortes.",
+        junior: "Répond à  des questions factuelles avec la donnée.",
+        senior: "Raconte une histoire avec la donnée, identifie des tendances de fond et transforme l'analyse en recommandation stratégique.",
+        situation: "Le junior note que 70% n'utilisent pas la feature X. Le senior montre que ceux qui l'utilisent ont une rétention 3x supérieure, créant une opportunité."
     },
     {
         id: "4.3.1",
@@ -229,69 +229,69 @@ const explorerData = [
         sub: "4.3 Communication & Culture",
         skill: "4.3.1 Visualisation & Communication",
         tools: "BI Tools, Data Viz",
-        junior: "Sait crÃ©er des graphiques clairs et lisibles pour prÃ©senter des rÃ©sultats.",
-        senior: "MaÃ®trise l'art de la visualisation. ConÃ§oit des dashboards interactifs pour le management.",
-        situation: "Le senior conÃ§oit un dashboard qui permet au management de filtrer par segment pour explorer les donnÃ©es par eux-mÃªmes."
+        junior: "Sait créer des graphiques clairs et lisibles pour présenter des résultats.",
+        senior: "Maà®trise l'art de la visualisation. Conçoit des dashboards interactifs pour le management.",
+        situation: "Le senior conçoit un dashboard qui permet au management de filtrer par segment pour explorer les données par eux-màªmes."
     },
     {
         id: "4.3.2",
         cat: "4. Data Culture",
         sub: "4.3 Communication & Culture",
         skill: "4.3.2 Instaurer une Culture Data-Informed",
-        tools: "Rituels de revue de mÃ©triques",
-        junior: "Utilise la donnÃ©e dans ses spÃ©cifications pour justifier ses choix.",
-        senior: "Ã‰vangÃ©lise l'utilisation de la donnÃ©e Ã  tous les niveaux. Met en place des rituels partagÃ©s.",
-        situation: "Le senior instaure une revue de mÃ©triques hebdomadaire oÃ¹ l'Ã©quipe analyse ensemble les performances passÃ©es."
+        tools: "Rituels de revue de métriques",
+        junior: "Utilise la donnée dans ses spécifications pour justifier ses choix.",
+        senior: "Évangélise l'utilisation de la donnée à  tous les niveaux. Met en place des rituels partagés.",
+        situation: "Le senior instaure une revue de métriques hebdomadaire où l'équipe analyse ensemble les performances passées."
     },
     {
         id: "5.1.1",
         cat: "5. Socle Tech & Design",
-        sub: "5.1 MaÃ®trise du Design",
+        sub: "5.1 Maà®trise du Design",
         skill: "5.1.1 Principes d'Ergonomie & Design d'Interaction",
         tools: "Heuristiques de Nielsen, Lois UX, Gestalt.",
         junior: "Comprend et sait appliquer les heuristiques d'ergonomie pour donner un feedback sur des maquettes.",
-        senior: "MaÃ®trise les patterns complexes. Sait challenger le designer pour pousser la simplicitÃ© au maximum.",
-        situation: "Face Ã  un formulaire complexe, le senior propose de le scinder en plusieurs Ã©tapes via le principe de divulgation progressive."
+        senior: "Maà®trise les patterns complexes. Sait challenger le designer pour pousser la simplicité au maximum.",
+        situation: "Face à  un formulaire complexe, le senior propose de le scinder en plusieurs étapes via le principe de divulgation progressive."
     },
     {
         id: "5.1.2",
         cat: "5. Socle Tech & Design",
-        sub: "5.1 MaÃ®trise des principes de Product Design",
-        skill: "5.1.2 ComprÃ©hension du Processus de Design",
+        sub: "5.1 Maà®trise des principes de Product Design",
+        skill: "5.1.2 Compréhension du Processus de Design",
         tools: "Design Thinking, Double Diamant, Design Sprints",
-        junior: "Comprend les diffÃ©rentes phases du processus (recherche, idÃ©ation, tests).",
-        senior: "Collabore pour dÃ©finir la stratÃ©gie de design. Sait quand utiliser un Design Sprint ou un prototype basse fidÃ©litÃ©.",
-        situation: "Face Ã  un problÃ¨me ambigu, le senior lance un Design Sprint d'une semaine avec les parties prenantes plutÃ´t que de lancer des maquettes directes."
+        junior: "Comprend les différentes phases du processus (recherche, idéation, tests).",
+        senior: "Collabore pour définir la stratégie de design. Sait quand utiliser un Design Sprint ou un prototype basse fidélité.",
+        situation: "Face à  un problème ambigu, le senior lance un Design Sprint d'une semaine avec les parties prenantes plutôt que de lancer des maquettes directes."
     },
     {
         id: "5.1.3",
         cat: "5. Socle Tech & Design",
-        sub: "5.1 MaÃ®trise des principes de Product Design",
+        sub: "5.1 Maà®trise des principes de Product Design",
         skill: "5.1.3 Culture du Design System",
         tools: "Atomic Design, Design Tokens.",
-        junior: "Utilise les composants du Design System existant dans ses spÃ©cifications.",
-        senior: "Agit comme sponsor du Design System. Arbitre entre crÃ©ation de nouveau composant et rÃ©utilisation.",
-        situation: "L'Ã©quipe demande un nouveau graphique. Le senior vÃ©rifie si le besoin est unique ou s'il justifie un nouvel atome rÃ©utilisable dans le systÃ¨me."
+        junior: "Utilise les composants du Design System existant dans ses spécifications.",
+        senior: "Agit comme sponsor du Design System. Arbitre entre création de nouveau composant et réutilisation.",
+        situation: "L'équipe demande un nouveau graphique. Le senior vérifie si le besoin est unique ou s'il justifie un nouvel atome réutilisable dans le système."
     },
     {
         id: "5.2.1",
         cat: "5. Socle Tech & Design",
-        sub: "5.2 MaÃ®trise des principes d'IngÃ©nierie",
-        skill: "5.2.1 ComprÃ©hension de l'Architecture Logicielle",
+        sub: "5.2 Maà®trise des principes d'Ingénierie",
+        skill: "5.2.1 Compréhension de l'Architecture Logicielle",
         tools: "CAP Theorem, API Gateway, Microservices.",
         junior: "Comprend l'architecture de base (front, back, API, DB).",
-        senior: "A une comprÃ©hension stratÃ©gique des choix d'architecture et de leurs impacts sur la performance et le coÃ»t.",
-        situation: "Le senior challenge une solution qui crÃ©erait un couplage fort, proposant une architecture par Ã©vÃ©nements pour la scalabilitÃ© future."
+        senior: "A une compréhension stratégique des choix d'architecture et de leurs impacts sur la performance et le coût.",
+        situation: "Le senior challenge une solution qui créerait un couplage fort, proposant une architecture par événements pour la scalabilité future."
     },
     {
         id: "5.2.2",
         cat: "5. Socle Tech & Design",
-        sub: "5.2 MaÃ®trise des principes d'IngÃ©nierie",
-        skill: "5.2.2 ComprÃ©hension du Cycle de DÃ©veloppement",
+        sub: "5.2 Maà®trise des principes d'Ingénierie",
+        skill: "5.2.2 Compréhension du Cycle de Développement",
         tools: "CI/CD, Test Pyramid, Git.",
         junior: "Comprend ce qu'est une Pull Request et le versionnement.",
-        senior: "Comprend les enjeux de CI/CD et la dette technique. Sait nÃ©gocier du temps pour le refactoring.",
-        situation: "Le senior justifie auprÃ¨s de la direction la nÃ©cessitÃ© de dÃ©dier 20% du trimestre Ã  la rÃ©duction de la dette pour accÃ©lÃ©rer le futur."
+        senior: "Comprend les enjeux de CI/CD et la dette technique. Sait négocier du temps pour le refactoring.",
+        situation: "Le senior justifie auprès de la direction la nécessité de dédier 20% du trimestre à  la réduction de la dette pour accélérer le futur."
     },
     {
         id: "6.1.1",
@@ -299,109 +299,109 @@ const explorerData = [
         sub: "6.1 Processus & Outils",
         skill: "6.1.1 Standardisation des Processus",
         tools: "Playbooks, Templates.",
-        junior: "Applique les processus et outils dÃ©finis (templates de specs, process de release).",
-        senior: "ConÃ§oit, dÃ©ploie et amÃ©liore les processus de l'organisation pour garantir l'efficacitÃ© Ã  l'Ã©chelle.",
-        situation: "Le senior met en place un Product Playbook centralisÃ© pour accÃ©lÃ©rer l'onboarding des nouveaux PMs."
+        junior: "Applique les processus et outils définis (templates de specs, process de release).",
+        senior: "Conçoit, déploie et améliore les processus de l'organisation pour garantir l'efficacité à  l'échelle.",
+        situation: "Le senior met en place un Product Playbook centralisé pour accélérer l'onboarding des nouveaux PMs."
     },
     {
         id: "6.2.1",
         cat: "6. Product Ops",
         sub: "6.2 Communication & Gouvernance",
-        skill: "6.2.1 Gouvernance de la DonnÃ©e Produit",
+        skill: "6.2.1 Gouvernance de la Donnée Produit",
         tools: "Data Dictionary",
-        junior: "S'assure que les donnÃ©es de son pÃ©rimÃ¨tre sont fiables.",
-        senior: "Met en place une gouvernance pour que tout le monde s'appuie sur une source de vÃ©ritÃ© unique.",
-        situation: "Le senior lance un projet de standardisation du nommage des Ã©vÃ©nements de tracking pour toutes les Ã©quipes."
+        junior: "S'assure que les données de son périmètre sont fiables.",
+        senior: "Met en place une gouvernance pour que tout le monde s'appuie sur une source de vérité unique.",
+        situation: "Le senior lance un projet de standardisation du nommage des événements de tracking pour toutes les équipes."
     },
     {
         id: "6.2.2",
         cat: "6. Product Ops",
         sub: "6.2 Communication & Gouvernance",
-        skill: "6.2.2 Communication & Rituels d'Ã‰quipe",
+        skill: "6.2.2 Communication & Rituels d'Équipe",
         tools: "Monthly Demos, Strategy Reviews.",
-        junior: "PrÃ©pare et partage les notes de version pour ses fonctionnalitÃ©s.",
-        senior: "Anime les rituels de communication de l'organisation pour assurer l'alignement entre les Ã©quipes.",
-        situation: "Le senior instaure une Revue Produit mensuelle oÃ¹ chaque Ã©quipe prÃ©sente ses apprentissages (succÃ¨s et Ã©checs)."
+        junior: "Prépare et partage les notes de version pour ses fonctionnalités.",
+        senior: "Anime les rituels de communication de l'organisation pour assurer l'alignement entre les équipes.",
+        situation: "Le senior instaure une Revue Produit mensuelle où chaque équipe présente ses apprentissages (succès et échecs)."
     },
     {
         id: "7.1.1",
         cat: "7. AI Product Builder",
-        sub: "7.1 StratÃ©gie IA",
-        skill: "7.1.1 ComprÃ©hension Fondamentale de l'IA",
+        sub: "7.1 Stratégie IA",
+        skill: "7.1.1 Compréhension Fondamentale de l'IA",
         tools: "Machine Learning Canvas, LLM.",
-        junior: "Comprend les concepts de base (SupervisÃ©, ModÃ¨le, API).",
-        senior: "Ã‰value les compromis entre modÃ¨le sur Ã©tagÃ¨re, fine-tuning ou construction sur mesure.",
-        situation: "Le senior oriente l'Ã©quipe vers le fine-tuning d'un modÃ¨le open-source hÃ©bergÃ© en interne pour des raisons de coÃ»t et de sÃ©curitÃ©."
+        junior: "Comprend les concepts de base (Supervisé, Modèle, API).",
+        senior: "Évalue les compromis entre modèle sur étagère, fine-tuning ou construction sur mesure.",
+        situation: "Le senior oriente l'équipe vers le fine-tuning d'un modèle open-source hébergé en interne pour des raisons de coût et de sécurité."
     },
     {
         id: "7.1.2",
         cat: "7. AI Product Builder",
-        sub: "7.1 StratÃ©gie IA",
+        sub: "7.1 Stratégie IA",
         skill: "7.1.2 Identification de Cas d'Usage IA",
         tools: "AI Value Proposition Canvas.",
-        junior: "Identifie des opportunitÃ©s simples d'automatisation.",
-        senior: "Identifie des problÃ¨mes complexes ne pouvant Ãªtre rÃ©solus que par l'IA. Pense AI-first.",
-        situation: "Le senior imagine un Agent Copilot qui Ã©coute le support client en temps rÃ©el pour suggÃ©rer des rÃ©ponses au conseiller."
+        junior: "Identifie des opportunités simples d'automatisation.",
+        senior: "Identifie des problèmes complexes ne pouvant àªtre résolus que par l'IA. Pense AI-first.",
+        situation: "Le senior imagine un Agent Copilot qui écoute le support client en temps réel pour suggérer des réponses au conseiller."
     },
     {
         id: "7.1.3",
         cat: "7. AI Product Builder",
-        sub: "7.1 StratÃ©gie IA",
-        skill: "7.1.3 StratÃ©gie de DonnÃ©es pour l'IA",
+        sub: "7.1 Stratégie IA",
+        skill: "7.1.3 Stratégie de Données pour l'IA",
         tools: "Data Flywheel, Feedback Loops.",
-        junior: "Participe Ã  la dÃ©finition des donnÃ©es nÃ©cessaires pour un projet simple.",
-        senior: "DÃ©finit la stratÃ©gie d'acquisition comme un avantage concurrentiel (data moat). Met en place des boucles de rÃ©troaction.",
-        situation: "Le senior conÃ§oit une feature qui incite l'utilisateur Ã  donner un feedback, lequel est utilisÃ© pour rÃ©-entraÃ®ner le modÃ¨le."
+        junior: "Participe à  la définition des données nécessaires pour un projet simple.",
+        senior: "Définit la stratégie d'acquisition comme un avantage concurrentiel (data moat). Met en place des boucles de rétroaction.",
+        situation: "Le senior conçoit une feature qui incite l'utilisateur à  donner un feedback, lequel est utilisé pour ré-entraà®ner le modèle."
     },
     {
         id: "7.2.1",
         cat: "7. AI Product Builder",
         sub: "7.2 MLOps",
-        skill: "7.2.1 Annotation & PrÃ©paration des DonnÃ©es",
+        skill: "7.2.1 Annotation & Préparation des Données",
         tools: "Labelbox, Scale AI.",
-        junior: "Participe Ã  des tÃ¢ches de labellisation.",
-        senior: "ConÃ§oit et supervise la stratÃ©gie d'annotation et le contrÃ´le qualitÃ©.",
+        junior: "Participe à  des tâches de labellisation.",
+        senior: "Conçoit et supervise la stratégie d'annotation et le contrôle qualité.",
         situation: "Le senior met en place un processus d'annotation externe suivi d'une validation par des experts internes."
     },
     {
         id: "7.2.2",
         cat: "7. AI Product Builder",
         sub: "7.2 MLOps",
-        skill: "7.2.2 EntraÃ®nement & Ã‰valuation du ModÃ¨le",
+        skill: "7.2.2 Entraà®nement & Évaluation du Modèle",
         tools: "Confusion Matrix, ROC Curve.",
-        junior: "Comprend les mÃ©triques de base (PrÃ©cision, Rappel).",
-        senior: "DÃ©finit les mÃ©triques d'Ã©valuation liÃ©es Ã  l'impact business et challenge les Data Scientists.",
-        situation: "Le senior demande d'optimiser le rappel sur un segment d'utilisateurs crucial oÃ¹ le modÃ¨le Ã©tait dÃ©faillant."
+        junior: "Comprend les métriques de base (Précision, Rappel).",
+        senior: "Définit les métriques d'évaluation liées à  l'impact business et challenge les Data Scientists.",
+        situation: "Le senior demande d'optimiser le rappel sur un segment d'utilisateurs crucial où le modèle était défaillant."
     },
     {
         id: "7.2.3",
         cat: "7. AI Product Builder",
         sub: "7.2 MLOps",
-        skill: "7.2.3 DÃ©ploiement & Monitoring en Production",
+        skill: "7.2.3 Déploiement & Monitoring en Production",
         tools: "MLflow, Model Drift monitoring.",
-        junior: "Coordonne le dÃ©ploiement d'une nouvelle version du modÃ¨le.",
-        senior: "Met en place un monitoring pour dÃ©tecter les dÃ©rives du modÃ¨le (model drift) et planifie les rÃ©-entraÃ®nements.",
-        situation: "Le senior crÃ©e un dashboard qui alerte si la distribution des donnÃ©es de prod s'Ã©loigne de celle de l'entraÃ®nement."
+        junior: "Coordonne le déploiement d'une nouvelle version du modèle.",
+        senior: "Met en place un monitoring pour détecter les dérives du modèle (model drift) et planifie les ré-entraà®nements.",
+        situation: "Le senior crée un dashboard qui alerte si la distribution des données de prod s'éloigne de celle de l'entraà®nement."
     },
     {
         id: "7.3.1",
         cat: "7. AI Product Builder",
-        sub: "7.3 ExpÃ©rience & Ã‰thique",
+        sub: "7.3 Expérience & Éthique",
         skill: "7.3.1 Design d'Interaction pour l'IA",
         tools: "Explainable AI (XAI), Human-in-the-loop.",
-        junior: "Participe Ã  la conception d'interfaces claires pour l'IA.",
-        senior: "MaÃ®trise comment gÃ©rer l'incertitude et expliquer les dÃ©cisions du modÃ¨le Ã  l'utilisateur.",
-        situation: "Le senior conÃ§oit une interface qui explique pourquoi un produit est recommandÃ© (\"Parce que vous avez aimÃ© X\")."
+        junior: "Participe à  la conception d'interfaces claires pour l'IA.",
+        senior: "Maà®trise comment gérer l'incertitude et expliquer les décisions du modèle à  l'utilisateur.",
+        situation: "Le senior conçoit une interface qui explique pourquoi un produit est recommandé (\"Parce que vous avez aimé X\")."
     },
     {
         id: "7.3.2",
         cat: "7. AI Product Builder",
-        sub: "7.3 ExpÃ©rience & Ã‰thique",
-        skill: "7.3.2 Ã‰thique & IA Responsable",
+        sub: "7.3 Expérience & Éthique",
+        skill: "7.3.2 Éthique & IA Responsable",
         tools: "Fairness checklists.",
-        junior: "Est sensibilisÃ© aux biais potentiels dans les donnÃ©es.",
-        senior: "IntÃ¨gre l'Ã©thique au cÅ“ur du processus. MÃ¨ne des analyses de risques Red Team.",
-        situation: "Avant de lancer un scoring de CV, le senior organise un atelier pour identifier et empÃªcher les biais de discrimination."
+        junior: "Est sensibilisé aux biais potentiels dans les données.",
+        senior: "Intègre l'éthique au cÅ“ur du processus. Mène des analyses de risques Red Team.",
+        situation: "Avant de lancer un scoring de CV, le senior organise un atelier pour identifier et empàªcher les biais de discrimination."
     }
 
 ];
@@ -417,8 +417,8 @@ const skillsData = explorerData;
 // Reference profile from aggregated assessments of successful PMs
 const averagePMProfile = {
     "0. Leadership & Influence": 2.4,
-    "1. StratÃ©gie & Vision Produit": 2.3,
-    "2. DÃ©couverte (Discovery)": 2.5,
+    "1. Stratégie & Vision Produit": 2.3,
+    "2. Découverte (Discovery)": 2.5,
     "3. Conception & Livraison (Delivery)": 2.4,
     "4. Data Culture": 2.2,
     "5. Socle Tech & Design": 2.1,
@@ -431,73 +431,73 @@ const profileRules = [
     { 
         cat: "0. Leadership & Influence", 
         title: "Le Leader Inspirant", 
-        desc: "Vous excellez dans l'humain et la nÃ©gociation. Votre force est d'aligner les Ã©quipes sans autoritÃ© hiÃ©rarchique. Vous crÃ©ez de l'engagement Ã©motionnel autour de la vision.", 
-        mission: "GÃ©rer une Ã©quipe de PMs ou transformer la culture produit d'une entreprise.",
-        improve: "Renforcer votre leadership Ã  travers une meilleure communication stratÃ©gique et influence auprÃ¨s des parties prenantes.",
-        improveWhy: "Un leader inspirant doit savoir inspirer, persuader et crÃ©er l'adhÃ©sion Ã©motionnelle. Cette compÃ©tence est critique pour aligner les Ã©quipes cross-fonctionnelles et transformer la vision en action collective.",
-        improveMission: "Diriger la transformation culturelle d'une orga produit, animer des ateliers stratÃ©giques, ou nÃ©gocier l'accÃ¨s Ã  des ressources clÃ©s avec la direction gÃ©nÃ©rale."
+        desc: "Vous excellez dans l'humain et la négociation. Votre force est d'aligner les équipes sans autorité hiérarchique. Vous créez de l'engagement émotionnel autour de la vision.", 
+        mission: "Gérer une équipe de PMs ou transformer la culture produit d'une entreprise.",
+        improve: "Renforcer votre leadership à  travers une meilleure communication stratégique et influence auprès des parties prenantes.",
+        improveWhy: "Un leader inspirant doit savoir inspirer, persuader et créer l'adhésion émotionnelle. Cette compétence est critique pour aligner les équipes cross-fonctionnelles et transformer la vision en action collective.",
+        improveMission: "Diriger la transformation culturelle d'une orga produit, animer des ateliers stratégiques, ou négocier l'accès à  des ressources clés avec la direction générale."
     },
     { 
-        cat: "1. StratÃ©gie & Vision Produit", 
-        title: "Le StratÃ¨ge Visionnaire", 
-        desc: "Le long-terme est votre terrain de jeu. Vous savez transformer des tendances en roadmap concrÃ¨te. Vous naviguez la complexitÃ© avec clartÃ©.", 
-        mission: "Lancement d'une nouvelle ligne de business stratÃ©gique.",
-        improve: "DÃ©velopper votre capacitÃ© Ã  penser long-terme et Ã  transformer les tendances marchÃ© en stratÃ©gie produit robuste.",
-        improveWhy: "La pensÃ©e stratÃ©gique est fondamentale pour anticiper les disruptions, identifier les opportunitÃ©s de croissance et dÃ©finir une direction claire pour le produit sur 3-5 ans.",
-        improveMission: "DÃ©finir la roadmap stratÃ©gique d'un produit en phase de croissance, mener une analyse SWOT approfondie, ou piloter une refonte de business model."
+        cat: "1. Stratégie & Vision Produit", 
+        title: "Le Stratège Visionnaire", 
+        desc: "Le long-terme est votre terrain de jeu. Vous savez transformer des tendances en roadmap concrète. Vous naviguez la complexité avec clarté.", 
+        mission: "Lancement d'une nouvelle ligne de business stratégique.",
+        improve: "Développer votre capacité à  penser long-terme et à  transformer les tendances marché en stratégie produit robuste.",
+        improveWhy: "La pensée stratégique est fondamentale pour anticiper les disruptions, identifier les opportunités de croissance et définir une direction claire pour le produit sur 3-5 ans.",
+        improveMission: "Définir la roadmap stratégique d'un produit en phase de croissance, mener une analyse SWOT approfondie, ou piloter une refonte de business model."
     },
     { 
-        cat: "2. DÃ©couverte (Discovery)", 
+        cat: "2. Découverte (Discovery)", 
         title: "L'Explorateur d'Insights", 
-        desc: "Vous ne jurez que par l'utilisateur. Votre obsession est de dÃ©-risquer avant de construire. Vous dÃ©couvrez les opportunitÃ©s cachÃ©es.", 
-        mission: "Mener la phase de discovery d'un produit complexe partant de zÃ©ro.",
-        improve: "AmÃ©liorer vos compÃ©tences en recherche utilisateur qualitative et quantitative pour dÃ©couvrir les besoins non-exprimÃ©s.",
-        improveWhy: "Une bonne discovery rÃ©duit les risques de dÃ©veloppement coÃ»teux, identifie les vrais besoins utilisateurs au-delÃ  de ce qu'ils demandent, et valide les hypothÃ¨ses avant de construire.",
-        improveMission: "Mener une Ã©tude ethnographique avec les utilisateurs, valider une hypothÃ¨se produit via des tests A/B, ou construire un MVP minimum viable pour dÃ©-risquer une nouvelle fonctionnalitÃ©."
+        desc: "Vous ne jurez que par l'utilisateur. Votre obsession est de dé-risquer avant de construire. Vous découvrez les opportunités cachées.", 
+        mission: "Mener la phase de discovery d'un produit complexe partant de zéro.",
+        improve: "Améliorer vos compétences en recherche utilisateur qualitative et quantitative pour découvrir les besoins non-exprimés.",
+        improveWhy: "Une bonne discovery réduit les risques de développement coûteux, identifie les vrais besoins utilisateurs au-delà  de ce qu'ils demandent, et valide les hypothèses avant de construire.",
+        improveMission: "Mener une étude ethnographique avec les utilisateurs, valider une hypothèse produit via des tests A/B, ou construire un MVP minimum viable pour dé-risquer une nouvelle fonctionnalité."
     },
     { 
         cat: "3. Conception & Livraison (Delivery)", 
-        title: "Le MaÃ®tre de l'ExÃ©cution", 
+        title: "Le Maà®tre de l'Exécution", 
         desc: "Rien ne sort sans votre validation. Vous transformez le chaos en une machine de livraison fluide. Votre rigueur est exemplaire.", 
-        mission: "Optimisation de la vÃ©locitÃ© et de la qualitÃ© d'une Ã©quipe technique.",
-        improve: "Renforcer votre rigueur opÃ©rationnelle et votre capacitÃ© Ã  piloter l'exÃ©cution pour garantir une livraison de qualitÃ© en temps voulu.",
-        improveWhy: "L'excellence opÃ©rationnelle assure que les projets sortent Ã  temps, en qualitÃ© et dans le budget. C'est la diffÃ©rence entre une bonne idÃ©e et un produit livrÃ© aux utilisateurs.",
-        improveMission: "Optimiser le processus de livraison d'une Ã©quipe technique, implÃ©menter un systÃ¨me de gestion des risques projet, ou mettre en place une culture de qualitÃ©."
+        mission: "Optimisation de la vélocité et de la qualité d'une équipe technique.",
+        improve: "Renforcer votre rigueur opérationnelle et votre capacité à  piloter l'exécution pour garantir une livraison de qualité en temps voulu.",
+        improveWhy: "L'excellence opérationnelle assure que les projets sortent à  temps, en qualité et dans le budget. C'est la différence entre une bonne idée et un produit livré aux utilisateurs.",
+        improveMission: "Optimiser le processus de livraison d'une équipe technique, implémenter un système de gestion des risques projet, ou mettre en place une culture de qualité."
     },
     { 
         cat: "4. Data Culture", 
         title: "Le Data Thinker", 
-        desc: "Les chiffres parlent pour vous. Votre approche est purement rationnelle et basÃ©e sur l'Ã©vidence. Vous construisez une culture expÃ©rimentale.", 
-        mission: "Mise en place d'une infrastructure de tracking et culture de l'expÃ©rimentation.",
-        improve: "Construire une culture data-driven et maÃ®triser les mÃ©thodes d'analyse pour prendre des dÃ©cisions basÃ©es sur l'Ã©vidence plutÃ´t que l'intuition.",
-        improveWhy: "Une culture data permet d'itÃ©rer rapidement, de mesurer l'impact rÃ©el des dÃ©cisions, et d'allouer les ressources aux initiatives Ã  fort ROI. C'est la base de la croissance scalable.",
-        improveMission: "Mettre en place un systÃ¨me de tracking et de reporting des KPIs clÃ©s, lancer un programme d'expÃ©rimentation structurÃ©, ou former l'Ã©quipe aux mÃ©thodes d'analyse."
+        desc: "Les chiffres parlent pour vous. Votre approche est purement rationnelle et basée sur l'évidence. Vous construisez une culture expérimentale.", 
+        mission: "Mise en place d'une infrastructure de tracking et culture de l'expérimentation.",
+        improve: "Construire une culture data-driven et maà®triser les méthodes d'analyse pour prendre des décisions basées sur l'évidence plutôt que l'intuition.",
+        improveWhy: "Une culture data permet d'itérer rapidement, de mesurer l'impact réel des décisions, et d'allouer les ressources aux initiatives à  fort ROI. C'est la base de la croissance scalable.",
+        improveMission: "Mettre en place un système de tracking et de reporting des KPIs clés, lancer un programme d'expérimentation structuré, ou former l'équipe aux méthodes d'analyse."
     },
     { 
         cat: "5. Socle Tech & Design", 
         title: "Le Product Architect", 
-        desc: "Vous parlez couramment le 'Dev' et le 'Design'. Vous faites le pont entre faisabilitÃ© et esthÃ©tique. Vous pensez en termes d'architecture.", 
+        desc: "Vous parlez couramment le 'Dev' et le 'Design'. Vous faites le pont entre faisabilité et esthétique. Vous pensez en termes d'architecture.", 
         mission: "Refonte d'un Design System ou d'une architecture monolithique.",
-        improve: "Approfondir votre comprÃ©hension technique et design pour mieux anticiper les impacts et les contraintes de faisabilitÃ©.",
-        improveWhy: "Une bonne comprÃ©hension tech-design permet d'optimiser les trade-offs, de prendre des dÃ©cisions architecturales robustes, et d'accÃ©lÃ©rer le time-to-market grÃ¢ce Ã  une meilleure collaboration avec l'Ã©quipe technique.",
-        improveMission: "Piloter une refonte d'architecture systÃ¨me, redesigner un Design System existant, ou implÃ©menter une approche scalable pour la base de code."
+        improve: "Approfondir votre compréhension technique et design pour mieux anticiper les impacts et les contraintes de faisabilité.",
+        improveWhy: "Une bonne compréhension tech-design permet d'optimiser les trade-offs, de prendre des décisions architecturales robustes, et d'accélérer le time-to-market grâce à  une meilleure collaboration avec l'équipe technique.",
+        improveMission: "Piloter une refonte d'architecture système, redesigner un Design System existant, ou implémenter une approche scalable pour la base de code."
     },
     { 
         cat: "6. Product Ops", 
-        title: "L'Organisateur d'Ã‰chelle", 
-        desc: "Votre passion est l'efficacitÃ©. Vous construisez les outils qui permettent aux autres de briller. Vous scalez les processus.", 
-        mission: "Scaling d'une orga produit de 5 Ã  50 PMs.",
-        improve: "MaÃ®triser les frameworks de Product Ops et build les processus et outils qui permettent de scaler l'organisation sans perdre l'agilitÃ©.",
-        improveWhy: "Product Ops crÃ©e de la cohÃ©rence, rÃ©duit les frictions, et multiplie l'efficacitÃ© de chaque PM. C'est critique quand l'orga grandit pour Ã©viter le chaos et la duplication.",
-        improveMission: "Construire un framework de gestion de portefeuille produit pour une orga multi-produits, mettre en place un systÃ¨me de priorisation, ou standardiser les processus de roadmapping."
+        title: "L'Organisateur d'Échelle", 
+        desc: "Votre passion est l'efficacité. Vous construisez les outils qui permettent aux autres de briller. Vous scalez les processus.", 
+        mission: "Scaling d'une orga produit de 5 à  50 PMs.",
+        improve: "Maà®triser les frameworks de Product Ops et build les processus et outils qui permettent de scaler l'organisation sans perdre l'agilité.",
+        improveWhy: "Product Ops crée de la cohérence, réduit les frictions, et multiplie l'efficacité de chaque PM. C'est critique quand l'orga grandit pour éviter le chaos et la duplication.",
+        improveMission: "Construire un framework de gestion de portefeuille produit pour une orga multi-produits, mettre en place un système de priorisation, ou standardiser les processus de roadmapping."
     },
     { 
         cat: "7. AI Product Builder", 
         title: "L'AI Architect", 
-        desc: "L'IA est pour vous un levier concret. Vous savez oÃ¹ elle apporte de la valeur rÃ©elle. Vous intÃ©grez l'IA de maniÃ¨re stratÃ©gique.", 
-        mission: "IntÃ©gration de modÃ¨les prÃ©dictifs ou LLM dans un produit mÃ©tier.",
-        improve: "DÃ©velopper votre expertise en IA/ML et savoir identifier les cas d'usage oÃ¹ l'IA crÃ©e rÃ©ellement de la valeur.",
-        improveWhy: "L'IA est un multiplicateur de capacitÃ©s unique. Les PMs qui savent l'exploiter de maniÃ¨re stratÃ©gique crÃ©ent des avantages compÃ©titifs durables et proposent des expÃ©riences diffÃ©renciantes.",
-        improveMission: "IntÃ©grer un LLM (ChatGPT-like) pour personnaliser l'expÃ©rience utilisateur, mettre en place un systÃ¨me de recommandation ML, ou automatiser des tÃ¢ches rÃ©pÃ©titives via l'IA."
+        desc: "L'IA est pour vous un levier concret. Vous savez où elle apporte de la valeur réelle. Vous intégrez l'IA de manière stratégique.", 
+        mission: "Intégration de modèles prédictifs ou LLM dans un produit métier.",
+        improve: "Développer votre expertise en IA/ML et savoir identifier les cas d'usage où l'IA crée réellement de la valeur.",
+        improveWhy: "L'IA est un multiplicateur de capacités unique. Les PMs qui savent l'exploiter de manière stratégique créent des avantages compétitifs durables et proposent des expériences différenciantes.",
+        improveMission: "Intégrer un LLM (ChatGPT-like) pour personnaliser l'expérience utilisateur, mettre en place un système de recommandation ML, ou automatiser des tâches répétitives via l'IA."
     }
 ];
