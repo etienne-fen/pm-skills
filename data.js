@@ -416,14 +416,14 @@ const skillsData = explorerData;
 // ===== AVERAGE PM PROFILE BENCHMARK =====
 // Reference profile from aggregated assessments of successful PMs
 const averagePMProfile = {
-    "0. Leadership & Influence": 2.4,
-    "1. Stratégie & Vision Produit": 2.3,
-    "2. Découverte (Discovery)": 2.5,
-    "3. Conception & Livraison (Delivery)": 2.4,
-    "4. Data Culture": 2.2,
-    "5. Socle Tech & Design": 2.1,
+    "0. Leadership & Influence": 1.9,
+    "1. Stratégie & Vision Produit": 2.0,
+    "2. Découverte (Discovery)": 2.3,
+    "3. Conception & Livraison (Delivery)": 2.7,
+    "4. Data Culture": 2.9,
+    "5. Socle Tech & Design": 2.3,
     "6. Product Ops & Scaling": 2.0,
-    "7. AI Product Builder": 1.8
+    "7. AI Product Builder": 2.7
 };
 
 // ===== PM PROFILE ARCHETYPES =====
