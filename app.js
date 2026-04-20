@@ -400,7 +400,7 @@ function closeModal() {
 
 function init() {
     const filterContainer = document.getElementById('filters');
-    const cats = ["Leadership", "Strat�gie", "Discovery", "Delivery", "Data", "Socle Tech & Design", "Product Ops", "AI Product builder"];
+    const cats = ["Leadership", "Stratégie", "Discovery", "Delivery", "Data", "Socle Tech & Design", "Product Ops", "AI Product builder"];
     
     const allBtn = document.createElement('button');
     allBtn.className = "px-6 py-2.5 rounded-full bg-white border-2 border-slate-200 text-slate-600 text-xs font-black uppercase tracking-widest hover:border-blue-400 hover:text-blue-600 transition duration-200 filter-btn";
