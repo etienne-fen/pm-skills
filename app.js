@@ -54,7 +54,7 @@ function renderExplorer(data) {
                         <div class="text-[11px] font-black text-blue-600 uppercase tracking-widest mb-2">${item.id}</div>
                         <h3 class="text-lg font-black text-slate-800 mb-3 leading-tight group-hover:text-blue-600 transition-colors">${item.skill.split(' ').slice(1).join(' ')}</h3>
                         <p class="text-xs text-slate-500 line-clamp-2 mb-4">${item.tools}</p>
-                        <div class="inline-block text-blue-600 text-xs font-bold opacity-0 group-hover:opacity-100 transition-opacity">Voir d�tails ?</div>
+                        <div class="inline-block text-blue-600 text-xs font-bold opacity-0 group-hover:opacity-100 transition-opacity">Voir détails ?</div>
                     </div>
                 `).join('')}
             </div>`;
@@ -84,7 +84,7 @@ function renderQuestion() {
     const progress = Math.round((currentStep / testQuestions.length) * 100);
     
     document.getElementById('progress-bar').style.width = progress + "%";
-    document.getElementById('progress-text').innerText = `Comp�tence ${currentStep + 1} / ${testQuestions.length}`;
+    document.getElementById('progress-text').innerText = `Compétence ${currentStep + 1} / ${testQuestions.length}`;
     document.getElementById('progress-percent').innerText = progress + "%";
     
     document.getElementById('q-category').innerText = skill.cat;
@@ -152,7 +152,7 @@ function showResults() {
     // Check if we have data for all categories
     if (labels.length === 0) {
         console.error('No categories found!');
-        alert('Erreur: Aucune cat�gorie trouv�e. Les donn�es ne sont pas charg�es correctement.');
+        alert('Erreur: Aucune catégorie trouvée. Les données ne sont pas chargées correctement.');
         return;
     }
 
@@ -250,7 +250,7 @@ function showResults() {
     console.log('Chart created successfully');
     } catch (error) {
         console.error('Error creating chart:', error);
-        alert('Erreur lors de la cr�ation du graphique: ' + error.message);
+        alert('Erreur lors de la création du graphique: ' + error.message);
     }
 
     // Display two-category profile analysis
