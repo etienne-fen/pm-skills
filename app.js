@@ -1,4 +1,4 @@
-ï»¿// app.js
+// app.js
 // --- APP STATE ---
 let currentStep = 0;
 let userRatings = {};
@@ -54,7 +54,7 @@ function renderExplorer(data) {
                         <div class="text-[11px] font-black text-blue-600 uppercase tracking-widest mb-2">${item.id}</div>
                         <h3 class="text-lg font-black text-slate-800 mb-3 leading-tight group-hover:text-blue-600 transition-colors">${item.skill.split(' ').slice(1).join(' ')}</h3>
                         <p class="text-xs text-slate-500 line-clamp-2 mb-4">${item.tools}</p>
-                        <div class="inline-block text-blue-600 text-xs font-bold opacity-0 group-hover:opacity-100 transition-opacity">Voir dÃ©tails â†’</div>
+                        <div class="inline-block text-blue-600 text-xs font-bold opacity-0 group-hover:opacity-100 transition-opacity">Voir détails ?</div>
                     </div>
                 `).join('')}
             </div>`;
@@ -84,7 +84,7 @@ function renderQuestion() {
     const progress = Math.round((currentStep / testQuestions.length) * 100);
     
     document.getElementById('progress-bar').style.width = progress + "%";
-    document.getElementById('progress-text').innerText = `CompÃ©tence ${currentStep + 1} / ${testQuestions.length}`;
+    document.getElementById('progress-text').innerText = `Compétence ${currentStep + 1} / ${testQuestions.length}`;
     document.getElementById('progress-percent').innerText = progress + "%";
     
     document.getElementById('q-category').innerText = skill.cat;
@@ -152,7 +152,7 @@ function showResults() {
     // Check if we have data for all categories
     if (labels.length === 0) {
         console.error('No categories found!');
-        alert('Erreur: Aucune catÃ©gorie trouvÃ©e. Les donnÃ©es ne sont pas chargÃ©es correctement.');
+        alert('Erreur: Aucune catégorie trouvée. Les données ne sont pas chargées correctement.');
         return;
     }
 
@@ -265,7 +265,7 @@ function showResults() {
     console.log('Chart created successfully');
     } catch (error) {
         console.error('Error creating chart:', error);
-        alert('Erreur lors de la crÃ©ation du graphique: ' + error.message);
+        alert('Erreur lors de la création du graphique: ' + error.message);
     }
 
     // Display two-category profile analysis
@@ -338,71 +338,38 @@ function showResults() {
     `;
 }
 
-function createSecondaryProfile() {
-    const container = document.getElementById('view-results');
-    const div = document.createElement('div');
-    div.id = 'profile-secondary';
-    container.appendChild(div);
-    return div;
-}
-
-function createScoresComparison() {
-    const container = document.getElementById('view-results');
-    const div = document.createElement('div');
-    div.id = 'profile-scores';
-    container.appendChild(div);
-    return div;
-}
-
-function restartTest() {
-    currentStep = 0;
-    userRatings = {};
-    switchTab('test');
-}
-
-// --- MODAL & INITIALIZATION ---
-function openModal(item) {
-    document.getElementById('modal-id').innerText = item.id;
-    document.getElementById('modal-title').innerText = item.skill.split(' ').slice(1).join(' ');
-    document.getElementById('modal-frameworks').innerText = item.tools;
-    document.getElementById('modal-junior').innerText = item.junior;
-    document.getElementById('modal-senior').innerText = item.senior;
-    document.getElementById('modal-situation').innerText = item.situation;
-    document.getElementById('modal').classList.remove('opacity-0', 'pointer-events-none');
-}
-
-function closeModal() {
-    document.getElementById('modal').classList.add('opacity-0', 'pointer-events-none');
-}
-
-function init() {
-    const filterContainer = document.getElementById('filters');
-    const cats = ["Leadership", "StratÃ©gie", "Discovery", "Delivery", "Data", "Socle Tech & Design", "Product Ops", "AI Product builder"];
+    // Find and display lowest scoring category (area for improvement)
+    const lowestCategory = categoryScores[categoryScores.length - 1]; // Already sorted descending, so last is lowest
+    const improvementProfile = profileRules.find(p => lowestCategory.category.includes(p.cat)) || profileRules[0];
     
-    const allBtn = document.createElement('button');
-    allBtn.className = "px-6 py-2.5 rounded-full bg-white border-2 border-slate-200 text-slate-600 text-xs font-black uppercase tracking-widest hover:border-blue-400 hover:text-blue-600 transition duration-200 filter-btn";
-    allBtn.innerText = "All Categories";
-    allBtn.onclick = () => filterSelection('all');
-    filterContainer.appendChild(allBtn);
-
-    cats.forEach(cat => {
-        const btn = document.createElement('button');
-        btn.className = "px-6 py-2.5 rounded-full bg-white border-2 border-slate-200 text-slate-600 text-xs font-black uppercase tracking-widest hover:border-blue-400 hover:text-blue-600 transition duration-200 filter-btn";
-        btn.innerText = cat;
-        btn.onclick = () => filterSelection(cat);
-        filterContainer.appendChild(btn);
-    });
-
-    // Set initial tab state
-    switchTab('explorer');
-}
-
-init();
-
-
-
-
-
-
-
-
+    // Get common tools for the category
+    const skillsInCategory = testQuestions.filter(s => s.cat === lowestCategory.category);
+    const commonTools = [...new Set(skillsInCategory.map(s => s.tools))].join(', ');
+    
+    const improvementDiv = document.getElementById('profile-improvement') || createImprovementArea();
+    improvementDiv.innerHTML = `
+        <h3 class="text-orange-700 font-black uppercase tracking-widest text-[10px] mb-4">?? Domaine à Développer</h3>
+        <h2 class="text-2xl font-black text-orange-800 mb-4 leading-tight">${lowestCategory.category.split(' ').slice(1).join(' ')}</h2>
+        
+        <div class="space-y-5">
+            <div class="bg-white/70 p-5 rounded-2xl border border-orange-200">
+                <h4 class="text-orange-700 font-bold text-xs uppercase mb-2 tracking-widest">Outils Communs</h4>
+                <p class="text-slate-700 text-sm leading-relaxed">${commonTools}</p>
+            </div>
+            
+            <div class="bg-white/70 p-5 rounded-2xl border border-orange-200">
+                <h4 class="text-orange-700 font-bold text-xs uppercase mb-2 tracking-widest">Domaines à Renforcer</h4>
+                <p class="text-slate-700 text-sm leading-relaxed">${improvementProfile.improve}</p>
+            </div>
+            
+            <div class="bg-white/70 p-5 rounded-2xl border border-orange-200">
+                <h4 class="text-orange-700 font-bold text-xs uppercase mb-2 tracking-widest">Pourquoi c'est Important</h4>
+                <p class="text-slate-700 text-sm leading-relaxed">${improvementProfile.improveWhy}</p>
+            </div>
+            
+            <div class="bg-white/70 p-5 rounded-2xl border border-orange-200">
+                <h4 class="text-orange-700 font-bold text-xs uppercase mb-2 tracking-widest">Contexts & Opportunités</h4>
+                <p class="text-slate-700 text-sm leading-relaxed">${improvementProfile.improveMission}</p>
+            </div>
+        </div>
+    `;
