@@ -25,7 +25,31 @@ const ApiService = {
 
     // 2. Post results to your Google Apps Script
     async saveResults(name, scores, scriptURL) {
-        const payload = { name, scores };
+        const compatibilityAliases = {
+            ...scores,
+            "2. Découverte & Validation d'Opportunités (Discovery)": scores["2. Découverte (Discovery)"] ?? "",
+            "4. Culture & Maîtrise de la Donnée": scores["4. Data Culture"] ?? "",
+            "5. Socle Technique & Design": scores["5. Socle Tech & Design"] ?? ""
+        };
+
+        const compactScores = {
+            leadership: scores["0. Leadership & Influence"] ?? "",
+            strategy: scores["1. Stratégie & Vision Produit"] ?? "",
+            discovery: scores["2. Découverte (Discovery)"] ?? "",
+            delivery: scores["3. Conception & Livraison (Delivery)"] ?? "",
+            data: scores["4. Data Culture"] ?? "",
+            techDesign: scores["5. Socle Tech & Design"] ?? "",
+            productOps: scores["6. Product Ops"] ?? "",
+            ai: scores["7. AI Product Builder"] ?? ""
+        };
+
+        const payload = {
+            name,
+            // Keep backward compatibility inside the main object used by most scripts.
+            scores: compatibilityAliases,
+            rawScores: scores,
+            compactScores
+        };
 
         return fetch(scriptURL, {
             method: 'POST',
