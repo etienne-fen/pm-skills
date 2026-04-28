@@ -1,216 +1,209 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>PM Skills Matrix</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0"></script>
-    <link rel="stylesheet" href="style.css"> <!-- Optional: move styles to a CSS file -->
-    <style>
-        .filter-active {
-            background-color: #1d4ed8 !important;
-            color: #ffffff !important;
-            border-color: transparent !important;
-            box-shadow: 0 15px 35px rgba(29, 78, 216, 0.18);
-        }
-        .filter-active:hover {
-            background-color: #1e40af !important;
-        }
-    </style>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Product Skills</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
+	<div class="app-shell">
+		<header class="app-header">
+			<div class="page-frame header-row">
+				<h1 class="brand-title brand-title-compact">Product Skills</h1>
+				<nav class="tabbar" aria-label="Navigation principale">
+					<button id="nav-explorer" class="tab-button is-active" onclick="switchTab('explorer')">Skills explorer</button>
+					<button id="nav-test" class="tab-button" onclick="switchTab('test')">Self Assessment</button>
+				</nav>
+			</div>
+		</header>
 
+		<main class="page-frame page-main">
+			<section id="view-explorer" class="view-section">
+				<div class="section-header">
+					<div>
+						<h2 class="section-title">Skills explorer</h2>
+						<p class="section-copy">Filtrez par catégorie, parcourez les cartes de compétences, puis ouvrez une carte pour afficher le détail complet dans une fenêtre modale.</p>
+					</div>
+				</div>
+				<div class="panel explorer-panel">
+					<div class="explorer-toolbar">
+						<div class="input-group explorer-filter-group">
+							<label class="field-label" for="category-filter">Catégorie</label>
+							<select id="category-filter" class="field-input select-field" onchange="handleCategoryChange(this.value)"></select>
+						</div>
+						<div class="metric-inline-group">
+							<div class="metric-inline-card"><span class="metric-label">Compétences</span><span id="metric-skills" class="metric-inline-value">0</span></div>
+							<div class="metric-inline-card"><span class="metric-label">Catégories</span><span id="metric-domains" class="metric-inline-value">0</span></div>
+							<div class="metric-inline-card"><span class="metric-label">Sous-catégories</span><span id="metric-subdomains" class="metric-inline-value">0</span></div>
+						</div>
+					</div>
+					<div id="skills-grid" class="skill-card-grid"></div>
+				</div>
+			</section>
 
-    <!-- HTML CONTENT (Tabs, Explorer grid, Assessment card, results, etc.) -->
+			<section id="view-test" class="view-section is-hidden">
+				<div class="section-header">
+					<div>
+						<h2 class="section-title">Self Assessment</h2>
+						<p class="section-copy">Evaluez vos compétences grâce à ce questionnaire. Vous pourrez ainsi obtenir une analyse complète de votre profil PM.</p>
+					</div>
+				</div>
 
-<div class="container mx-auto px-4 py-10">
-    <header class="mb-10 text-center">
-        <div class="inline-block mb-4 px-4 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-black uppercase tracking-widest">
-            Product Management Mastery
-        </div>
-        <h1 class="text-5xl md:text-6xl font-black text-slate-900 mb-3 leading-tight">PM Skills Matrix</h1>
-        <p class="text-lg text-slate-500 max-w-2xl mx-auto">Evaluate your competencies across 8 key pillars. Discover your PM archetype. Compare with industry standards.</p>
-    </header>
+				<div id="onboarding-screen" class="panel" style="max-width: 620px;">
+					<div class="panel-header">
+						<div>
+							<h3 class="panel-title">Avant de commencer</h3>
+							<p class="panel-copy">Renseignez votre nom pour associer vos resultats a votre profil.</p>
+						</div>
+					</div>
+					<div class="input-group">
+						<label class="field-label" for="user-name-input">Nom</label>
+						<input id="user-name-input" class="field-input" type="text" placeholder="Ex: Lea Martin" aria-describedby="user-name-error" />
+						<div id="user-name-error" class="error-text" role="alert"></div>
+					</div>
+					<div class="hero-actions">
+						<button class="button button-primary" onclick="startAssessment()">Commencer</button>
+						<button class="button button-tertiary" onclick="switchTab('explorer')">Retour a l'explorer</button>
+					</div>
+				</div>
 
-    <!-- Navigation Tabs -->
-    <div class="flex justify-center mb-12 border-b-2 border-slate-200">
-        <button id="tab-explorer" onclick="switchTab('explorer')" class="px-8 py-4 text-slate-600 hover:text-blue-600 transition uppercase tracking-widest text-sm font-extrabold border-b-2 border-transparent">📚 Skill Explorer</button>
-        <button id="tab-test" onclick="switchTab('test')" class="px-8 py-4 text-slate-600 hover:text-blue-600 transition uppercase tracking-widest text-sm font-extrabold border-b-2 border-transparent">✓ Self-Assessment</button>
-    </div>
+				<div id="assessment-container" class="assessment-grid is-hidden">
+					<aside class="progress-card">
+						<div>
+							<p class="eyebrow">Progression</p>
+							<h3 class="panel-title">Évaluation en cours</h3>
+							<p id="progress-text" class="progress-label">Competence 1 / 0</p>
+						</div>
+						<div class="progress-track">
+							<div id="progress-bar" class="progress-bar"></div>
+						</div>
+	
+						<button id="assessment-back-button" class="button button-secondary" type="button" onclick="goToPreviousQuestion()">Retour</button>
+					</aside>
 
-    <!-- VIEW 1: EXPLORER -->
-    <div id="view-explorer" class="fade-in">
-        <div id="filters" class="flex flex-wrap justify-center gap-3 mb-14">
-            <!-- Buttons injected by JS -->
-        </div>
-        <div id="skills-grid" class="space-y-14">
-            <!-- Groups injected by JS -->
-        </div>
-    </div>
+					<div class="question-card">
+						<div class="question-block">
+							<div class="question-meta">
+								<span id="q-category" class="pill"></span>
+								<span id="q-sub" class="pill"></span>
+							</div>
+							<h3 id="q-title" class="question-title question-title-main"></h3>
+						<div class="question-description-box">
+							<p id="q-description" class="question-description"></p>
+						</div>
+							<div class="question-situation-card">
+								<span class="detail-label">Situation</span>
+								<p id="q-situation" class="question-situation-copy"></p>
+							</div>
+							<p class="question-copy question-tools"><span class="question-strong">Outils :</span> <span id="q-tools"></span></p>
+						</div>
+						<div class="rating-section">
+							<p class="rating-instruction">Choisissez votre niveau d'expertise pour cette compétence</p>
+							<div class="rating-grid" aria-label="Choisissez un niveau de maitrise">
+							<button class="rating-button rating-button-compact" type="button" onclick="handleAnswer(1)" title="Je comprends les bases mais j'ai encore besoin de cadre." aria-label="Débutant. Je comprends les bases mais j'ai encore besoin de cadre.">
+								<span class="rating-number">1</span>
+								<h4 class="rating-title">Debutant</h4>
+							</button>
+							<button class="rating-button rating-button-compact" type="button" onclick="handleAnswer(2)" title="Je suis autonome dans les cas courants." aria-label="Intermédiaire. Je suis autonome dans les cas courants.">
+								<span class="rating-number">2</span>
+								<h4 class="rating-title">Intermediaire</h4>
+							</button>
+							<button class="rating-button rating-button-compact" type="button" onclick="handleAnswer(3)" title="Je gere les sujets complexes avec methode." aria-label="Avancé. Je gere les sujets complexes avec methode.">
+								<span class="rating-number">3</span>
+								<h4 class="rating-title">Avance</h4>
+							</button>
+							<button class="rating-button rating-button-compact" type="button" onclick="handleAnswer(4)" title="Je structure, transmets et fais progresser les autres." aria-label="Expert. Je structure, transmets et fais progresser les autres.">
+								<span class="rating-number">4</span>
+								<h4 class="rating-title">Expert</h4>
+							</button>
+						</div>
+						</div>
+					</div>
+				</div>
 
-    <!-- VIEW 2: STEP-BY-STEP ASSESSMENT -->
-    <div id="view-test" class="hidden max-w-3xl mx-auto fade-in">
-        <div class="mb-10">
-            <div class="flex justify-between text-[10px] font-black text-slate-400 mb-2 uppercase tracking-widest">
-                <span id="progress-text">Compétence 1 / 40</span>
-                <span id="progress-percent">0%</span>
-            </div>
-            <div class="w-full bg-slate-200 h-1.5 rounded-full overflow-hidden">
-                <div id="progress-bar" class="bg-blue-600 h-full transition-all duration-500" style="width: 0%"></div>
-            </div>
-        </div>
+				<div id="loading-screen" class="loading-screen is-hidden">
+					<div class="loading-overlay">
+						<div class="spinner"></div>
+						<p class="loading-text">Analyse de vos résultats en cours...</p>
+					</div>
+				</div>
 
-        <div id="question-card" class="bg-white rounded-3xl shadow-xl p-10 border border-slate-100 relative overflow-hidden">
-            <div class="mb-6 pb-6 border-b border-slate-100">
-                <div>
-                    <div id="q-category" class="text-blue-600 font-black text-xs uppercase mb-1 tracking-widest">Category</div>
-                    <div id="q-sub" class="text-slate-500 text-sm font-semibold">Sub-category</div>
-                </div>
-            </div>
-            
-            <h2 id="q-title" class="text-4xl font-black text-slate-900 mb-8 leading-tight">Skill Name</h2>
-            
-            <div class="space-y-6 mb-12">
-                <div class="bg-gradient-to-br from-blue-50 to-blue-100/50 p-6 rounded-2xl border border-blue-200">
-                    <h4 class="text-[10px] font-black text-blue-700 uppercase mb-2 tracking-widest">🔧 Frameworks & Outils</h4>
-                    <p id="q-tools" class="text-slate-700 font-semibold text-sm"></p>
-                </div>
-                <div class="bg-gradient-to-br from-amber-50 to-amber-100/50 p-6 rounded-2xl border-l-4 border-amber-400">
-                    <h4 class="text-[10px] font-black text-amber-700 uppercase mb-2 tracking-widest">💡 Situation Concrète</h4>
-                    <p id="q-situation" class="text-slate-700 text-sm italic leading-relaxed"></p>
-                </div>
-            </div>
+				<div id="results-container" class="view-section is-hidden">
+					<div class="section-header">
+						<div>
+							<h2 class="section-title">Vos résultats</h2>
+							<p class="section-copy">Une vue radar accompagnée de trois cartes de synthèse : votre profil principal, votre deuxième profil le plus fort et la compétence à travailler en priorité.</p>
+						</div>
+						<button class="button button-primary" onclick="restartTest()">Recommencer</button>
+					</div>
+					<div class="results-layout">
+						<div class="results-chart-card">
+							<div class="panel-header">
+								<div>
+									<h3 class="panel-title">Radar des compétences</h3>
+									<p class="panel-copy">Votre score comparé au benchmark PM.</p>
+								</div>
+							</div>
+							<canvas id="radarChart" height="100"></canvas>
+						</div>
+						<div class="results-score-card">
+							<div class="panel-header">
+								<div>
+									<h3 class="panel-title">Scores</h3>
+									<p class="panel-copy">Vue rapide sur l’ensemble des familles de compétences.</p>
+								</div>
+							</div>
+							<div id="results-score-list" class="score-list"></div>
+						</div>
+					</div>
+					<div id="profile-summary-grid" class="results-summary-grid"></div>
+				</div>
+			</div>
+		</section>
+		</main>
 
-            <div class="pt-8 border-t border-slate-200 text-center">
-                <p class="text-slate-600 font-bold mb-8 text-sm">Évaluez votre expertise :</p>
-                <div class="flex flex-wrap justify-center gap-3">
-                    <div class="flex flex-col items-center">
-                        <input type="radio" id="r0" name="lvl" value="0" class="hidden rating-option" onclick="handleAnswer(0)">
-                        <label for="r0" class="w-16 h-16 flex items-center justify-center border-2 border-slate-300 rounded-2xl font-black text-2xl cursor-pointer hover:border-blue-500 hover:bg-blue-50 transition-all duration-200">0</label>
-                        <span class="text-[9px] mt-2 text-slate-400 font-bold uppercase">Inconnu</span>
-                    </div>
-                    <div class="flex flex-col items-center">
-                        <input type="radio" id="r1" name="lvl" value="1" class="hidden rating-option" onclick="handleAnswer(1)">
-                        <label for="r1" class="w-16 h-16 flex items-center justify-center border-2 border-slate-300 rounded-2xl font-black text-2xl cursor-pointer hover:border-orange-500 hover:bg-orange-50 transition-all duration-200">1</label>
-                        <span class="text-[9px] mt-2 text-slate-400 font-bold uppercase">Théorie</span>
-                    </div>
-                    <div class="flex flex-col items-center">
-                        <input type="radio" id="r2" name="lvl" value="2" class="hidden rating-option" onclick="handleAnswer(2)">
-                        <label for="r2" class="w-16 h-16 flex items-center justify-center border-2 border-slate-300 rounded-2xl font-black text-2xl cursor-pointer hover:border-yellow-500 hover:bg-yellow-50 transition-all duration-200">2</label>
-                        <span class="text-[9px] mt-2 text-slate-400 font-bold uppercase">Pratique</span>
-                    </div>
-                    <div class="flex flex-col items-center">
-                        <input type="radio" id="r3" name="lvl" value="3" class="hidden rating-option" onclick="handleAnswer(3)">
-                        <label for="r3" class="w-16 h-16 flex items-center justify-center border-2 border-slate-300 rounded-2xl font-black text-2xl cursor-pointer hover:border-green-500 hover:bg-green-50 transition-all duration-200">3</label>
-                        <span class="text-[9px] mt-2 text-slate-400 font-bold uppercase">Autonome</span>
-                    </div>
-                    <div class="flex flex-col items-center">
-                        <input type="radio" id="r4" name="lvl" value="4" class="hidden rating-option" onclick="handleAnswer(4)">
-                        <label for="r4" class="w-16 h-16 flex items-center justify-center border-2 border-slate-300 rounded-2xl font-black text-2xl cursor-pointer hover:border-blue-700 hover:bg-blue-50 transition-all duration-200">4</label>
-                        <span class="text-[9px] mt-2 text-slate-400 font-bold uppercase">Expert</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+		<div id="modal" class="modal is-hidden" onclick="handleModalBackdrop(event)">
+			<div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+				<button class="icon-button" aria-label="Fermer la fenetre" onclick="closeModal()">x</button>
+				<div class="modal-header">
+					<div class="modal-header-main">
+						<div class="modal-meta-row">
+							<span id="modal-id" class="pill"></span>
+							<span id="modal-category" class="profile-score-pill"></span>
+							<span id="modal-sub" class="profile-score-pill"></span>
+						</div>
+						<h3 id="modal-title" class="modal-title"></h3>
+					</div>
+					<div class="modal-tools-block">
+						<span class="detail-label">Outils</span>
+						<div id="modal-tools-tags" class="tag-list"></div>
+					</div>
+				</div>
+				<div class="modal-description-card">
+					<span class="detail-label">Description</span>
+					<p id="modal-description" class="modal-description-copy"></p>
+				</div>
+				<div class="modal-expectations-grid">
+					<div class="detail-item"><span class="detail-label">Attentes Junior</span><span id="modal-junior"></span></div>
+					<div class="detail-item"><span class="detail-label">Attentes Senior</span><span id="modal-senior"></span></div>
+				</div>
+				<div class="modal-story-card">
+					<span class="detail-label">Exemple de situation</span>
+					<p id="modal-situation" class="modal-story-copy"></p>
+				</div>
+			</div>
+		</div>
+	</div>
 
-    <!-- VIEW 3: RESULTS -->
-    <div id="view-results" class="hidden max-w-7xl mx-auto fade-in">
-        <!-- Top Section: Radar + Scores Comparison -->
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
-            <!-- Radar Chart -->
-            <div class="lg:col-span-2 bg-white p-8 rounded-3xl shadow-lg border border-slate-100">
-                <h3 class="text-xl font-black text-slate-800 mb-2 flex items-center">
-                    <span class="w-2 h-8 bg-blue-600 mr-4 rounded-full"></span>
-                    Radar de Compétences
-                </h3>
-                <p class="text-xs text-slate-500 mb-8">Comparaison de votre profil avec la moyenne PM</p>
-                <canvas id="radarChart"></canvas>
-            </div>
-            
-            <!-- Scores Comparison (moved to right) -->
-            <div class="lg:col-span-1">
-                <div id="profile-scores" class="bg-white rounded-3xl shadow-lg border border-slate-100 p-8 h-full">
-                    <!-- Injected by JS -->
-                </div>
-            </div>
-        </div>
-
-        <!-- Bottom Section: 2-Column Layout -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <!-- Left Block: Top Profiles -->
-            <div class="bg-white rounded-3xl shadow-lg border border-slate-100 p-8">
-                <!-- Primary Profile -->
-                <div class="mb-10 pb-10 border-b-2 border-slate-200">
-                    <div id="profile-card">
-                        <!-- Injected by JS -->
-                    </div>
-                </div>
-
-                <!-- Secondary Profile -->
-                <div id="profile-secondary">
-                    <!-- Injected by JS -->
-                </div>
-            </div>
-
-            <!-- Right Block: Growth Area -->
-            <div id="profile-improvement" class="bg-gradient-to-br from-orange-50 to-red-50 rounded-3xl shadow-lg border-2 border-orange-200 p-8">
-                <!-- Injected by JS -->
-            </div>
-        </div>
-
-        <!-- Restart Button -->
-        <div class="mt-8">
-            <button onclick="restartTest()" class="w-full px-6 py-3 bg-blue-600 text-white font-bold text-sm rounded-xl hover:bg-blue-700 transition uppercase tracking-widest">
-                ↻ Recommencer le test
-            </button>
-        </div>
-    </div>
-</div>
-
-<!-- Modal Explorer -->
-<div id="modal" class="modal opacity-0 pointer-events-none fixed w-full h-full top-0 left-0 flex items-center justify-center z-50">
-    <div class="modal-overlay absolute w-full h-full bg-slate-900/80 backdrop-blur-sm" onclick="closeModal()"></div>
-    <div class="modal-container bg-white w-11/12 md:max-w-3xl mx-auto rounded-3xl shadow-2xl z-50 overflow-hidden fade-in">
-        <div class="p-8">
-            <div class="flex justify-between items-start mb-6">
-                <div>
-                    <span id="modal-id" class="text-[10px] font-black text-blue-600 uppercase mb-1 block"></span>
-                    <h2 class="text-3xl font-black text-slate-800" id="modal-title"></h2>
-                </div>
-                <button onclick="closeModal()" class="text-slate-400 hover:text-slate-800 transition">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M18 6L6 18M6 6l12 12"></path></svg>
-                </button>
-            </div>
-            
-            <div class="space-y-6">
-                <div class="bg-slate-50 p-4 rounded-xl">
-                    <h4 class="text-[10px] font-bold text-slate-400 uppercase mb-1">Frameworks & Tools</h4>
-                    <p id="modal-frameworks" class="text-slate-700 font-semibold italic"></p>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div class="bg-green-50 p-5 rounded-2xl border border-green-100">
-                        <h5 class="text-[10px] font-black text-green-600 uppercase mb-2">Attente Junior</h5>
-                        <p id="modal-junior" class="text-sm text-slate-700 leading-relaxed"></p>
-                    </div>
-                    <div class="bg-purple-50 p-5 rounded-2xl border border-purple-100">
-                        <h5 class="text-[10px] font-black text-purple-600 uppercase mb-2">Attente Senior</h5>
-                        <p id="modal-senior" class="text-sm text-slate-700 leading-relaxed"></p>
-                    </div>
-                </div>
-                <div class="bg-amber-50 p-6 rounded-2xl border border-amber-200">
-                    <h5 class="text-[10px] font-black text-amber-600 uppercase mb-2 italic">Situation Réelle</h5>
-                    <p id="modal-situation" class="text-slate-700 text-sm italic leading-relaxed"></p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-    <!-- CRITICAL: LOAD DATA FIRST, THEN APP -->
-    <script src="data.js"></script>
-    <script src="app.js"></script>
-
+	<script src="state.js"></script>
+	<script src="api.js"></script>
+	<script src="ui.js"></script>
+	<script src="data.js"></script>
+	<script src="app.js"></script>
 </body>
 </html>
