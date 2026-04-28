@@ -85,6 +85,7 @@ async function finishAssessment() {
     
     const finalAverages = AppState.getCalculatedResults();
     AppState.latestResults = finalAverages;
+    console.log('Final category keys sent:', Object.keys(finalAverages));
 
     // 2. Send to Google Sheets (POST)
     try {

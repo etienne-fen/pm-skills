@@ -8,15 +8,27 @@ const AppState = {
     latestResults: null,
     currentFilter: 'all',
 
+    // Canonical category keys used for scoring and export.
+    categoryAliases: {
+        "2. Découverte & Validation d'Opportunités (Discovery)": "2. Découverte (Discovery)",
+        "4. Culture & Maîtrise de la Donnée": "4. Data Culture",
+        "5. Socle Technique & Design": "5. Socle Tech & Design"
+    },
+
+    normalizeCategoryKey(category) {
+        return this.categoryAliases[category] || category;
+    },
+
     // Helper to calculate final averages
     getCalculatedResults() {
         const catScores = {};
         this.explorerData.forEach(skill => {
-            if (!catScores[skill.cat]) catScores[skill.cat] = { sum: 0, count: 0 };
+            const normalizedCat = this.normalizeCategoryKey(skill.cat);
+            if (!catScores[normalizedCat]) catScores[normalizedCat] = { sum: 0, count: 0 };
             const rawRating = this.userRatings[skill.id];
             const rating = typeof rawRating === 'object' ? (rawRating?.val || 0) : (rawRating || 0);
-            catScores[skill.cat].sum += rating;
-            catScores[skill.cat].count += 1;
+            catScores[normalizedCat].sum += rating;
+            catScores[normalizedCat].count += 1;
         });
 
         const averages = {};
