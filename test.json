@@ -1,0 +1,2792 @@
+﻿{
+    "version":  "0.6",
+    "reqId":  "0",
+    "status":  "ok",
+    "sig":  "1739414844",
+    "table":  {
+                  "cols":  [
+                               {
+                                   "id":  "A",
+                                   "label":  "",
+                                   "type":  "string"
+                               },
+                               {
+                                   "id":  "B",
+                                   "label":  "",
+                                   "type":  "string"
+                               },
+                               {
+                                   "id":  "C",
+                                   "label":  "",
+                                   "type":  "string"
+                               },
+                               {
+                                   "id":  "D",
+                                   "label":  "",
+                                   "type":  "string"
+                               },
+                               {
+                                   "id":  "E",
+                                   "label":  "",
+                                   "type":  "string"
+                               },
+                               {
+                                   "id":  "F",
+                                   "label":  "",
+                                   "type":  "string"
+                               },
+                               {
+                                   "id":  "G",
+                                   "label":  "",
+                                   "type":  "string"
+                               },
+                               {
+                                   "id":  "H",
+                                   "label":  "",
+                                   "type":  "string"
+                               },
+                               {
+                                   "id":  "I",
+                                   "label":  "",
+                                   "type":  "string"
+                               },
+                               {
+                                   "id":  "J",
+                                   "label":  "",
+                                   "type":  "string"
+                               },
+                               {
+                                   "id":  "K",
+                                   "label":  "",
+                                   "type":  "string"
+                               },
+                               {
+                                   "id":  "L",
+                                   "label":  "",
+                                   "type":  "string"
+                               },
+                               {
+                                   "id":  "M",
+                                   "label":  "",
+                                   "type":  "string"
+                               },
+                               {
+                                   "id":  "N",
+                                   "label":  "",
+                                   "type":  "string"
+                               },
+                               {
+                                   "id":  "O",
+                                   "label":  "",
+                                   "type":  "string"
+                               },
+                               {
+                                   "id":  "P",
+                                   "label":  "",
+                                   "type":  "string"
+                               },
+                               {
+                                   "id":  "Q",
+                                   "label":  "",
+                                   "type":  "string"
+                               },
+                               {
+                                   "id":  "R",
+                                   "label":  "",
+                                   "type":  "string"
+                               },
+                               {
+                                   "id":  "S",
+                                   "label":  "",
+                                   "type":  "string"
+                               },
+                               {
+                                   "id":  "T",
+                                   "label":  "",
+                                   "type":  "string"
+                               },
+                               {
+                                   "id":  "U",
+                                   "label":  "",
+                                   "type":  "string"
+                               },
+                               {
+                                   "id":  "V",
+                                   "label":  "",
+                                   "type":  "string"
+                               },
+                               {
+                                   "id":  "W",
+                                   "label":  "",
+                                   "type":  "string"
+                               },
+                               {
+                                   "id":  "X",
+                                   "label":  "",
+                                   "type":  "string"
+                               },
+                               {
+                                   "id":  "Y",
+                                   "label":  "",
+                                   "type":  "string"
+                               },
+                               {
+                                   "id":  "Z",
+                                   "label":  "",
+                                   "type":  "string"
+                               },
+                               {
+                                   "id":  "AA",
+                                   "label":  "",
+                                   "type":  "string"
+                               }
+                           ],
+                  "rows":  [
+                               {
+                                   "c":  [
+                                             {
+                                                 "v":  "id"
+                                             },
+                                             {
+                                                 "v":  "Categorie"
+                                             },
+                                             {
+                                                 "v":  "Sub-category"
+                                             },
+                                             {
+                                                 "v":  "Skill"
+                                             },
+                                             {
+                                                 "v":  "Description"
+                                             },
+                                             {
+                                                 "v":  "Beginner"
+                                             },
+                                             {
+                                                 "v":  "Expert"
+                                             },
+                                             {
+                                                 "v":  "Situation"
+                                             },
+                                             {
+                                                 "v":  "Methods"
+                                             },
+                                             {
+                                                 "v":  "Tools"
+                                             },
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             {
+                                                 "v":  null
+                                             }
+                                         ]
+                               },
+                               {
+                                   "c":  [
+                                             {
+                                                 "v":  "1.1.1"
+                                             },
+                                             {
+                                                 "v":  "1. StratÃ©gie \u0026 Vision Produit"
+                                             },
+                                             {
+                                                 "v":  "1.1 Ã‰laboration de la StratÃ©gie"
+                                             },
+                                             {
+                                                 "v":  "1.1.1 Analyse du MarchÃ© \u0026 Concurrence"
+                                             },
+                                             {
+                                                 "v":  "Veille active et analyse critique des tendances sectorielles et des mouvements des concurrents pour identifier des opportunitÃ©s de diffÃ©renciation."
+                                             },
+                                             {
+                                                 "v":  "Effectue une veille sur des concurrents directs et des fonctionnalitÃ©s spÃ©cifiques Ã  la demande de son manager."
+                                             },
+                                             {
+                                                 "v":  "MÃ¨ne une analyse continue et pro-active du marchÃ© (tendances macro, technologies Ã©mergentes, mouvements concurrentiels) pour identifier des opportunitÃ©s de rupture et des menaces stratÃ©giques."
+                                             },
+                                             {
+                                                 "v":  "Le senior identifie une nouvelle technologie (ex: LLM open-source performant) comme une menace potentielle pour la position de leader, poussant Ã  la crÃ©ation d\u0027une nouvelle initiative R\u0026D."
+                                             },
+                                             {
+                                                 "v":  "SWOT, PESTEL, Forces de Porter, Wardley Maps"
+                                             },
+                                             {
+                                                 "v":  "Perplexity, SimilarWeb, SEMrush, Gartner, Forrester"
+                                             },
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             {
+                                                 "v":  null
+                                             }
+                                         ]
+                               },
+                               {
+                                   "c":  [
+                                             {
+                                                 "v":  "1.1.2"
+                                             },
+                                             {
+                                                 "v":  "1. StratÃ©gie \u0026 Vision Produit"
+                                             },
+                                             {
+                                                 "v":  "1.1 Ã‰laboration de la StratÃ©gie"
+                                             },
+                                             {
+                                                 "v":  "1.1.2 Vision Produit"
+                                             },
+                                             {
+                                                 "v":  "DÃ©finition d\u0027un Ã©tat futur ambitieux et inspirant pour le produit, servant de boussole Ã  long terme pour toutes les dÃ©cisions tactiques."
+                                             },
+                                             {
+                                                 "v":  "Comprend, articule et peut expliquer la vision du produit Ã  son Ã©quipe. S\u0027assure que son backlog est alignÃ© avec la vision"
+                                             },
+                                             {
+                                                 "v":  "DÃ©finit, possÃ¨de et Ã©vangÃ©lise une vision produit inspirante sur 3-5 ans. Il s\u0027assure qu\u0027elle est comprise, partagÃ©e et qu\u0027elle guide les dÃ©cisions Ã  tous les niveaux de l\u0027entreprise."
+                                             },
+                                             {
+                                                 "v":  "Lors d\u0027une rÃ©union \"all-hands\", le senior prÃ©sente la vision avec un storytelling impactant, donnant un sens et une direction clairs Ã  tous les employÃ©s."
+                                             },
+                                             {
+                                                 "v":  "V2MOM (Vision, Values, Methods, Obstacles, Measures), Golden Circle, Product Vision Board."
+                                             },
+                                             {
+                                                 "v":  "Roadmunk, Aha!, Confluence, Coda, Notion"
+                                             },
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             {
+                                                 "v":  null
+                                             }
+                                         ]
+                               },
+                               {
+                                   "c":  [
+                                             {
+                                                 "v":  "1.1.3"
+                                             },
+                                             {
+                                                 "v":  "1. StratÃ©gie \u0026 Vision Produit"
+                                             },
+                                             {
+                                                 "v":  "1.1 Ã‰laboration de la StratÃ©gie"
+                                             },
+                                             {
+                                                 "v":  "1.1.3 Business \u0026 ModÃ¨le Ã‰co."
+                                             },
+                                             {
+                                                 "v":  "ComprÃ©hension des mÃ©canismes de crÃ©ation de valeur financiÃ¨re et de rentabilitÃ© du produit au sein de l\u0027entreprise."
+                                             },
+                                             {
+                                                 "v":  "Comprend le modÃ¨le Ã©conomique du produit et l\u0027impact de son pÃ©rimÃ¨tre sur les KPIs principaux (ex: revenus, acquisition). Calcule le ROI de ses fonctionnalitÃ©s"
+                                             },
+                                             {
+                                                 "v":  "Construit, modÃ©lise et optimise le modÃ¨le Ã©conomique. Prend des dÃ©cisions stratÃ©giques (pricing, nouveaux marchÃ©s) en se basant sur une analyse financiÃ¨re approfondie (P\u0026L, CAC, LTV)."
+                                             },
+                                             {
+                                                 "v":  "Le senior dÃ©cide de pivoter d\u0027un modÃ¨le de licence unique vers un abonnement (SaaS) en modÃ©lisant l\u0027impact sur les revenus rÃ©currents (MRR) et la valorisation de l\u0027entreprise."
+                                             },
+                                             {
+                                                 "v":  "Business Model Canvas, Lean Canvas, Analyse de la chaÃ®ne de valeur."
+                                             },
+                                             {
+                                                 "v":  "Excel/Google Sheets, Anaplan"
+                                             },
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             {
+                                                 "v":  null
+                                             }
+                                         ]
+                               },
+                               {
+                                   "c":  [
+                                             {
+                                                 "v":  "1.2.1"
+                                             },
+                                             {
+                                                 "v":  "1. StratÃ©gie \u0026 Vision Produit"
+                                             },
+                                             {
+                                                 "v":  "1.2 Communication \u0026 Alignement de la StratÃ©gie"
+                                             },
+                                             {
+                                                 "v":  "1.2.1 Construction \u0026 Gestion de Roadmap"
+                                             },
+                                             {
+                                                 "v":  "Planification stratÃ©gique des Ã©tapes de dÃ©veloppement du produit visant Ã  maximiser l\u0027impact business et la valeur utilisateur dans le temps."
+                                             },
+                                             {
+                                                 "v":  "Contribue Ã  la roadmap de son Ã©quipe en fournissant des estimations pour son pÃ©rimÃ¨tre."
+                                             },
+                                             {
+                                                 "v":  "Construit et maintient une roadmap stratÃ©gique basÃ©e sur les \"outcomes\" (rÃ©sultats) et non les \"outputs\" (fonctionnalitÃ©s). La prÃ©sente et la dÃ©fend au niveau exÃ©cutif."
+                                             },
+                                             {
+                                                 "v":  "Le senior prÃ©sente au comitÃ© de direction une roadmap axÃ©e sur des objectifs comme \"Augmenter la rÃ©tention de 15%\" plutÃ´t qu\u0027une liste de fonctionnalitÃ©s, justifiant chaque initiative par son impact attendu."
+                                             },
+                                             {
+                                                 "v":  "Now-Next-Later Roadmap, Roadmap ThÃ©matique, OKRs (pour lier stratÃ©gie et exÃ©cution)."
+                                             },
+                                             {
+                                                 "v":  "Roadmunk, Aha!, Confluence, Coda, Notion, Miro"
+                                             },
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             {
+                                                 "v":  null
+                                             }
+                                         ]
+                               },
+                               {
+                                   "c":  [
+                                             {
+                                                 "v":  "1.2.2"
+                                             },
+                                             {
+                                                 "v":  "1. StratÃ©gie \u0026 Vision Produit"
+                                             },
+                                             {
+                                                 "v":  "1.2 Communication \u0026 Alignement de la StratÃ©gie"
+                                             },
+                                             {
+                                                 "v":  "1.2.2 Influence \u0026 NÃ©gociation"
+                                             },
+                                             {
+                                                 "v":  "Aptitude Ã  convaincre et Ã  obtenir un consensus sans lien hiÃ©rarchique, tout en gÃ©rant les conflits d\u0027intÃ©rÃªts entre les diffÃ©rentes parties prenantes."
+                                             },
+                                             {
+                                                 "v":  "Sait argumenter pour dÃ©fendre une prioritÃ© au sein de son Ã©quipe ou obtenir de l\u0027aide d\u0027une Ã©quipe adjacente."
+                                             },
+                                             {
+                                                 "v":  "Cartographie l\u0027ensemble des parties prenantes, nÃ©gocie et obtient leur adhÃ©sion, mÃªme sans autoritÃ© hiÃ©rarchique. Sait dire \"non\" de maniÃ¨re constructive en expliquant les arbitrages et en prÃ©servant la relation."
+                                             },
+                                             {
+                                                 "v":  "Un directeur commercial demande une fonctionnalitÃ© spÃ©cifique pour un client clÃ©. Le senior, au lieu d\u0027accepter ou de refuser, organise un atelier avec lui, lui prÃ©sente les coÃ»ts d\u0027opportunitÃ© et nÃ©gocie une solution alternative qui rÃ©pond Ã  80% du besoin sans dÃ©vier de la stratÃ©gie."
+                                             },
+                                             {
+                                                 "v":  "Matrice Pouvoir/IntÃ©rÃªt, NÃ©gociation RaisonnÃ©e (Getting to Yes), Matrice RACI"
+                                             },
+                                             {
+                                                 "v":  "Miro, FigJam"
+                                             },
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             {
+                                                 "v":  null
+                                             }
+                                         ]
+                               },
+                               {
+                                   "c":  [
+                                             {
+                                                 "v":  "1.2.3"
+                                             },
+                                             {
+                                                 "v":  "1. StratÃ©gie \u0026 Vision Produit"
+                                             },
+                                             {
+                                                 "v":  "1.2 Communication \u0026 Alignement de la StratÃ©gie"
+                                             },
+                                             {
+                                                 "v":  "1.2.3 Communication StratÃ©gique \u0026 Storytelling"
+                                             },
+                                             {
+                                                 "v":  "CapacitÃ© Ã  structurer et transmettre des messages complexes de maniÃ¨re persuasive et mÃ©morable pour aligner les parties prenantes sur une vision commune."
+                                             },
+                                             {
+                                                 "v":  "PrÃ©sente les features et l’avancement de son pÃ©rimÃ¨tre. Communique de maniÃ¨re claire et concise au sein de son Ã©quipe et avec ses interlocuteurs directs."
+                                             },
+                                             {
+                                                 "v":  "MaÃ®trise l\u0027art du storytelling pour crÃ©er crÃ©ant une adhÃ©sion Ã©motionnelle et rationnelle. Adapte son discours Ã  son audience pour inspirer, persuader et crÃ©er un alignement autour de la vision et de la stratÃ©gie."
+                                             },
+                                             {
+                                                 "v":  "Face au comitÃ© de direction, le senior ne liste pas les fonctionnalitÃ©s Ã  venir. Il raconte l\u0027histoire de l\u0027utilisateur, explique son problÃ¨me, et positionne la roadmap comme la solution narrative Ã  ce problÃ¨me."
+                                             },
+                                             {
+                                                 "v":  "Golden Circle (Why, How, What), MÃ©thode STAR"
+                                             },
+                                             {
+                                                 "v":  "Google Slides, PPT, Miro, FigJam, Loom"
+                                             },
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             {
+                                                 "v":  null
+                                             }
+                                         ]
+                               },
+                               {
+                                   "c":  [
+                                             {
+                                                 "v":  "1.3.1"
+                                             },
+                                             {
+                                                 "v":  "1. StratÃ©gie \u0026 Vision Produit"
+                                             },
+                                             {
+                                                 "v":  "1.3 ViabilitÃ© \u0026 ConformitÃ© rÃ©glementaire"
+                                             },
+                                             {
+                                                 "v":  "1.3.1 Culture lÃ©gale \u0026 ConformitÃ©"
+                                             },
+                                             {
+                                                 "v":  "IntÃ©gration systÃ©matique des contraintes juridiques et rÃ©glementaires (RGPD, accessibilitÃ©) comme levier de confiance et d\u0027Ã©thique produit."
+                                             },
+                                             {
+                                                 "v":  "ConnaÃ®t les principes de base du RGPD et autres rÃ©gulations clÃ©s. Collabore avec le DPO/Juriste pour assurer la conformitÃ© de ses features."
+                                             },
+                                             {
+                                                 "v":  "Anticipe l\u0027impact des futures rÃ©gulations sur la roadmap.Transforme la conformitÃ© (ex: la confidentialitÃ©) en un avantage concurrentiel et un argument produit (\"Privacy by Design\")"
+                                             },
+                                             {
+                                                 "v":  "Une nouvelle fonctionnalitÃ© nÃ©cessite de suivre l\u0027activitÃ© utilisateur. Le junior applique la conformitÃ© RGPD Ã  la fin en ajoutant une case Ã  cocher qui dÃ©grade l\u0027expÃ©rience. Le senior intÃ¨gre la contrainte lÃ©gale comme un principe de design dÃ¨s le dÃ©but (\"Privacy by Design\") pour crÃ©er une solution qui est Ã  la fois conforme et meilleure pour l\u0027utilisateur."
+                                             },
+                                             {
+                                                 "v":  "Privacy by Design, Analyse d\u0027Impact relative Ã  la Protection des DonnÃ©es (AIPD)"
+                                             },
+                                             {
+                                                 "v":  "Documentation de la CNIL, IAPP, OneTrust, TrustArc"
+                                             },
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             {
+                                                 "v":  null
+                                             }
+                                         ]
+                               },
+                               {
+                                   "c":  [
+                                             {
+                                                 "v":  "2.1.1"
+                                             },
+                                             {
+                                                 "v":  "2. DÃ©couverte \u0026 Validation d\u0027OpportunitÃ©s (Discovery)"
+                                             },
+                                             {
+                                                 "v":  "2.1 Recherche \u0026 GÃ©nÃ©ration d\u0027Insights"
+                                             },
+                                             {
+                                                 "v":  "2.1.1 Recherche Utilisateur Qualitative"
+                                             },
+                                             {
+                                                 "v":  "Utilisation de mÃ©thodes d\u0027observation et d\u0027interaction directe pour comprendre en profondeur les motivations, les besoins et les frustrations des utilisateurs."
+                                             },
+                                             {
+                                                 "v":  "MÃ¨ne des entretiens utilisateurs et des tests d\u0027utilisabilitÃ© en utilisant des scripts prÃ©parÃ©s. Sait synthÃ©tiser les retours bruts."
+                                             },
+                                             {
+                                                 "v":  "DÃ©finit la stratÃ©gie de recherche (quelles mÃ©thodes, quels segments). MÃ¨ne des entretiens complexes (ex: ethnographiques) pour dÃ©couvrir des besoins latents et non exprimÃ©s."
+                                             },
+                                             {
+                                                 "v":  "Le senior, en observant un utilisateur sur son lieu de travail (recherche ethnographique), dÃ©couvre un \"hack\" que celui-ci a mis en place, rÃ©vÃ©lant un besoin profond que des entretiens classiques n\u0027avaient pas fait Ã©merger."
+                                             },
+                                             {
+                                                 "v":  "Personas, Jobs-to-be-Done (JTBD), User Story Mapping, Customer Journey, Interviews."
+                                             },
+                                             {
+                                                 "v":  "Hotjar (Content Square) / Screeb, Figma / FigJam, "
+                                             },
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             {
+                                                 "v":  null
+                                             }
+                                         ]
+                               },
+                               {
+                                   "c":  [
+                                             {
+                                                 "v":  "2.1.2"
+                                             },
+                                             {
+                                                 "v":  "2. DÃ©couverte \u0026 Validation d\u0027OpportunitÃ©s (Discovery)"
+                                             },
+                                             {
+                                                 "v":  "2.1 Recherche \u0026 GÃ©nÃ©ration d\u0027Insights"
+                                             },
+                                             {
+                                                 "v":  "2.1.2 Analyse de DonnÃ©es Quantitatives"
+                                             },
+                                             {
+                                                 "v":  "Exploitation statistique des donnÃ©es d\u0027usage pour identifier des tendances de comportement Ã  grande Ã©chelle et valider des hypothÃ¨ses."
+                                             },
+                                             {
+                                                 "v":  "Sait utiliser les outils d\u0027analyse pour crÃ©er des dashboards et suivre l\u0027adoption de ses fonctionnalitÃ©s."
+                                             },
+                                             {
+                                                 "v":  "DÃ©finit le plan de tracking du produit. MaÃ®trise l\u0027analyse de cohortes, les funnels de conversion et sait croiser donnÃ©es quanti/quali pour formuler des hypothÃ¨ses stratÃ©giques."
+                                             },
+                                             {
+                                                 "v":  "Le senior remarque une chute dans le funnel de conversion Ã  une Ã©tape prÃ©cise. Il demande au junior de mener des entretiens ciblÃ©s sur les utilisateurs qui abandonnent Ã  cette Ã©tape pour comprendre le \"pourquoi\" derriÃ¨re les chiffres"
+                                             },
+                                             {
+                                                 "v":  "MÃ©triques Pirate (AARRR), HEART Framework, Analyse de cohortes, Data comportemantales "
+                                             },
+                                             {
+                                                 "v":  "Amplitude, Content Square, GA4, Mixpanel"
+                                             },
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             {
+                                                 "v":  null
+                                             }
+                                         ]
+                               },
+                               {
+                                   "c":  [
+                                             {
+                                                 "v":  "2.2.1"
+                                             },
+                                             {
+                                                 "v":  "2. DÃ©couverte \u0026 Validation d\u0027OpportunitÃ©s (Discovery)"
+                                             },
+                                             {
+                                                 "v":  "2.2 SynthÃ¨se \u0026 ExpÃ©rimentation"
+                                             },
+                                             {
+                                                 "v":  "2.2.1 DÃ©finition du ProblÃ¨me \u0026 IdÃ©ation"
+                                             },
+                                             {
+                                                 "v":  "CapacitÃ© Ã  isoler la cause racine d\u0027un problÃ¨me utilisateur et Ã  gÃ©nÃ©rer un large Ã©ventail de solutions potentielles avant de converger."
+                                             },
+                                             {
+                                                 "v":  "Participe Ã  des ateliers de brainstorming. Sait formuler un problÃ¨me utilisateur clairement Ã  partir de retours directs. "
+                                             },
+                                             {
+                                                 "v":  "Facilite des ateliers de crÃ©ativitÃ©. MaÃ®trise l\u0027art de reformuler un problÃ¨me pour ouvrir le champ des possibles et agrÃ¨ge des insights de sources multiples pour dÃ©finir le \"vrai\" problÃ¨me Ã  rÃ©soudre."
+                                             },
+                                             {
+                                                 "v":  "Face Ã  une demande client pour \"un bouton d\u0027export Excel\", le senior utilise les \"5 Pourquoi\" pour comprendre le besoin rÃ©el derriÃ¨re la demande, qui est de \"partager la performance de l\u0027Ã©quipe avec mon manager\", ouvrant la voie Ã  des solutions bien plus pertinentes."
+                                             },
+                                             {
+                                                 "v":  "Opportunity Solution Tree, \"How Might We\", 5 Pourquoi, Design Thinking"
+                                             },
+                                             {
+                                                 "v":  "Google form / Typeform, Productboard, Miro / FigJam"
+                                             },
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             {
+                                                 "v":  null
+                                             }
+                                         ]
+                               },
+                               {
+                                   "c":  [
+                                             {
+                                                 "v":  "2.2.2"
+                                             },
+                                             {
+                                                 "v":  "2. DÃ©couverte \u0026 Validation d\u0027OpportunitÃ©s (Discovery)"
+                                             },
+                                             {
+                                                 "v":  "2.2 SynthÃ¨se \u0026 ExpÃ©rimentation"
+                                             },
+                                             {
+                                                 "v":  "2.2.2 Conception \u0026 Exploration "
+                                             },
+                                             {
+                                                 "v":  "Traduction des idÃ©es en concepts tangibles (parcours, wireframes) pour explorer visuellement la solution et prÃ©parer les tests."
+                                             },
+                                             {
+                                                 "v":  "ConÃ§oit les supports de test sur la base d\u0027un brief fourni Ã  partir de wireframes simples et de scÃ©narios prÃ©dÃ©finis."
+                                             },
+                                             {
+                                                 "v":  "DÃ©finit la stratÃ©gie d\u0027exploration en travaillants ur la conception de supports interactifs permettant une simulation haute fidÃ©litÃ© des parcours."
+                                             },
+                                             {
+                                                 "v":  "Le senior est en capacitÃ© d\u0027apprÃ©hender les ressources design (outils et Ã©quipe) Ã  sa disposition pour obtenir des supports s\u0027exploration Ã  la hauteur de l\u0027hypothÃ¨se explorÃ©e."
+                                             },
+                                             {
+                                                 "v":  "Wireframing, Prototyping, Test Utilisateurs (guerilla ou non)"
+                                             },
+                                             {
+                                                 "v":  "Figma, FigJam, AI tools"
+                                             },
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             {
+                                                 "v":  null
+                                             }
+                                         ]
+                               },
+                               {
+                                   "c":  [
+                                             {
+                                                 "v":  "2.2.3"
+                                             },
+                                             {
+                                                 "v":  "2. DÃ©couverte \u0026 Validation d\u0027OpportunitÃ©s (Discovery)"
+                                             },
+                                             {
+                                                 "v":  "2.2 SynthÃ¨se \u0026 ExpÃ©rimentation"
+                                             },
+                                             {
+                                                 "v":  "2.2.3 ExpÃ©rimentation \u0026 Validation"
+                                             },
+                                             {
+                                                 "v":  "Mise en Å“uvre de tests rapides et peu coÃ»teux (MVP, tests A/B) pour valider la valeur et la dÃ©sirabilitÃ© avant le dÃ©veloppement complet."
+                                             },
+                                             {
+                                                 "v":  "Met en place et mesure des A/B tests simples pour optimiser un Ã©lÃ©ment (ex: un bouton, un titre)."
+                                             },
+                                             {
+                                                 "v":  "ConÃ§oit une stratÃ©gie d\u0027expÃ©rimentation pour dÃ©-risquer les 4 grands risques (valeur, utilisabilitÃ©, faisabilitÃ©, viabilitÃ©). Sait quand utiliser un prototype, un MVP \"Concierge\" ou un test de \"fausse porte\"."
+                                             },
+                                             {
+                                                 "v":  "Pour valider l\u0027appÃ©tence pour une fonctionnalitÃ© complexe d\u0027IA, le senior met en place une \"fausse porte\" : un bouton dans l\u0027interface. Si les utilisateurs cliquent, un message indique que la fonctionnalitÃ© arrive bientÃ´t, validant l\u0027intÃ©rÃªt avant d\u0027Ã©crire une seule ligne de code."
+                                             },
+                                             {
+                                                 "v":  " Lean Startup (Build-Measure-Learn), A/B Testing, Test de Fausse Porte (Fake Door)"
+                                             },
+                                             {
+                                                 "v":  "Maze, Usertesting, Hotjar, Optimizely"
+                                             },
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             {
+                                                 "v":  null
+                                             }
+                                         ]
+                               },
+                               {
+                                   "c":  [
+                                             {
+                                                 "v":  "3.1.1"
+                                             },
+                                             {
+                                                 "v":  "3. Conception \u0026 Livraison (Delivery)"
+                                             },
+                                             {
+                                                 "v":  "3.1 Planification \u0026 Priorisation"
+                                             },
+                                             {
+                                                 "v":  "3.1.1 Gestion de Backlog \u0026 SpÃ©cifications"
+                                             },
+                                             {
+                                                 "v":  "Organisation et documentation dÃ©taillÃ©e des besoins (User Stories) pour assurer une comprÃ©hension parfaite par l\u0027Ã©quipe (dev + design)."
+                                             },
+                                             {
+                                                 "v":  "RÃ©dige des User Stories claires, concises et avec des critÃ¨res d\u0027acceptation prÃ©cis. Maintient le backlog de son Ã©quipe propre et ordonnÃ©."
+                                             },
+                                             {
+                                                 "v":  "GÃ¨re un backlog comme un outil de communication stratÃ©gique. Excelle dans l\u0027art de dÃ©couper des Ã©popÃ©es complexes en tranches de valeur livrables et indÃ©pendantes."
+                                             },
+                                             {
+                                                 "v":  "Le senior dÃ©coupe un projet de 3 mois en Ã©tapes hebdomadaires permettant de livrer de la valeur et de collecter du feedback utilisateur dÃ¨s la deuxiÃ¨me semaine."
+                                             },
+                                             {
+                                                 "v":  "User Story, INVEST, Gherkin (pour les critÃ¨res d\u0027acceptation)."
+                                             },
+                                             {
+                                                 "v":  "Jira, GitHub Project, Confluence"
+                                             },
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             {
+                                                 "v":  null
+                                             }
+                                         ]
+                               },
+                               {
+                                   "c":  [
+                                             {
+                                                 "v":  "3.1.2"
+                                             },
+                                             {
+                                                 "v":  "3. Conception \u0026 Livraison (Delivery)"
+                                             },
+                                             {
+                                                 "v":  "3.1 Planification \u0026 Priorisation"
+                                             },
+                                             {
+                                                 "v":  "3.1.2 Priorisation "
+                                             },
+                                             {
+                                                 "v":  "Arbitrage rationnel entre les diffÃ©rentes opportunitÃ©s pour maximiser la valeur dÃ©livrÃ©e en tenant compte des contraintes de ressources et de temps."
+                                             },
+                                             {
+                                                 "v":  "Priorise le travail de son Ã©quipe au niveau du sprint, souvent en collaboration avec un PM plus senior."
+                                             },
+                                             {
+                                                 "v":  "MaÃ®trise plusieurs frameworks de priorisation et sait choisir le bon en fonction du contexte (maturitÃ© du produit, objectifs business). Communique et dÃ©fend ses choix de maniÃ¨re transparente et rationnelle. Focus impact et valeur."
+                                             },
+                                             {
+                                                 "v":  "Le senior, prÃ©parant le trimestre, utilise le framework RICE pour comparer une initiative \"stratÃ©gique\" (gros Reach, gros Impact) mais complexe (gros Effort) Ã  une sÃ©rie de petites amÃ©liorations rapides mais trÃ¨s demandÃ©es, et arbitre en connaissance de cause."
+                                             },
+                                             {
+                                                 "v":  "RICE, ICE, MoSCoW, ModÃ¨le de Kano"
+                                             },
+                                             {
+                                                 "v":  "Jira, GitHub Project"
+                                             },
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             {
+                                                 "v":  null
+                                             }
+                                         ]
+                               },
+                               {
+                                   "c":  [
+                                             {
+                                                 "v":  "3.2.1"
+                                             },
+                                             {
+                                                 "v":  "3. Conception \u0026 Livraison (Delivery)"
+                                             },
+                                             {
+                                                 "v":  "3.2 ExÃ©cution \u0026 Lancement"
+                                             },
+                                             {
+                                                 "v":  "3.2.1 Animation d\u0027Ã©quipe \u0026 Rituels Agiles"
+                                             },
+                                             {
+                                                 "v":  "Facilitation de la collaboration quotidienne avec l\u0027Ã©quipe de dÃ©veloppement en s\u0027appuyant sur les mÃ©thodes agiles pour maintenir la vÃ©locitÃ©."
+                                             },
+                                             {
+                                                 "v":  "Participe activement et efficacement aux rituels de son Ã©quipe (daily, planning, retro). Fait le lien quotidien entre les besoins business et l\u0027Ã©quipe de dÃ©veloppement."
+                                             },
+                                             {
+                                                 "v":  "Facilite les rituels et les rend plus efficaces. Agit comme un \"bouclier\" pour l\u0027Ã©quipe en la protÃ©geant des interruptions, et comme un \"moteur\" en maintenant la motivation et la concentration sur l\u0027objectif."
+                                             },
+                                             {
+                                                 "v":  "Le senior, voyant que les \"dailies\" s\u0027Ã©ternisent, recadre l\u0027exercice pour qu\u0027il soit focalisÃ© sur les blocages et la synchronisation, et non un rapport d\u0027activitÃ©. Il crÃ©e des instances dÃ©diÃ©es pour les discussions plus longues."
+                                             },
+                                             {
+                                                 "v":  "Scrum, Kanban, SAFE"
+                                             },
+                                             {
+                                                 "v":  "Jira, GitHub Project, Confluence"
+                                             },
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             {
+                                                 "v":  null
+                                             }
+                                         ]
+                               },
+                               {
+                                   "c":  [
+                                             {
+                                                 "v":  "3.2.2"
+                                             },
+                                             {
+                                                 "v":  "3. Conception \u0026 Livraison (Delivery)"
+                                             },
+                                             {
+                                                 "v":  "3.2 ExÃ©cution \u0026 Lancement"
+                                             },
+                                             {
+                                                 "v":  "3.2.2 StratÃ©gie de QualitÃ© \u0026 Tests (QA)"
+                                             },
+                                             {
+                                                 "v":  "Garantie de la fiabilitÃ© du produit via des protocoles de tests rigoureux et une dÃ©finition claire des standards de qualitÃ© avant mise en production."
+                                             },
+                                             {
+                                                 "v":  "Participe activement aux phases de test. Effectue les tests d\u0027acceptation utilisateur (UAT) sur ses fonctionnalitÃ©s. Valide que ce qui a Ã©tÃ© dÃ©veloppÃ© correspond aux critÃ¨res d\u0027acceptation et signale les bugs de maniÃ¨re claire et reproductible."
+                                             },
+                                             {
+                                                 "v":  "DÃ©finit la stratÃ©gie de qualitÃ© globale en collaboration avec les Ã©quipes QA et de dÃ©veloppement. Va au-delÃ  de la simple validation fonctionnelle en se concentrant sur la qualitÃ© perÃ§ue par l\u0027utilisateur (performance, robustesse, cohÃ©rence). Arbitre sur la criticitÃ© des bugs."
+                                             },
+                                             {
+                                                 "v":  "Un bug est dÃ©couvert juste avant une mise en production. Le junior le documente. Le senior analyse son impact rÃ©el sur l\u0027expÃ©rience utilisateur, sa frÃ©quence d\u0027apparition et la complexitÃ© du correctif pour prendre la dÃ©cision : \"On retarde le lancement\" ou \"On lance et on corrigera dans un hotfix\"."
+                                             },
+                                             {
+                                                 "v":  "Pyramide des Tests, Tests d\u0027Acceptation Utilisateur (UAT), Tests Exploratoires, Bug Triage"
+                                             },
+                                             {
+                                                 "v":  "gestion des tests : TestRail, XRay. automatisation : Selenium, Cypress, Playwright. tests de performance : JMeter, k6. tests d\u0027API : Postman"
+                                             },
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             {
+                                                 "v":  null
+                                             }
+                                         ]
+                               },
+                               {
+                                   "c":  [
+                                             {
+                                                 "v":  "3.2.3"
+                                             },
+                                             {
+                                                 "v":  "3. Conception \u0026 Livraison (Delivery)"
+                                             },
+                                             {
+                                                 "v":  "3.2 ExÃ©cution \u0026 Lancement"
+                                             },
+                                             {
+                                                 "v":  "3.2.3 StratÃ©gie de Lancement (Go-to-Market)"
+                                             },
+                                             {
+                                                 "v":  "Orchestration de la mise sur le marchÃ© d\u0027une fonctionnalitÃ© pour assurer une adoption maximale et une communication fluide vers les clients."
+                                             },
+                                             {
+                                                 "v":  "Coordonne les lancements de fonctionnalitÃ©s avec les Ã©quipes marketing et support (rÃ©daction de notes de version, formation du support)."
+                                             },
+                                             {
+                                                 "v":  "DÃ©finit la stratÃ©gie de lancement complÃ¨te : segmentation de l\u0027audience, communication, plan de dÃ©ploiement progressif (feature flagging), dÃ©finition des mÃ©triques de succÃ¨s et mesure de l\u0027impact post-lancement."
+                                             },
+                                             {
+                                                 "v":  "Pour un changement d\u0027interface majeur, le senior met en place un plan de dÃ©ploiement sur 1 mois : 1% des utilisateurs la premiÃ¨re semaine, puis 10%, puis 50%, etc., tout en monitorant de prÃ¨s les KPIs d\u0027engagement et les retours support pour pouvoir rÃ©agir rapidement en cas de problÃ¨me."
+                                             },
+                                             {
+                                                 "v":  "Feature Flags, Beta Programs, A/B Test de dÃ©ploiement."
+                                             },
+                                             {
+                                                 "v":  "AB Tasty, Kameleoon, Optimizely"
+                                             },
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             {
+                                                 "v":  null
+                                             }
+                                         ]
+                               },
+                               {
+                                   "c":  [
+                                             {
+                                                 "v":  "4.1.1"
+                                             },
+                                             {
+                                                 "v":  "4. Culture \u0026 MaÃ®trise de la DonnÃ©e"
+                                             },
+                                             {
+                                                 "v":  "4.1 DÃ©finition de la StratÃ©gie de Mesure"
+                                             },
+                                             {
+                                                 "v":  "4.1.1 DÃ©finition des KPIs \u0026 North Star Metric"
+                                             },
+                                             {
+                                                 "v":  "SÃ©lection et hiÃ©rarchisation des indicateurs clÃ©s de performance permettant de piloter la santÃ© et la croissance du produit."
+                                             },
+                                             {
+                                                 "v":  "Comprend et suit les KPIs dÃ©finis pour son produit. Sait expliquer comment ses fonctionnalitÃ©s impactent ces indicateurs."
+                                             },
+                                             {
+                                                 "v":  "DÃ©finit la \"North Star Metric\" (NSM) du produit, qui encapsule la valeur apportÃ©e Ã  l\u0027utilisateur. DÃ©cline cette NSM en un arbre de mÃ©triques actionnables (inputs) pour guider les efforts des Ã©quipes."
+                                             },
+                                             {
+                                                 "v":  "L\u0027entreprise veut \"augmenter les revenus\". Le senior dÃ©finit la NSM comme \"le nombre d\u0027Ã©quipes collaborant chaque semaine\". Il dÃ©montre que l\u0027amÃ©lioration de cette mÃ©trique est le principal levier de rÃ©tention, et donc de revenus Ã  long terme."
+                                             },
+                                             {
+                                                 "v":  "North Star Metric Framework, Opportunity Tree, OKRs"
+                                             },
+                                             {
+                                                 "v":  "Google Slides, PPT, Miro, FigJam, Spreadsheet"
+                                             },
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             {
+                                                 "v":  null
+                                             }
+                                         ]
+                               },
+                               {
+                                   "c":  [
+                                             {
+                                                 "v":  "4.1.2"
+                                             },
+                                             {
+                                                 "v":  "4. Culture \u0026 MaÃ®trise de la DonnÃ©e"
+                                             },
+                                             {
+                                                 "v":  "4.1 DÃ©finition de la StratÃ©gie de Mesure"
+                                             },
+                                             {
+                                                 "v":  "4.1.2 Conception du Plan de Tracking"
+                                             },
+                                             {
+                                                 "v":  "DÃ©finition technique des Ã©vÃ©nements et des propriÃ©tÃ©s Ã  collecter pour assurer une mesure prÃ©cise et exploitable des comportements utilisateurs."
+                                             },
+                                             {
+                                                 "v":  "RÃ©dige des spÃ©cifications de tracking pour les nouvelles fonctionnalitÃ©s en se basant sur les templates et les conventions existantes."
+                                             },
+                                             {
+                                                 "v":  "ConÃ§oit le plan de tracking complet du produit. DÃ©finit une taxonomie d\u0027Ã©vÃ©nements claire et pÃ©renne. S\u0027assure que les donnÃ©es nÃ©cessaires pour rÃ©pondre aux futures questions stratÃ©giques seront bien collectÃ©es."
+                                             },
+                                             {
+                                                 "v":  "Avant une refonte majeure, le senior ne se contente pas de tracker les clics. Il conÃ§oit un plan de tracking qui permettra de mesurer l\u0027adoption par segment d\u0027utilisateurs, l\u0027impact sur la rÃ©tention Ã  30 jours, et la corrÃ©lation avec l\u0027upsell."
+                                             },
+                                             {
+                                                 "v":  "Taxonomie d\u0027Ã©vÃ©nements, Data Dictionary"
+                                             },
+                                             {
+                                                 "v":  "GTM, Segment"
+                                             },
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             {
+                                                 "v":  null
+                                             }
+                                         ]
+                               },
+                               {
+                                   "c":  [
+                                             {
+                                                 "v":  "4.2.1"
+                                             },
+                                             {
+                                                 "v":  "4. Culture \u0026 MaÃ®trise de la DonnÃ©e"
+                                             },
+                                             {
+                                                 "v":  "4.2 Analyse \u0026 InterprÃ©tation"
+                                             },
+                                             {
+                                                 "v":  "4.2.1 MaÃ®trise des Outils d\u0027Analyse"
+                                             },
+                                             {
+                                                 "v":  "Utilisation experte des plateformes de data et des langages de requÃªte (SQL) pour extraire l\u0027information brute nÃ©cessaire Ã  l\u0027analyse."
+                                             },
+                                             {
+                                                 "v":  "MaÃ®trise les outils d\u0027analyse produit (ex: Mixpanel, Amplitude) pour construire des dashboards, crÃ©er des funnels de conversion et analyser des cohortes simples."
+                                             },
+                                             {
+                                                 "v":  "Va au-delÃ  des outils standards. Sait Ã©crire des requÃªtes SQL de base pour explorer la donnÃ©e brute, et collabore avec les Data Analysts pour mener des analyses statistiques complexes (ex: tests de significativitÃ©)."
+                                             },
+                                             {
+                                                 "v":  "Le junior constate une baisse de 5% dans un funnel. Le senior Ã©crit une requÃªte SQL pour isoler les utilisateurs concernÃ©s, se rend compte qu\u0027ils sont tous sur une ancienne version de l\u0027app et un type d\u0027appareil spÃ©cifique, identifiant ainsi la cause racine."
+                                             },
+                                             {
+                                                 "v":  "SQL, Plateformes d\u0027analyse Produit, Outils de BI"
+                                             },
+                                             {
+                                                 "v":  "Mixpanel, Amplitude, Tableau, Looker, Big Query"
+                                             },
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             {
+                                                 "v":  null
+                                             }
+                                         ]
+                               },
+                               {
+                                   "c":  [
+                                             {
+                                                 "v":  "4.2.2"
+                                             },
+                                             {
+                                                 "v":  "4. Culture \u0026 MaÃ®trise de la DonnÃ©e"
+                                             },
+                                             {
+                                                 "v":  "4.2 Analyse \u0026 InterprÃ©tation"
+                                             },
+                                             {
+                                                 "v":  "4.2.2 Transformation de la DonnÃ©e en Insight"
+                                             },
+                                             {
+                                                 "v":  "CapacitÃ© Ã  interprÃ©ter les donnÃ©es pour en extraire des recommandations concrÃ¨tes et orienter les dÃ©cisions produit."
+                                             },
+                                             {
+                                                 "v":  "Est capable de rÃ©pondre Ã  des questions factuelles avec la donnÃ©e (ex: \"Quel est le taux de conversion de cette page ?\")."
+                                             },
+                                             {
+                                                 "v":  "Ne se contente pas de prÃ©senter des chiffres. Il raconte une histoire avec la donnÃ©e, identifie des tendances de fond, et transforme une analyse en une recommandation stratÃ©gique actionnable."
+                                             },
+                                             {
+                                                 "v":  "Le junior prÃ©sente un slide montrant que \"70% des utilisateurs n\u0027utilisent pas la fonctionnalitÃ© X\". Le senior, en analysant les cohortes, montre que \"les utilisateurs qui utilisent la fonctionnalitÃ© X ont une rÃ©tention 3x supÃ©rieure, ce qui reprÃ©sente une opportunitÃ© majeure si nous amÃ©liorons son adoption\". "
+                                             },
+                                             {
+                                                 "v":  "Storytelling par la donnÃ©e, Analyse de cohortes, Analyse de funnels."
+                                             },
+                                             {
+                                                 "v":  "Google sheet, Excel, Slides, Notion"
+                                             },
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             {
+                                                 "v":  null
+                                             }
+                                         ]
+                               },
+                               {
+                                   "c":  [
+                                             {
+                                                 "v":  "4.3.1"
+                                             },
+                                             {
+                                                 "v":  "4. Culture \u0026 MaÃ®trise de la DonnÃ©e"
+                                             },
+                                             {
+                                                 "v":  "4.3 Communication \u0026 Culture de la DonnÃ©e"
+                                             },
+                                             {
+                                                 "v":  "4.3.1 Visualisation \u0026 Communication"
+                                             },
+                                             {
+                                                 "v":  "CrÃ©ation de supports visuels clairs et de tableaux de bord intuitifs pour rendre les performances du produit accessibles Ã  tous."
+                                             },
+                                             {
+                                                 "v":  "Sait crÃ©er des graphiques clairs et lisibles pour prÃ©senter des rÃ©sultats. "
+                                             },
+                                             {
+                                                 "v":  "MaÃ®trise l\u0027art de la visualisation de donnÃ©es. Choisit le bon type de graphique pour le bon message et conÃ§oit des dashboards qui communiquent l\u0027Ã©tat de santÃ© du produit en un coup d\u0027Å“il."
+                                             },
+                                             {
+                                                 "v":  "Pour le reporting mensuel, le junior envoie une sÃ©rie de graphiques par email. Le senior conÃ§oit un dashboard interactif qui permet au management de non seulement voir les KPIs, mais aussi de filtrer par segment ou par pÃ©riode pour explorer les donnÃ©es par eux-mÃªmes. "
+                                             },
+                                             {
+                                                 "v":  "Outils de Business Intelligence (Tableau, Looker), Data Viz "
+                                             },
+                                             {
+                                                 "v":  "Tableau, PowerBI, Looker"
+                                             },
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             {
+                                                 "v":  null
+                                             }
+                                         ]
+                               },
+                               {
+                                   "c":  [
+                                             {
+                                                 "v":  "4.3.2"
+                                             },
+                                             {
+                                                 "v":  "4. Culture \u0026 MaÃ®trise de la DonnÃ©e"
+                                             },
+                                             {
+                                                 "v":  "4.3 Communication \u0026 Culture de la DonnÃ©e"
+                                             },
+                                             {
+                                                 "v":  "4.3.2 Instaurer une Culture Data-Informed"
+                                             },
+                                             {
+                                                 "v":  "Promotion de l\u0027usage systÃ©matique de la donnÃ©e comme preuve dans les prises de dÃ©cision Ã  tous les niveaux de l\u0027organisation."
+                                             },
+                                             {
+                                                 "v":  "Utilise la donnÃ©e dans ses spÃ©cifications et ses rÃ©trospectives pour justifier ses choix."
+                                             },
+                                             {
+                                                 "v":  "Ã‰vangÃ©lise l\u0027utilisation de la donnÃ©e Ã  tous les niveaux. Met en place des rituels et des outils pour que chacun (designers, dÃ©veloppeurs, marketeurs) ait accÃ¨s Ã  la donnÃ©e et soit encouragÃ© Ã  l\u0027utiliser pour prendre de meilleures dÃ©cisions."
+                                             },
+                                             {
+                                                 "v":  "Le senior instaure une \"Revue de MÃ©triques\" hebdomadaire oÃ¹ l\u0027Ã©quipe analyse ensemble les performances de la semaine passÃ©e. Il donne des formations aux non-spÃ©cialistes pour qu\u0027ils puissent construire leurs propres rapports et Ãªtre plus autonomes."
+                                             },
+                                             {
+                                                 "v":  "Rituels de revue de mÃ©triques, DÃ©mocratisation de l\u0027accÃ¨s Ã  la donnÃ©e "
+                                             },
+                                             {
+                                                 "v":  "Make / n8n (automatisation infos data ?)"
+                                             },
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             {
+                                                 "v":  null
+                                             }
+                                         ]
+                               },
+                               {
+                                   "c":  [
+                                             {
+                                                 "v":  "4.4.1"
+                                             },
+                                             {
+                                                 "v":  "4. Culture \u0026 MaÃ®trise de la DonnÃ©e"
+                                             },
+                                             {
+                                                 "v":  "4.4 FiabilitÃ© \u0026 Gouvernance de la DonnÃ©e"
+                                             },
+                                             {
+                                                 "v":  "4.4.1 QualitÃ© \u0026 IntÃ©gritÃ©"
+                                             },
+                                             {
+                                                 "v":  "CapacitÃ© Ã  auditer et garantir la fiabilitÃ© de la donnÃ©e collectÃ©e en identifiant les anomalies, les doublons ou les biais de collecte."
+                                             },
+                                             {
+                                                 "v":  "Sait identifier une anomalie Ã©vidente dans un dashboard (ex: chute brutale de trafic) et remonter l\u0027alerte aux Ã©quipes techniques."
+                                             },
+                                             {
+                                                 "v":  "Met en place des tests de santÃ© de la donnÃ©e (Data Health Checks) et collabore avec les Data Engineers pour assurer la robustesse des pipelines."
+                                             },
+                                             {
+                                                 "v":  "Lors de l\u0027analyse d\u0027un test A/B, le PM dÃ©tecte une incohÃ©rence dans les logs d\u0027Ã©vÃ©nements et suspend le test pour corriger le tracking avant de prendre une dÃ©cision erronÃ©e."
+                                             },
+                                             {
+                                                 "v":  "Data Mapping, Data Lineage"
+                                             },
+                                             {
+                                                 "v":  "nformatica, Talend, Collibra, DataGalaxy"
+                                             },
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             {
+                                                 "v":  null
+                                             }
+                                         ]
+                               },
+                               {
+                                   "c":  [
+                                             {
+                                                 "v":  "4.4.2"
+                                             },
+                                             {
+                                                 "v":  "4. Culture \u0026 MaÃ®trise de la DonnÃ©e"
+                                             },
+                                             {
+                                                 "v":  "4.4 FiabilitÃ© \u0026 Gouvernance de la DonnÃ©e"
+                                             },
+                                             {
+                                                 "v":  "4.4.2 Gouvernance"
+                                             },
+                                             {
+                                                 "v":  "Organisation et sÃ©curisation du cycle de vie de la donnÃ©e (collecte, stockage, accÃ¨s, suppression) pour garantir sa disponibilitÃ©, sa documentation et sa conformitÃ© lÃ©gale (RGPD)."
+                                             },
+                                             {
+                                                 "v":  "Sait utiliser le dictionnaire de donnÃ©es interne, comprend qui possÃ¨de quelle donnÃ©e (Ownership) et applique rigoureusement les rÃ¨gles de confidentialitÃ© de base."
+                                             },
+                                             {
+                                                 "v":  "DÃ©finit les standards de documentation (Data Dictionary), pilote la stratÃ©gie de classification des donnÃ©es et assure le \"Privacy by Design\" sur des pÃ©rimÃ¨tres complexes ou multi-pays."
+                                             },
+                                             {
+                                                 "v":  "Lors du lancement d\u0027une fonctionnalitÃ© de parrainage, le PM dÃ©finit prÃ©cisÃ©ment quelles donnÃ©es sont collectÃ©es, leur durÃ©e de rÃ©tention et coordonne avec le DPO pour s\u0027assurer que le registre des traitements est Ã  jour."
+                                             },
+                                             {
+                                                 "v":  "Data Mapping, Data Lineage, Privacy by Design, ROPA (Registre des activitÃ©s de traitement)"
+                                             },
+                                             {
+                                                 "v":  "Collibra, Atlan, DataHub, CastorDoc"
+                                             },
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             {
+                                                 "v":  null
+                                             }
+                                         ]
+                               },
+                               {
+                                   "c":  [
+                                             {
+                                                 "v":  "5.1.1"
+                                             },
+                                             {
+                                                 "v":  "5. Socle Technique \u0026 Design"
+                                             },
+                                             {
+                                                 "v":  "5.1 MaÃ®trise des Principes de Product Design"
+                                             },
+                                             {
+                                                 "v":  "5.1.1 Principes d\u0027Ergonomie \u0026 Design d\u0027Interaction"
+                                             },
+                                             {
+                                                 "v":  "Connaissance des lois de l\u0027UX et de la psychologie cognitive pour concevoir des interfaces intuitives et sans friction."
+                                             },
+                                             {
+                                                 "v":  "Comprend et sait appliquer les heuristiques d\u0027ergonomie (ex: Nielsen) et les lois de l\u0027UX pour donner un feedback constructif sur des maquettes."
+                                             },
+                                             {
+                                                 "v":  "MaÃ®trise les patterns de design complexes (ex: gestion de donnÃ©es denses, visualisation). Sait challenger les propositions du designer pour pousser la simplicitÃ© et l\u0027efficacitÃ© de l\u0027expÃ©rience au maximum."
+                                             },
+                                             {
+                                                 "v":  "Face Ã  un formulaire complexe, le junior suggÃ¨re de mieux regrouper les champs. Le senior propose de le scinder en plusieurs Ã©tapes, en utilisant le principe de \"divulgation progressive\" pour ne pas submerger l\u0027utilisateur. "
+                                             },
+                                             {
+                                                 "v":  "Heuristiques de Nielsen, Lois UX (Gestalt Principles), Bastien \u0026 Scapin (grille audit)."
+                                             },
+                                             {
+                                                 "v":  "Figma, FigJam"
+                                             },
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             {
+                                                 "v":  null
+                                             }
+                                         ]
+                               },
+                               {
+                                   "c":  [
+                                             {
+                                                 "v":  "5.1.2"
+                                             },
+                                             {
+                                                 "v":  "5. Socle Technique \u0026 Design"
+                                             },
+                                             {
+                                                 "v":  "5.1 MaÃ®trise des Principes de Product Design"
+                                             },
+                                             {
+                                                 "v":  "5.1.2 ComprÃ©hension du Processus de Design"
+                                             },
+                                             {
+                                                 "v":  "MaÃ®trise du cycle de conception centrÃ©e utilisateur, de la phase d\u0027empathie jusqu\u0027au prototypage haute fidÃ©litÃ©."
+                                             },
+                                             {
+                                                 "v":  "Comprend les diffÃ©rentes phases du processus de design (recherche, idÃ©ation, prototypage, test) et y participe activement. "
+                                             },
+                                             {
+                                                 "v":  "Collabore avec le Design Lead pour dÃ©finir la stratÃ©gie de design. Sait quand utiliser un Design Sprint, quand prototyper en basse ou haute fidÃ©litÃ©, et comment intÃ©grer le feedback utilisateur en continu."
+                                             },
+                                             {
+                                                 "v":  "Le senior, face Ã  un problÃ¨me ambigu et stratÃ©gique, dÃ©cide de lancer un Design Sprint d\u0027une semaine avec des parties prenantes clÃ©s pour explorer le problÃ¨me et co-crÃ©er une solution testable, plutÃ´t que de se lancer directement dans des maquettes."
+                                             },
+                                             {
+                                                 "v":  "Design Thinking, Double Diamant, Design Sprints, Brief Design"
+                                             },
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             {
+                                                 "v":  null
+                                             }
+                                         ]
+                               },
+                               {
+                                   "c":  [
+                                             {
+                                                 "v":  "5.1.3"
+                                             },
+                                             {
+                                                 "v":  "5. Socle Technique \u0026 Design"
+                                             },
+                                             {
+                                                 "v":  "5.1 MaÃ®trise des Principes de Product Design"
+                                             },
+                                             {
+                                                 "v":  "5.1.3 Culture du Design System"
+                                             },
+                                             {
+                                                 "v":  "Connaissance et promotion d\u0027une bibliothÃ¨que de composants standardisÃ©s pour assurer la cohÃ©rence visuelle et l\u0027efficacitÃ© technique."
+                                             },
+                                             {
+                                                 "v":  "Utilise les composants du Design System existant, et leurs noms, dans ses spÃ©cifications pour assurer la cohÃ©rence."
+                                             },
+                                             {
+                                                 "v":  "Agit comme un sponsor du Design System. Collabore avec les designers et les dÃ©veloppeurs pour le faire Ã©voluer, en arbitrant entre la crÃ©ation d\u0027un nouveau composant et la rÃ©utilisation d\u0027un existant."
+                                             },
+                                             {
+                                                 "v":  "L\u0027Ã©quipe a besoin d\u0027un nouveau type de graphique. Le junior demande simplement sa crÃ©ation. Le senior organise une rÃ©union avec le designer et le front-end lead pour dÃ©terminer si ce besoin est unique ou s\u0027il justifie la crÃ©ation d\u0027un nouveau \"atome\" rÃ©utilisable dans le Design System."
+                                             },
+                                             {
+                                                 "v":  "Atomic Design, Design Tokens"
+                                             },
+                                             {
+                                                 "v":  "Figma, Storybook"
+                                             },
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             {
+                                                 "v":  null
+                                             }
+                                         ]
+                               },
+                               {
+                                   "c":  [
+                                             {
+                                                 "v":  "5.2.1"
+                                             },
+                                             {
+                                                 "v":  "5. Socle Technique \u0026 Design"
+                                             },
+                                             {
+                                                 "v":  "5.2 MaÃ®trise des Principes d\u0027IngÃ©nierie"
+                                             },
+                                             {
+                                                 "v":  "5.2.1 ComprÃ©hension de l\u0027Architecture Logicielle"
+                                             },
+                                             {
+                                                 "v":  "Connaissance structurelle du fonctionnement technique du produit (API, BDD, services) pour en comprendre les capacitÃ©s et les limites."
+                                             },
+                                             {
+                                                 "v":  "Comprend l\u0027architecture de son produit (front-end, back-end, API REST, base de donnÃ©es). "
+                                             },
+                                             {
+                                                 "v":  "A une comprÃ©hension stratÃ©gique des choix d\u0027architecture (microservices, monolithe, serverless), de leurs impacts sur la performance, la scalabilitÃ© et le coÃ»t. Sait discuter de ces sujets avec le CTO."
+                                             },
+                                             {
+                                                 "v":  "L\u0027Ã©quipe propose une solution rapide mais qui crÃ©e un couplage fort entre deux services. Le senior, anticipant les problÃ¨mes de scalabilitÃ© futurs, challenge l\u0027Ã©quipe pour trouver une solution basÃ©e sur une architecture Ã  base d\u0027Ã©vÃ©nements, mÃªme si elle est plus complexe Ã  court terme."
+                                             },
+                                             {
+                                                 "v":  "CAP Theorem, Bases Architecture, API Gateway."
+                                             },
+                                             {
+                                                 "v":  "LucidChart, Excalidraw, Whimsical"
+                                             },
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             {
+                                                 "v":  null
+                                             }
+                                         ]
+                               },
+                               {
+                                   "c":  [
+                                             {
+                                                 "v":  "5.2.2"
+                                             },
+                                             {
+                                                 "v":  "5. Socle Technique \u0026 Design"
+                                             },
+                                             {
+                                                 "v":  "5.2 MaÃ®trise des Principes d\u0027IngÃ©nierie"
+                                             },
+                                             {
+                                                 "v":  "5.2.2 ComprÃ©hension du Cycle de DÃ©veloppement"
+                                             },
+                                             {
+                                                 "v":  "Connaissance des Ã©tapes techniques de crÃ©ation d\u0027un logiciel, de l\u0027Ã©criture du code jusqu\u0027Ã  sa maintenance en production."
+                                             },
+                                             {
+                                                 "v":  "Comprend et participe aux rituels de son Ã©quipe (Scrum, Kanban). Sait ce qu\u0027est une Pull Request et le versionnement (Git)."
+                                             },
+                                             {
+                                                 "v":  "Comprend l\u0027ensemble du cycle de vie du logiciel, y compris les enjeux de CI/CD, de qualitÃ© (tests unitaires, E2E) et de la dette technique. Sait nÃ©gocier l\u0027allocation de bande passante pour la refactorisation."
+                                             },
+                                             {
+                                                 "v":  "Le senior, voyant la vÃ©locitÃ© de l\u0027Ã©quipe diminuer, analyse les indicateurs de qualitÃ© et justifie auprÃ¨s de la direction la nÃ©cessitÃ© de dÃ©dier 20% du prochain trimestre Ã  la rÃ©duction de la dette technique pour accÃ©lÃ©rer les dÃ©veloppements futurs."
+                                             },
+                                             {
+                                                 "v":  "CI/CD, Test Pyramid."
+                                             },
+                                             {
+                                                 "v":  "GitHub, Jira"
+                                             },
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             {
+                                                 "v":  null
+                                             }
+                                         ]
+                               },
+                               {
+                                   "c":  [
+                                             {
+                                                 "v":  "5.2.3"
+                                             },
+                                             {
+                                                 "v":  "5. Socle Technique \u0026 Design"
+                                             },
+                                             {
+                                                 "v":  "5.2 MaÃ®trise des Principes d\u0027IngÃ©nierie"
+                                             },
+                                             {
+                                                 "v":  "5.2.3 Fondamentaux du Cloud \u0026 Infrastructure"
+                                             },
+                                             {
+                                                 "v":  "ComprÃ©hension des concepts d\u0027hÃ©bergement cloud, de scalabilitÃ© et de services managÃ©s pour optimiser les performances et les coÃ»ts du produit."
+                                             },
+                                             {
+                                                 "v":  "Comprend les concepts de base du cloud (SaaS, PaaS, IaaS) et sait localiser les services utilisÃ©s par son produit dans la console."
+                                             },
+                                             {
+                                                 "v":  "Capable de challenger l\u0027architecture cloud pour optimiser la disponibilitÃ© (Multi-AZ) et les coÃ»ts. Comprend les enjeux de serverless vs conteneurs."
+                                             },
+                                             {
+                                                 "v":  "Lors d\u0027une hausse soudaine de trafic, le senior discute avec les DevOps de la stratÃ©gie d\u0027auto-scaling et du choix des instances pour maintenir la performance sans faire exploser le budget."
+                                             },
+                                             {
+                                                 "v":  "Cloud Migration, FinOps, Serverless Architecture, Well-Architected Framework."
+                                             },
+                                             {
+                                                 "v":  "Google Cloud Platform (GCP), Amazon Web Services (AWS), Azure, Terraform"
+                                             },
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             {
+                                                 "v":  null
+                                             }
+                                         ]
+                               },
+                               {
+                                   "c":  [
+                                             {
+                                                 "v":  "6.1.1"
+                                             },
+                                             {
+                                                 "v":  "6. Product Ops"
+                                             },
+                                             {
+                                                 "v":  "6.1 Processus \u0026 Outils"
+                                             },
+                                             {
+                                                 "v":  "6.1.1 Standardisation des Processus"
+                                             },
+                                             {
+                                                 "v":  "CrÃ©ation et maintenance de mÃ©thodes de travail uniformes au sein de l\u0027organisation pour amÃ©liorer l\u0027efficacitÃ© collective."
+                                             },
+                                             {
+                                                 "v":  "Applique les processus et les outils dÃ©finis par l\u0027Ã©quipe (templates de specs, process de release)."
+                                             },
+                                             {
+                                                 "v":  "ConÃ§oit, dÃ©ploie et amÃ©liore les processus de l\u0027organisation Produit (ex: processus de Discovery, de priorisation trimestrielle, de communication de roadmap) pour garantir la cohÃ©rence et l\u0027efficacitÃ© Ã  l\u0027Ã©chelle."
+                                             },
+                                             {
+                                                 "v":  "Le senior met en place un \"Product Playbook\" centralisÃ© documentant tous les processus, les outils et les bonnes pratiques, afin d\u0027accÃ©lÃ©rer l\u0027onboarding des nouveaux PMs et d\u0027harmoniser les mÃ©thodes de travail."
+                                             },
+                                             null,
+                                             {
+                                                 "v":  "Notion, Coda"
+                                             },
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             {
+                                                 "v":  null
+                                             }
+                                         ]
+                               },
+                               {
+                                   "c":  [
+                                             {
+                                                 "v":  "6.1.2"
+                                             },
+                                             {
+                                                 "v":  "6. Product Ops"
+                                             },
+                                             {
+                                                 "v":  "6.1 Processus \u0026 Outils"
+                                             },
+                                             {
+                                                 "v":  "6.1.2 Gouvernance de la documentation Produit"
+                                             },
+                                             {
+                                                 "v":  "Gestion de l\u0027intÃ©gritÃ©, de l\u0027accessibilitÃ© et de la documentation des donnÃ©es partagÃ©es pour assurer une source de vÃ©ritÃ© unique."
+                                             },
+                                             {
+                                                 "v":  "S\u0027assure que les information produit (donnÃ©es, features, how to...) de son pÃ©rimÃ¨tre sont fiables et bien documentÃ©es."
+                                             },
+                                             {
+                                                 "v":  "Met en place une gouvernance pour les outils et les donnÃ©es Produit (ex: un dictionnaire de donnÃ©es partagÃ©, des rÃ¨gles claires pour la crÃ©ation d\u0027Ã©vÃ©nements de tracking) pour que tout le monde s\u0027appuie sur une source de vÃ©ritÃ© unique et fiable."
+                                             },
+                                             {
+                                                 "v":  "Le senior, constatant que chaque Ã©quipe nomme ses Ã©vÃ©nements de tracking diffÃ©remment, lance un projet de standardisation et crÃ©e un processus de validation pour tout nouvel Ã©vÃ©nement, garantissant la propretÃ© de la donnÃ©e Ã  long terme."
+                                             },
+                                             {
+                                                 "v":  "Knowledge management, Data dictionnary \u0026 governance"
+                                             },
+                                             {
+                                                 "v":  "Collibra, OvalEdge, DataHub"
+                                             },
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             {
+                                                 "v":  null
+                                             }
+                                         ]
+                               },
+                               {
+                                   "c":  [
+                                             {
+                                                 "v":  "6.2.1"
+                                             },
+                                             {
+                                                 "v":  "6. Product Ops"
+                                             },
+                                             {
+                                                 "v":  "6.2 Organisation"
+                                             },
+                                             {
+                                                 "v":  "6.2.1 Organisation des Ã©quipes"
+                                             },
+                                             {
+                                                 "v":  "DÃ©finition de la structure, des rÃ´les et des objectifs pour aligner l\u0027Ã©quipe sur une vision commune et garantir que chacun comprenne sa contribution."
+                                             },
+                                             {
+                                                 "v":  "Comprend et applique le cadre organisationnel (son rÃ´le, ses responsabilitÃ©s, ses objectifs) dans son pÃ©rimÃ¨tre. contribue Ã  la dÃ©finition de ses propres objectifs (okr) et Ã  l\u0027Ã©valuation de ses compÃ©tences."
+                                             },
+                                             {
+                                                 "v":  "ConÃ§oit et fait Ã©voluer l\u0027organisation de l\u0027Ã©quipe produit : dÃ©finition des rÃ´les et des responsabilitÃ©s, alignement sur les objectifs stratÃ©giques (okr), crÃ©ation des fiches de poste et des matrices de compÃ©tences pour assurer la performance et le dÃ©veloppement des talents."
+                                             },
+                                             {
+                                                 "v":  "En rÃ©ponse Ã  une croissance rapide, le senior mÃ¨ne un projet de rÃ©organisation. il anime des ateliers pour redÃ©finir les rÃ´les avec un raci clair, met en place des okr pour chaque squad et met Ã  jour la matrice de compÃ©tences pour identifier les besoins en recrutement et en formation."
+                                             },
+                                             {
+                                                 "v":  "conception organisationnelle, RACI / RAPID, OKR, modÃ©lisation de compÃ©tences, career pathing"
+                                             },
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             {
+                                                 "v":  null
+                                             }
+                                         ]
+                               },
+                               {
+                                   "c":  [
+                                             {
+                                                 "v":  "6.2.2"
+                                             },
+                                             {
+                                                 "v":  "6. Product Ops"
+                                             },
+                                             {
+                                                 "v":  "6.2 Organisation"
+                                             },
+                                             {
+                                                 "v":  "6.2.2 Pilotage \u0026 Gouvernance"
+                                             },
+                                             {
+                                                 "v":  "Mise en place des instances, des indicateurs et des rituels nÃ©cessaires pour piloter la performance de l\u0027organisation produit et assurer l\u0027alignement avec la stratÃ©gie de l\u0027entreprise et avec les Ã©quipes MÃ©tiers \u0026 Tech."
+                                             },
+                                             {
+                                                 "v":  "PrÃ©pare les supports pour les instances de gouvernance (ex: mise Ã  jour des kpi, prÃ©paration d\u0027une dÃ©mo). participe activement aux rituels de son Ã©quipe (daily, weekly, retro) et comprend comment sa squad contribue aux KPI globaux."
+                                             },
+                                             {
+                                                 "v":  "VConÃ§oit, met en Å“uvre et anime les instances de gouvernance produit (comitÃ©s, rituels) pour assurer la bonne circulation de l\u0027information et l\u0027alignement stratÃ©gique. il dÃ©finit les KPI pertinents pour mesurer la performance de l\u0027organisation et construit les tableaux de bord associÃ©s."
+                                             },
+                                             {
+                                                 "v":  "Le senior instaure une Product review mensuelle oÃ¹ chaque Ã©quipe prÃ©sente ses avancÃ©es, ses KPI et ses prochains dÃ©fis. ce rituel permet aux directeurs d\u0027avoir une vision claire de la performance, de dÃ©bloquer des situations et de garantir l\u0027alignement entre les Ã©quipes."
+                                             },
+                                             {
+                                                 "v":  "Comitologie \u0026 rituels (comitÃ©s stratÃ©gique, tactique, opÃ©rationnel), indicateurs partagÃ©s (OKR, north star metric), gestion de portefeuille projets"
+                                             },
+                                             {
+                                                 "v":  "Jira, airtable, Notion, Coda, Looker Studio, tableau."
+                                             },
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             {
+                                                 "v":  null
+                                             }
+                                         ]
+                               },
+                               {
+                                   "c":  [
+                                             {
+                                                 "v":  "6.3.1"
+                                             },
+                                             {
+                                                 "v":  "6. Product Ops"
+                                             },
+                                             {
+                                                 "v":  "6.3 Culture"
+                                             },
+                                             {
+                                                 "v":  "6.3.1 Facilitation et animation d\u0027ateliers"
+                                             },
+                                             {
+                                                 "v":  "MaÃ®trise des techniques de dynamique de groupe pour guider une Ã©quipe multidisciplinaire vers un objectif de dÃ©cision, d\u0027idÃ©ation ou de rÃ©solution de problÃ¨mes."
+                                             },
+                                             {
+                                                 "v":  "Participe activement aux ateliers et peut co-animer des ateliers simples (ex: rÃ©trospective)."
+                                             },
+                                             {
+                                                 "v":  "ConÃ§oit et facilite des ateliers complexes (ex: cadrage stratÃ©gique, idÃ©ation) avec des groupes multidisciplinaires et des participants de haut niveau, en s\u0027assurant que l\u0027objectif est atteint."
+                                             },
+                                             {
+                                                 "v":  "Pour lancer un nouveau projet d\u0027envergure, le senior conÃ§oit et anime un kick-off de 2 jours avec 15 personnes (produit, tech, design, marketing, ventes) pour crÃ©er une vision partagÃ©e, identifier les risques et dÃ©finir la feuille de route initiale."
+                                             },
+                                             {
+                                                 "v":  "Animation d\u0027ateliers (dÃ©finir lesquels)"
+                                             },
+                                             {
+                                                 "v":  "Miro, FigJam, Klaxoon"
+                                             },
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             {
+                                                 "v":  null
+                                             }
+                                         ]
+                               },
+                               {
+                                   "c":  [
+                                             {
+                                                 "v":  "6.3.2"
+                                             },
+                                             {
+                                                 "v":  "6. Product Ops"
+                                             },
+                                             {
+                                                 "v":  "6.3 Culture"
+                                             },
+                                             {
+                                                 "v":  "6.3.2 Coaching \u0026 Mentorat"
+                                             },
+                                             {
+                                                 "v":  "Acoompagnement des membres de l\u0027Ã©quipe ou des pairs dans leur dÃ©veloppement professionnel et la montÃ©e en compÃ©tences de l\u0027organisation."
+                                             },
+                                             {
+                                                 "v":  "Se concentre sur son propre dÃ©veloppement. Partage ses connaissances de maniÃ¨re informelle avec ses pairs. Donne des feedbacks constructifs Ã  ses pairs."
+                                             },
+                                             {
+                                                 "v":  "Agit comme un coach pour l\u0027Ã©quipe et comme un mentor pour les PMs plus juniors. Contribue activement Ã  la montÃ©e en compÃ©tence de l\u0027organisation produit."
+                                             },
+                                             {
+                                                 "v":  "Le senior ne donne pas la solution Ã  un PM junior bloquÃ© sur une priorisation. Il lui pose des questions basÃ©es sur le modÃ¨le GROW (Goal, Reality, Options, Will) pour l\u0027aider Ã  structurer sa pensÃ©e et Ã  trouver la solution par lui-mÃªme."
+                                             },
+                                             {
+                                                 "v":  "GROW Model, Feedback Constructif (DESC)"
+                                             },
+                                             {
+                                                 "v":  "Guildes, 1:to:1"
+                                             },
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             {
+                                                 "v":  null
+                                             }
+                                         ]
+                               },
+                               {
+                                   "c":  [
+                                             {
+                                                 "v":  "7.1.1"
+                                             },
+                                             {
+                                                 "v":  "7. Culture et maÃ®trise de l\u0027IA"
+                                             },
+                                             {
+                                                 "v":  "7.1 Fondamentaux IA"
+                                             },
+                                             {
+                                                 "v":  "7.1.1 Fondamentaux et cas d\u0027usage"
+                                             },
+                                             {
+                                                 "v":  "Comprendre les types de modÃ¨les (ML, LLM, gÃ©nÃ©ratif), les notions clÃ©s (entraÃ®nement, fine-tuning, contexte, hallucination). Savoir associer un problÃ¨me mÃ©tier au bon type de solution : classification, gÃ©nÃ©ration, RAG, agents."
+                                             },
+                                             {
+                                                 "v":  "Distingue le ML classique de l\u0027IA gÃ©nÃ©rative. Sait identifier si un problÃ¨me nÃ©cessite du RAG ou du Fine-tuning."
+                                             },
+                                             {
+                                                 "v":  "Capable de challenger le choix d\u0027un modÃ¨le (ex: Llama vs GPT-4) selon la complexitÃ© de la tÃ¢che et les contraintes de latence."
+                                             },
+                                             {
+                                                 "v":  "Lors du kick-off d\u0027un projet de moteur de recherche interne, le PM propose une architecture RAG plutÃ´t qu\u0027un entraÃ®nement complet pour garantir la fraÃ®cheur des donnÃ©es."
+                                             },
+                                             {
+                                                 "v":  "AI Use Case Canvas."
+                                             },
+                                             {
+                                                 "v":  "Gemini, ChatGPT, Claude, Hugging Face."
+                                             },
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             {
+                                                 "v":  null
+                                             }
+                                         ]
+                               },
+                               {
+                                   "c":  [
+                                             {
+                                                 "v":  "7.1.2"
+                                             },
+                                             {
+                                                 "v":  "7. Culture et maÃ®trise de l\u0027IA"
+                                             },
+                                             {
+                                                 "v":  "7.1 Fondamentaux IA"
+                                             },
+                                             {
+                                                 "v":  "7.1.2 FinOps"
+                                             },
+                                             {
+                                                 "v":  "Comprendre les modÃ¨les de coÃ»ts d\u0027un produit IA : tokens, infÃ©rence, stockage vectoriel. DÃ©finir stratÃ©gie de Build vs Buy vs Fine-tune. Ã‰valuer coÃ»t / performance / confidentialitÃ© / time-to-market."
+                                             },
+                                             {
+                                                 "v":  "Comprend la notion de \"Token\" et sait que l\u0027infÃ©rence a un coÃ»t rÃ©current. Sait lire une facture API de base."
+                                             },
+                                             {
+                                                 "v":  "ModÃ©lise le coÃ»t d\u0027exploitation Ã  l\u0027Ã©chelle (1M d\u0027utilisateurs) et dÃ©finit des stratÃ©gies de mise en cache ou de modÃ¨les plus petits pour optimiser le ROI."
+                                             },
+                                             {
+                                                 "v":  "Pour une feature de rÃ©sumÃ© automatique, le PM dÃ©cide d\u0027utiliser GPT-4o-mini pour 90% des cas simples afin de diviser les coÃ»ts par 10."
+                                             },
+                                             {
+                                                 "v":  "Unit Cost Analysis."
+                                             },
+                                             {
+                                                 "v":  "Helicone, LangSmith (monitoring de coÃ»ts), GCP/AWS Cost Explorer."
+                                             },
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             {
+                                                 "v":  null
+                                             }
+                                         ]
+                               },
+                               {
+                                   "c":  [
+                                             {
+                                                 "v":  "7.1.3"
+                                             },
+                                             {
+                                                 "v":  "7. Culture et maÃ®trise de l\u0027IA"
+                                             },
+                                             {
+                                                 "v":  "7.1 Fondamentaux IA"
+                                             },
+                                             {
+                                                 "v":  "7.1.3 Prompt Engineering"
+                                             },
+                                             {
+                                                 "v":  "RÃ©diger et itÃ©rer sur des system prompts. Tester les comportements d\u0027un LLM pour mieux spÃ©cifier les features IA et collaborer efficacement avec les Ã©quipes tech."
+                                             },
+                                             {
+                                                 "v":  "Sait rÃ©diger des prompts structurÃ©s (Context, Task, Constraints). Utilise le \"Few-shot prompting\"."
+                                             },
+                                             {
+                                                 "v":  "MaÃ®trise les techniques avancÃ©es (Chain-of-Thought, ReAct). Capable de versionner et de tester systÃ©matiquement la robustesse des prompts."
+                                             },
+                                             {
+                                                 "v":  "Le PM itÃ¨re sur le \"System Prompt\" d\u0027un agent de support pour s\u0027assurer qu\u0027il ne sort jamais de son ton de marque, mÃªme face Ã  des questions piÃ¨ges."
+                                             },
+                                             {
+                                                 "v":  "CO-STAR, RISEN"
+                                             },
+                                             {
+                                                 "v":  "Excalidraw, BigQuery, romptPerfect, LangChain Prompt Templates, Playground (OpenAI/Anthropic)."
+                                             },
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             {
+                                                 "v":  null
+                                             }
+                                         ]
+                               },
+                               {
+                                   "c":  [
+                                             {
+                                                 "v":  "7.2.1"
+                                             },
+                                             {
+                                                 "v":  "7. Culture et maÃ®trise de l\u0027IA"
+                                             },
+                                             {
+                                                 "v":  "7.2 StratÃ©gie \u0026 OpportunitÃ©s IA"
+                                             },
+                                             {
+                                                 "v":  "7.2.1 Identification d\u0027opportunitÃ©s IA"
+                                             },
+                                             {
+                                                 "v":  "DÃ©tecter les problÃ¨mes mÃ©tiers, construire et prioriser un backlog IA, rÃ©diger des hypothÃ¨ses de valeur."
+                                             },
+                                             {
+                                                 "v":  "Identifie des opportunitÃ©s IA simples. Priorise le backlog en fonction de la faisabilitÃ© technique estimÃ©e par les devs."
+                                             },
+                                             {
+                                                 "v":  "DÃ©finit une roadmap \"AI-first\" oÃ¹ l\u0027IA apporte un avantage compÃ©titif durable (moat). Anticipe les dÃ©rives de performance."
+                                             },
+                                             {
+                                                 "v":  "Le PM priorise le dÃ©veloppement d\u0027un classificateur de tickets client car l\u0027analyse d\u0027impact montre un gain de 20% du temps des Ops."
+                                             },
+                                             {
+                                                 "v":  "Opportunity Solution Tree"
+                                             },
+                                             {
+                                                 "v":  "Notion, Jira, Productboard."
+                                             },
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             {
+                                                 "v":  null
+                                             }
+                                         ]
+                               },
+                               {
+                                   "c":  [
+                                             {
+                                                 "v":  "7.2.2"
+                                             },
+                                             {
+                                                 "v":  "7. Culture et maÃ®trise de l\u0027IA"
+                                             },
+                                             {
+                                                 "v":  "7.2 StratÃ©gie \u0026 OpportunitÃ©s IA"
+                                             },
+                                             {
+                                                 "v":  "7.2.2 StratÃ©gie data \u0026 Valeur business"
+                                             },
+                                             {
+                                                 "v":  "DÃ©finir les besoins en donnÃ©es (collecte, labelling, qualitÃ©). Construire le business case, dÃ©finir des KPIs adaptÃ©s (au-delÃ  de l\u0027accuracy) et mesurer le ROI."
+                                             },
+                                             {
+                                                 "v":  "Sait quelles donnÃ©es sont nÃ©cessaires pour alimenter une feature IA. Suit des KPIs de base (Accuracy)."
+                                             },
+                                             {
+                                                 "v":  "DÃ©finit la stratÃ©gie d\u0027acquisition et de gestion des donnÃ©es comme un avantage concurrentiel (\"data moat\"). Met en place des boucles de rÃ©troaction (\"flywheels\") oÃ¹ le produit gÃ©nÃ¨re des donnÃ©es qui amÃ©liorent le modÃ¨le, ce qui amÃ©liore le produit."
+                                             },
+                                             {
+                                                 "v":  "Pour un outil de recommandation, le PM ne suit pas juste le clic, mais le \"Business Lift\" (augmentation du panier moyen) gÃ©nÃ©rÃ© par l\u0027IA."
+                                             },
+                                             {
+                                                 "v":  "Data Flywheel, Boucles de RÃ©troaction (Feedback Loops)."
+                                             },
+                                             {
+                                                 "v":  "BigQuery, Snwflakes, Grafana, Giskard, Databricks"
+                                             },
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             {
+                                                 "v":  null
+                                             }
+                                         ]
+                               },
+                               {
+                                   "c":  [
+                                             {
+                                                 "v":  "7.3.1"
+                                             },
+                                             {
+                                                 "v":  "7. Culture et maÃ®trise de l\u0027IA"
+                                             },
+                                             {
+                                                 "v":  "7.3 Delivery \u0026 Cycle de vie du modÃ¨le"
+                                             },
+                                             {
+                                                 "v":  "7.3.1 Annotation \u0026 PrÃ©paration des DonnÃ©es"
+                                             },
+                                             {
+                                                 "v":  "Supervision du processus de labellisation et de nettoyage des donnÃ©es pour garantir la fiabilitÃ© des jeux d\u0027entraÃ®nement. Mettre en place les boucles de feedback utilisateur pour amÃ©liorer le modÃ¨le."
+                                             },
+                                             {
+                                                 "v":  "Comprend l\u0027importance d\u0027un \"Golden Dataset\". Aide Ã  dÃ©finir les labels pour les tests de performance."
+                                             },
+                                             {
+                                                 "v":  "ConÃ§oit et supervise la stratÃ©gie d\u0027annotation : choix des outils (ex: Labelbox), mise en place du contrÃ´le qualitÃ©, et dÃ©cision sur l\u0027externalisation ou non (ex: via Scale AI). "
+                                             },
+                                             {
+                                                 "v":  "Pour un projet de reconnaissance d\u0027images, le senior met en place un processus en deux Ã©tapes : une premiÃ¨re passe d\u0027annotation par une Ã©quipe externe, puis une validation par une Ã©quipe d\u0027experts internes pour garantir la qualitÃ© des donnÃ©es d\u0027entraÃ®nement."
+                                             },
+                                             {
+                                                 "v":  "Data Labeling \u0026 Annotation Platforms, Human-in-the-loop"
+                                             },
+                                             {
+                                                 "v":  "Labelbox, Scale AI, Argilla."
+                                             },
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             {
+                                                 "v":  null
+                                             }
+                                         ]
+                               },
+                               {
+                                   "c":  [
+                                             {
+                                                 "v":  "7.3.2"
+                                             },
+                                             {
+                                                 "v":  "7. Culture et maÃ®trise de l\u0027IA"
+                                             },
+                                             {
+                                                 "v":  "7.3 Delivery \u0026 Cycle de vie du modÃ¨le"
+                                             },
+                                             {
+                                                 "v":  "7.3.2 Ã‰valuation du modÃ¨le, Monitoring \u0026 red-teamingÂ "
+                                             },
+                                             {
+                                                 "v":  "Lire et interprÃ©ter les mÃ©triques, organiser des A/B tests et Ã©valuations humaines. Challenger les data scientists sur les benchmarks mÃ©tier vs techniques.\nPiloter les alertes de dÃ©rive, gÃ©rer les incidents. Organiser des sessions de red-teaming pour tester les hallucinations et comportements inattendus."
+                                             },
+                                             {
+                                                 "v":  "Sait lire une matrice de confusion. Comprend la diffÃ©rence entre PrÃ©cision et Rappel (Recall)."
+                                             },
+                                             {
+                                                 "v":  "DÃ©finit des seuils d\u0027acceptation mÃ©tier. Arbitre entre \"faux positifs\" et \"faux nÃ©gatifs\" selon l\u0027impact utilisateur. Challenge les Data Scientists sur leurs choix."
+                                             },
+                                             {
+                                                 "v":  "Sur un dÃ©tecteur de fraude, l\u0027expert PM choisit de privilÃ©gier le Rappel pour ne rater aucune fraude, quitte Ã  avoir quelques fausses alertes. Met en place un systÃ¨me d’alert de “Model Drift”"
+                                             },
+                                             {
+                                                 "v":  "Evaluation Benchmarks, MLOps"
+                                             },
+                                             {
+                                                 "v":  "Weights \u0026 Biases, MLflow, Grafana"
+                                             },
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             {
+                                                 "v":  null
+                                             }
+                                         ]
+                               },
+                               {
+                                   "c":  [
+                                             {
+                                                 "v":  "7.4.1"
+                                             },
+                                             {
+                                                 "v":  "7. Culture et maÃ®trise de l\u0027IA"
+                                             },
+                                             {
+                                                 "v":  "7.4 ExpÃ©rience utilisateur \u0026 IA responsable"
+                                             },
+                                             {
+                                                 "v":  "7.4.1 Design d\u0027Interaction pour l\u0027IA"
+                                             },
+                                             {
+                                                 "v":  "Concevoir des interfaces prenant en compte les spÃ©cificitÃ©s de l\u0027IA : affichage de l\u0027incertitude, gestion des erreurs, explainability, human-in-the-loop. Traduire les contraintes du modÃ¨le en choix UX."
+                                             },
+                                             {
+                                                 "v":  "Participe Ã  la conception d\u0027interfaces pour des fonctionnalitÃ©s IA, en se concentrant sur la clartÃ©. Ajoute des mentions \"gÃ©nÃ©rÃ© par IA\". PrÃ©voit des boutons de feedback (thumbs up/down)."
+                                             },
+                                             {
+                                                 "v":  "MaÃ®trise les patterns de design spÃ©cifiques Ã  l\u0027IA : comment gÃ©rer l\u0027incertitude, expliquer les dÃ©cisions du modÃ¨le, permettre Ã  l\u0027utilisateur de corriger l\u0027IA et de garder le contrÃ´le."
+                                             },
+                                             {
+                                                 "v":  "Pour un systÃ¨me de recommandation, le senior ne se contente pas d\u0027afficher les produits. Il conÃ§oit une interface qui explique pourquoi un produit est recommandÃ© (\"Parce que vous avez aimÃ© X\") et permet Ã  l\u0027utilisateur d\u0027affiner les rÃ©sultats (\"Montrez-moi moins de produits comme celui-ci\")."
+                                             },
+                                             {
+                                                 "v":  "Google PAIR Guidebook, Explainable AI (XAI), Human-in-the-loop, Niveaux de Confiance. "
+                                             },
+                                             {
+                                                 "v":  "Figma"
+                                             },
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             {
+                                                 "v":  null
+                                             }
+                                         ]
+                               },
+                               {
+                                   "c":  [
+                                             {
+                                                 "v":  "7.4.2"
+                                             },
+                                             {
+                                                 "v":  "7. Culture et maÃ®trise de l\u0027IA"
+                                             },
+                                             {
+                                                 "v":  "7.4 ExpÃ©rience utilisateur \u0026 IA responsable"
+                                             },
+                                             {
+                                                 "v":  "7.4.2 Design conversationnel"
+                                             },
+                                             {
+                                                 "v":  "Concevoir des interfaces conversationnelles : flux de conversation, gestion des ruptures et sorties hors-scope, calibration du ton et de la personnalitÃ©."
+                                             },
+                                             {
+                                                 "v":  "CrÃ©e des flux linÃ©aires (arbres de dÃ©cision) sur la base d’Ã©changes avec le mÃ©tier."
+                                             },
+                                             {
+                                                 "v":  "GÃ¨re le contexte multi-tours, les interruptions et les sorties de scope avec Ã©lÃ©gance. Travaille la personnalitÃ© de l\u0027IA."
+                                             },
+                                             {
+                                                 "v":  "Le PM conÃ§oit un assistant de voyage capable de se souvenir d\u0027une prÃ©fÃ©rence citÃ©e 5 messages plus tÃ´t (\"comme je disais, je prÃ©fÃ¨re le train\")."
+                                             },
+                                             {
+                                                 "v":  "Cooperative Principle (Grice)"
+                                             },
+                                             {
+                                                 "v":  "Voiceflow, Botpress"
+                                             },
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             {
+                                                 "v":  null
+                                             }
+                                         ]
+                               },
+                               {
+                                   "c":  [
+                                             {
+                                                 "v":  "7.4.3"
+                                             },
+                                             {
+                                                 "v":  "7. Culture et maÃ®trise de l\u0027IA"
+                                             },
+                                             {
+                                                 "v":  "7.4 ExpÃ©rience utilisateur \u0026 IA responsable"
+                                             },
+                                             {
+                                                 "v":  "7.4.3 Ã‰thique, ConformitÃ© \u0026 IA Responsable"
+                                             },
+                                             {
+                                                 "v":  "Identifier les risques de biais et d\u0027usage irresponsable d\u0027un produit IA. ConnaÃ®tre les grands principes de l\u0027AI Act et du RGPD pour collaborer avec les Ã©quipes juridiques et techniques, et intÃ©grer des garde-fous dÃ¨s la conception."
+                                             },
+                                             {
+                                                 "v":  "Est sensibilisÃ© aux biais potentiels dans les donnÃ©es et les algorithmes. ConnaÃ®t l\u0027existence de l\u0027AI Act. VÃ©rifie que les donnÃ©es utilisÃ©es sont conformes au RGPD."
+                                             },
+                                             {
+                                                 "v":  "RÃ©alise des audits de biais. Documente la \"Fiche de Transparence\" du modÃ¨le et anticipe les risques de sÃ©curitÃ© (Prompt Injection)."
+                                             },
+                                             {
+                                                 "v":  "Avant de lancer un modÃ¨le de scoring de CV, le senior organise un atelier \"Red Team\" oÃ¹ une Ã©quipe est chargÃ©e d\u0027imaginer toutes les maniÃ¨res dont le modÃ¨le pourrait Ãªtre biaisÃ© ou utilisÃ© de maniÃ¨re discriminatoire, et met en place des garde-fous pour empÃªcher ces scÃ©narios."
+                                             },
+                                             {
+                                                 "v":  "AI Ethics Frameworks (ex: Microsoft, Google), Fairness checklists."
+                                             },
+                                             {
+                                                 "v":  "Giskard (scan de biais), Microsoft Counterfit."
+                                             },
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             {
+                                                 "v":  null
+                                             }
+                                         ]
+                               },
+                               {
+                                   "c":  [
+                                             {
+                                                 "v":  "8.1.1"
+                                             },
+                                             {
+                                                 "v":  "8. AI building"
+                                             },
+                                             {
+                                                 "v":  "8.1 Building \u0026 AI Agentic"
+                                             },
+                                             {
+                                                 "v":  "8.1.1 Prototypage low-code \u0026 no-code"
+                                             },
+                                             {
+                                                 "v":  "Construire des workflows, agents et apps fonctionnelles sans coder ou avec peu de code. Valider une hypothÃ¨se produit rapidement. Choisir la bonne plateforme selon le contexte."
+                                             },
+                                             {
+                                                 "v":  "Sait crÃ©er un agent conversationnel simple via Vertex AI Agent Builder (Agent Designer) en utilisant des documents PDF ou des URLs comme source de donnÃ©es."
+                                             },
+                                             {
+                                                 "v":  "Assemble des applications mÃ©tier complexes avec AppSheet intÃ©grÃ©es Ã  Gemini, ou crÃ©e des automatisations via Gemini pour Google Workspace (AppScript + IA)."
+                                             },
+                                             {
+                                                 "v":  "Le PM crÃ©e en quelques heures un agent \"FAQ Interne\" pour les RH en tÃ©lÃ©chargeant les politiques de l\u0027entreprise dans Vertex AI Search, validant ainsi l\u0027utilitÃ© du RAG sans Ã©crire une ligne de code."
+                                             },
+                                             {
+                                                 "v":  "Lean Startup (MVP), Prompt-to-App, Rapid Prototyping"
+                                             },
+                                             {
+                                                 "v":  "Vertex AI Agent Builder, AppSheet, Gemini for Workspace, Google Tables, Make, n8n"
+                                             },
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             {
+                                                 "v":  null
+                                             }
+                                         ]
+                               },
+                               {
+                                   "c":  [
+                                             {
+                                                 "v":  "8.1.2"
+                                             },
+                                             {
+                                                 "v":  "8. AI building"
+                                             },
+                                             {
+                                                 "v":  "8.1 Building \u0026 AI Agentic"
+                                             },
+                                             {
+                                                 "v":  "8.1.2 Architecture agentique \u0026 RAG"
+                                             },
+                                             {
+                                                 "v":  "Concevoir et orchestrer des agents IA autonomes, des pipelines RAG, des architectures multi-agents. Connecter l\u0027IA Ã  des sources de donnÃ©es externes via MCP et APIs."
+                                             },
+                                             {
+                                                 "v":  "Comprend comment connecter un modÃ¨le Gemini Ã  une base BigQuery ou un bucket Cloud Storage. Sait configurer un index vectoriel simple."
+                                             },
+                                             {
+                                                 "v":  "Orchestre des systÃ¨mes multi-agents complexes Ã  l\u0027aide de l\u0027ADK (Agent Development Kit) de Google. MaÃ®trise le \"Grounding\" sur Google Search ou sur des donnÃ©es privÃ©es (BigQuery/Vector Search)."
+                                             },
+                                             {
+                                                 "v":  "Pour un outil d\u0027aide Ã  la vente, le PM dÃ©finit une architecture oÃ¹ un premier agent extrait les besoins d\u0027un e-mail, et un second interroge le catalogue produit dans BigQuery pour gÃ©nÃ©rer un devis personnalisÃ©."
+                                             },
+                                             {
+                                                 "v":  "Agentic Workflows, RAG Architecture"
+                                             },
+                                             {
+                                                 "v":  "Vertex AI Agent Engine, BigQuery Vector Search, Model Garden (Gemini 1.5 Pro), Firebase Genkit"
+                                             },
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             null,
+                                             {
+                                                 "v":  null
+                                             }
+                                         ]
+                               }
+                           ],
+                  "parsedNumHeaders":  0
+              }
+}
