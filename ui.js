@@ -9,9 +9,10 @@ const UI = {
         const categories = new Set(data.map(item => item.cat));
         const subCategories = new Set(data.map(item => item.sub));
 
-        document.getElementById('metric-skills').innerText = data.length;
-        document.getElementById('metric-domains').innerText = categories.size;
-        document.getElementById('metric-subdomains').innerText = subCategories.size;
+        document.getElementById('metric-skills').textContent = data.length;
+        document.getElementById('metric-domains').textContent = categories.size;
+        const subEl = document.getElementById('metric-subdomains');
+        if (subEl) subEl.textContent = subCategories.size;
     },
 
     renderCategoryFilter(data, currentFilter) {
@@ -29,7 +30,7 @@ const UI = {
     setNameError(message) {
         const input = document.getElementById('user-name-input');
         const error = document.getElementById('user-name-error');
-        error.innerText = message;
+        error.textContent = message;
         input.setAttribute('aria-invalid', message ? 'true' : 'false');
         input.classList.toggle('is-error', Boolean(message));
     },
@@ -38,63 +39,108 @@ const UI = {
     updateProgress(current, total) {
         const percent = Math.round((current / total) * 100);
         document.getElementById('progress-bar').style.width = percent + "%";
-        document.getElementById('progress-text').innerText = `Competence ${current + 1} / ${total}`;
+        document.getElementById('progress-text').textContent = `Competence ${current + 1} / ${total}`;
         document.getElementById('assessment-back-button').disabled = current === 0;
     },
 
     // Renders a single question card
     renderQuestionCard(skill) {
-        document.getElementById('q-category').innerText = skill.cat;
-        document.getElementById('q-sub').innerText = skill.sub;
-        document.getElementById('q-title').innerText = skill.skill.split(' ').slice(1).join(' ');
-        document.getElementById('q-description').innerText = skill.description || '';
-        document.getElementById('q-tools').innerText = skill.tools;
-        document.getElementById('q-situation').innerText = skill.situation;
+        document.getElementById('q-category').textContent = skill.cat;
+        document.getElementById('q-sub').textContent = skill.sub;
+        document.getElementById('q-title').textContent = skill.skill.split(' ').slice(1).join(' ');
+        document.getElementById('q-description').textContent = skill.description || '';
+        document.getElementById('q-tools').textContent = skill.tools;
+        document.getElementById('q-situation').textContent = skill.situation;
     },
 
-    renderScoreList(averages) {
+    renderScoreList(averages, skillsByCategory, userRatings, benchmarks) {
         const container = document.getElementById('results-score-list');
         const entries = Object.entries(averages).sort((a, b) => Number(b[1]) - Number(a[1]));
+        const chevronSvg = `<svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
 
-        container.innerHTML = entries.map(([label, value]) => {
+        container.innerHTML = entries.map(([label, value], index) => {
             const score = Number(value);
-            const width = Math.max(8, Math.min(100, (score / 4) * 100));
+            const width = Math.max(4, Math.min(100, (score / 4) * 100));
+            const shortLabel = label.replace(/^\d+\.\s*/, '');
+            const tier = score >= 3.5 ? 'top' : score >= 2.5 ? 'high' : score >= 1.5 ? 'mid' : 'low';
+            const rowDelay = index * 65;
+            const barDelay = rowDelay + 180;
 
-            return `
-                <div class="score-row">
+            const benchScore = benchmarks?.[label] ?? null;
+            const benchPct = benchScore !== null ? Math.max(0, Math.min(100, (benchScore / 4) * 100)) : null;
+            const benchMark = benchPct !== null
+                ? `<span class="score-bar-bench" style="left:${benchPct}%" data-label="Moy. ${Number(benchScore).toFixed(1)}"></span>`
+                : '';
+
+            const skills = skillsByCategory?.[label] ?? [];
+            const arrowIcon = `<svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 6h7M6.5 3l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+            const skillRows = skills.map(skill => {
+                const rating = Number(userRatings?.[skill.id]) || 0;
+                const skillName = skill.skill.replace(/^[\d.]+ /, '');
+                const subName = skill.sub.replace(/^[\d.]+ /, '');
+                const dots = [1, 2, 3, 4].map(d =>
+                    `<span class="rating-dot${d <= rating ? ` is-filled tier-${tier}` : ''}"></span>`
+                ).join('');
+                return `<div class="skill-detail-row" onclick="openModalById('${skill.id}')">
+                    <span class="skill-detail-name">${skillName}</span>
+                    <span class="skill-detail-sub">${subName}</span>
+                    <div class="skill-detail-dots">${dots}</div>
+                    <span class="skill-detail-arrow">${arrowIcon}</span>
+                </div>`;
+            }).join('');
+
+            return `<div class="score-row" style="animation-delay:${rowDelay}ms">
+                <button class="score-row-trigger" aria-expanded="false" onclick="UI.toggleScoreDetail(this)">
                     <div class="score-header">
-                        <span class="score-name">${label}</span>
-                        <span class="score-value">${score.toFixed(2)} / 4</span>
+                        <span class="score-name">${shortLabel}</span>
+                        <div class="score-header-right">
+                            <span class="score-badge score-badge--${tier}">${score.toFixed(2)}<span class="score-denom"> / 4</span></span>
+                            <span class="score-chevron">${chevronSvg}</span>
+                        </div>
                     </div>
-                    <div class="score-bar"><div class="score-bar-fill" style="width: ${width}%"></div></div>
-                </div>
-            `;
+                    <div class="score-bar-wrap">
+                        <div class="score-bar"><div class="score-bar-fill score-bar-fill--${tier}" style="--tw:${width}%;animation-delay:${barDelay}ms"></div></div>
+                        ${benchMark}
+                    </div>
+                </button>
+                <div class="score-detail"><div class="skill-detail-list">${skillRows}</div></div>
+            </div>`;
         }).join('');
+    },
+
+    toggleScoreDetail(trigger) {
+        const detail = trigger.closest('.score-row').querySelector('.score-detail');
+        const isOpen = detail.classList.contains('is-open');
+        detail.classList.toggle('is-open', !isOpen);
+        trigger.setAttribute('aria-expanded', String(!isOpen));
+        trigger.querySelector('.score-chevron').classList.toggle('is-rotated', !isOpen);
     },
 
     renderProfileSummary(cards) {
         const container = document.getElementById('profile-summary-grid');
-        container.innerHTML = cards.map(card => `
-            <article class="profile-summary-card profile-summary-card-${card.tone}">
-                <div class="profile-summary-head">
-                    <span class="pill">${card.label}</span>
-                    ${card.tone !== 'weak' ? `<span class="profile-score-pill">${Number(card.score).toFixed(2)} / 4</span>` : ''}
-                </div>
-                ${card.tone !== 'weak' ? `
-                <h3 class="result-title">${card.title}</h3>
-                <p class="result-lead">${card.desc}</p>
-                <div class="score-bar profile-score-bar"><div class="score-bar-fill" style="width: ${Math.max(8, Math.min(100, (Number(card.score) / 4) * 100))}%"></div></div>
-                <div class="result-body">
-                    <div class="category-label"><strong>Catégorie :</strong> ${card.category}</div>
-                    <div class="inline-card"><strong>Mission :</strong> ${card.mission}</div>
-                </div>
-                ` : `
-                <div class="result-body-weak">
-                    <div class="weak-score-display">
-                        <span class="profile-score-pill">${Number(card.score).toFixed(2)} / 4</span>
+        container.innerHTML = cards.map(card => {
+            const score = Number(card.score);
+            const shortCat = card.category.replace(/^\d+\.\s*/, '');
+            const scorePill = `<span class="profile-score-pill">${score.toFixed(2)} / 4</span>`;
+
+            if (card.tone !== 'weak') {
+                return `
+                <article class="profile-summary-card profile-summary-card-${card.tone}">
+                    <div class="profile-summary-head">
+                        <span class="pill">${card.label} : ${card.title}</span>
+                        ${scorePill}
                     </div>
-                    <h3 class="result-title-weak">${card.category}</h3>
+                    <p class="profile-category-tag">${shortCat}</p>
                     <p class="result-lead">${card.desc}</p>
+                    <div class="inline-card"><strong>Mission :</strong> ${card.mission}</div>
+                </article>`;
+            } else {
+                return `
+                <article class="profile-summary-card profile-summary-card-weak">
+                    <div class="profile-summary-head">
+                        <span class="pill">${card.label} : ${shortCat}</span>
+                        ${scorePill}
+                    </div>
                     <div class="improvement-section">
                         <h4 class="improvement-title">Comment progresser</h4>
                         <p class="improvement-text"><strong>Domaine :</strong> ${card.improve}</p>
@@ -104,10 +150,9 @@ const UI = {
                         <h4 class="mission-title">Exemple de mission pour progresser</h4>
                         <p class="mission-text">${card.improveMission}</p>
                     </div>
-                </div>
-                `}
-            </article>
-        `).join('');
+                </article>`;
+            }
+        }).join('');
     },
 
     toggleAccordionById(id) {

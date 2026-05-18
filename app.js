@@ -1,7 +1,7 @@
 ﻿// --- CONFIGURATION ---
 const CONFIG = {
     // URL to fetch skill data (Google Sheet JSON endpoint)
-    DATA_SOURCE_URL: "https://docs.google.com/spreadsheets/d/1ecR3OfBTqYhc5ljzrA2geTUSiywagxwMyS3UCBulGUk/gviz/tq?tqx=out:json",
+    DATA_SOURCE_URL: "https://docs.google.com/spreadsheets/d/1V2qLH8z9XrNa9IvuHqUSbLqUxVrYUJxv/gviz/tq?tqx=out:json&gid=2147291852",
     // Your Google Apps Script URL for saving results
     SCRIPT_URL: "https://script.google.com/macros/s/AKfycbyIEkYOOkI1Ib4w4V1gHCREzhOOQ71IgewiBnQt0ZxU7Wh8WXvlIJEpENKE6rHqlKU/exec"
 };
@@ -9,7 +9,6 @@ const CONFIG = {
 // --- 1. DATA LOADING (API) ---
 async function loadSkillsFromSheet() {
     AppState.explorerData = await ApiService.fetchSkills(CONFIG.DATA_SOURCE_URL, explorerData);
-    console.log("Data loaded:", AppState.explorerData);
     UI.updateExplorerMetrics(AppState.explorerData);
     UI.renderCategoryFilter(AppState.explorerData, AppState.currentFilter);
     renderExplorer();
@@ -31,6 +30,11 @@ function switchTab(view) {
 
 function handleCategoryChange(value) {
     AppState.currentFilter = value;
+    renderExplorer();
+}
+
+function handleSearch(value) {
+    AppState.searchQuery = value.trim().toLowerCase();
     renderExplorer();
 }
 
@@ -85,7 +89,6 @@ async function finishAssessment() {
     
     const finalAverages = AppState.getCalculatedResults();
     AppState.latestResults = finalAverages;
-    console.log('Final category keys sent:', Object.keys(finalAverages));
 
     // 2. Send to Google Sheets (POST)
     try {
@@ -121,24 +124,46 @@ function showResultsPage(averages) {
     const secondProfileCard = buildProfileCard(sorted[1] || sorted[0], 'Mon deuxième profil');
     const lowestProfileCard = buildProfileCard(sorted[sorted.length - 1], 'Mon axe d\'amélioration');
 
-    UI.renderScoreList(averages);
+    const skillsByCategory = {};
+    AppState.explorerData.forEach(skill => {
+        const cat = AppState.normalizeCategoryKey(skill.cat);
+        if (!skillsByCategory[cat]) skillsByCategory[cat] = [];
+        skillsByCategory[cat].push(skill);
+    });
+
+    UI.renderScoreList(averages, skillsByCategory, AppState.userRatings, averagePMProfile);
     UI.renderProfileSummary([topProfileCard, secondProfileCard, lowestProfileCard]);
 }
 
 // --- 5. EXPLORER RENDERER ---
 function renderExplorer() {
     const grid = document.getElementById('skills-grid');
-    const data = AppState.currentFilter === 'all'
+    const query = AppState.searchQuery;
+
+    let data = AppState.currentFilter === 'all'
         ? AppState.explorerData
         : AppState.explorerData.filter(item => item.cat === AppState.currentFilter);
 
+    if (query) {
+        data = data.filter(item =>
+            item.skill.toLowerCase().includes(query) ||
+            item.sub.toLowerCase().includes(query) ||
+            item.cat.toLowerCase().includes(query) ||
+            (item.description && item.description.toLowerCase().includes(query)) ||
+            (item.tools && item.tools.toLowerCase().includes(query))
+        );
+    }
+
     if (data.length === 0) {
-        grid.innerHTML = '<div class="empty-state">Aucune compétence trouvée pour la catégorie sélectionnée.</div>';
+        const msg = query
+            ? `Aucune compétence ne correspond à « ${AppState.searchQuery} ».`
+            : 'Aucune compétence trouvée pour la catégorie sélectionnée.';
+        grid.innerHTML = `<div class="empty-state">${msg}</div>`;
         return;
     }
 
     grid.innerHTML = data.map(item => `
-        <button class="skill-card skill-card-flat" type="button" onclick='openModal(${JSON.stringify(item).replace(/'/g, "&apos;")})'>
+        <button class="skill-card skill-card-flat" type="button" data-skill-id="${item.id}">
             <span class="skill-card-topline">
                 <span class="skill-card-id">${item.cat}</span>
             </span>
@@ -153,7 +178,8 @@ function renderExplorer() {
 
 function buildProfileCard(entry, label) {
     const [category, score] = entry;
-    const profile = profileRules.find(item => category.includes(item.cat)) || profileRules[0];
+    const normalizedCategory = AppState.normalizeCategoryKey(category);
+    const profile = profileRules.find(item => normalizedCategory.includes(item.cat)) || profileRules[0];
 
     return {
         label,
@@ -163,7 +189,7 @@ function buildProfileCard(entry, label) {
         improve: profile.improve,
         improveWhy: profile.improveWhy,
         improveMission: profile.improveMission,
-        category,
+        category: normalizedCategory,
         score,
         tone: label === 'Mon profil principal' ? 'top' : (label === 'Mon deuxième profil' ? 'second' : 'weak')
     };
@@ -171,14 +197,14 @@ function buildProfileCard(entry, label) {
 
 // --- INITIALIZATION ---
 function openModal(item) {
-    document.getElementById('modal-id').innerText = item.id;
-    document.getElementById('modal-title').innerText = item.skill.split(' ').slice(1).join(' ');
-    document.getElementById('modal-category').innerText = item.cat;
-    document.getElementById('modal-sub').innerText = item.sub;
-    document.getElementById('modal-description').innerText = item.description || 'Cette compétence précise les attendus de maîtrise du niveau junior au niveau senior.';
-    document.getElementById('modal-junior').innerText = item.junior;
-    document.getElementById('modal-senior').innerText = item.senior;
-    document.getElementById('modal-situation').innerText = item.situation;
+    document.getElementById('modal-id').textContent = item.id;
+    document.getElementById('modal-title').textContent = item.skill.split(' ').slice(1).join(' ');
+    document.getElementById('modal-category').textContent = item.cat.replace(/^\d+\.\s*/, '');
+    document.getElementById('modal-sub').textContent = item.sub.replace(/^[\d.]+\s/, '');
+    document.getElementById('modal-description').textContent = item.description || 'Cette compétence précise les attendus de maîtrise du niveau junior au niveau senior.';
+    document.getElementById('modal-junior').textContent = item.junior;
+    document.getElementById('modal-senior').textContent = item.senior;
+    document.getElementById('modal-situation').textContent = item.situation;
 
     const toolsContainer = document.getElementById('modal-tools-tags');
     const tools = (item.tools || '').split(',').map(tool => tool.trim()).filter(Boolean);
@@ -186,13 +212,13 @@ function openModal(item) {
     if (tools.length === 0) {
         const emptyTag = document.createElement('span');
         emptyTag.className = 'tool-tag';
-        emptyTag.innerText = 'Non renseigné';
+        emptyTag.textContent = 'Non renseigné';
         toolsContainer.appendChild(emptyTag);
     } else {
         tools.forEach(tool => {
             const tag = document.createElement('span');
             tag.className = 'tool-tag';
-            tag.innerText = tool;
+            tag.textContent = tool;
             toolsContainer.appendChild(tag);
         });
     }
@@ -202,12 +228,56 @@ function openModal(item) {
 
 function closeModal() { UI.setModalOpen(false); }
 
+function openModalById(id) {
+    const skill = AppState.explorerData.find(s => s.id === id);
+    if (skill) openModal(skill);
+}
+
 function handleModalBackdrop(event) {
     if (event.target.id === 'modal') closeModal();
 }
 
 function toggleAccordion(id) {
     UI.toggleAccordionById(id);
+}
+
+function exportExcel() {
+    if (typeof XLSX === 'undefined') { alert('Bibliothèque XLSX non chargée.'); return; }
+    const wb = XLSX.utils.book_new();
+
+    const catRows = Object.entries(AppState.latestResults).map(([cat, avg]) => ({
+        'Catégorie': cat.replace(/^\d+\.\s*/, ''),
+        'Score moyen': Number(Number(avg).toFixed(2)),
+        'Score / 4': `${Number(avg).toFixed(2)} / 4`
+    }));
+    XLSX.utils.book_append_sheet(wb, XLSX.utils.json_to_sheet(catRows), 'Scores par catégorie');
+
+    const skillRows = AppState.explorerData.map(skill => ({
+        'ID': skill.id,
+        'Catégorie': AppState.normalizeCategoryKey(skill.cat).replace(/^\d+\.\s*/, ''),
+        'Sous-catégorie': skill.sub.replace(/^[\d.]+\s/, ''),
+        'Compétence': skill.skill.replace(/^[\d.]+ /, ''),
+        'Score (1-4)': AppState.userRatings[skill.id] || 0
+    }));
+    XLSX.utils.book_append_sheet(wb, XLSX.utils.json_to_sheet(skillRows), 'Scores par compétence');
+
+    XLSX.writeFile(wb, `${AppState.userName || 'Assessment'}_PM_Profile.xlsx`);
+}
+
+async function copyRadarPng(btn) {
+    const canvas = document.getElementById('radarChart');
+    try {
+        const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/png'));
+        await navigator.clipboard.write([new ClipboardItem({ 'image/png': blob })]);
+        const orig = btn.innerHTML;
+        btn.textContent = 'Copié !';
+        setTimeout(() => { btn.innerHTML = orig; }, 2000);
+    } catch {
+        const link = document.createElement('a');
+        link.download = `${AppState.userName || 'radar'}_radar.png`;
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+    }
 }
 
 function restartTest() {
@@ -221,4 +291,13 @@ function restartTest() {
 }
 
 // Start
+document.getElementById('skills-grid').addEventListener('click', e => {
+    const btn = e.target.closest('[data-skill-id]');
+    if (!btn) return;
+    const skill = AppState.explorerData.find(s => s.id === btn.dataset.skillId);
+    if (skill) openModal(skill);
+});
+
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
 loadSkillsFromSheet();

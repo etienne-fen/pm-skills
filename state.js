@@ -7,12 +7,20 @@ const AppState = {
     myRadarChart: null,
     latestResults: null,
     currentFilter: 'all',
+    searchQuery: '',
 
     // Canonical category keys used for scoring and export.
     categoryAliases: {
         "2. Découverte & Validation d'Opportunités (Discovery)": "2. Découverte (Discovery)",
         "4. Culture & Maîtrise de la Donnée": "4. Data Culture",
-        "5. Socle Technique & Design": "5. Socle Tech & Design"
+        "5. Socle Technique & Design": "5. Socle Tech & Design",
+        "1. Strategie & Vision Produit": "1. Stratégie & Vision Produit",
+        "1. Strategy": "1. Stratégie & Vision Produit",
+        "1. Strategy & Vision Produit": "1. Stratégie & Vision Produit",
+        "7. Culture et maîtrise de l'IA": "7. Culture et Maîtrise de l'IA",
+        "8. AI Building": "8. AI Building",
+        "8. AI building": "8. AI Building",
+        "AI Builder": "8. AI Building"
     },
 
     normalizeCategoryKey(category) {
