@@ -3,19 +3,88 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Product Skills</title>
+	<title>Product Skills by Converteo</title>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="style.css">
 	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
 </head>
 <body>
-	<div class="app-shell">
+
+	<!-- ===== HOME PAGE ===== -->
+	<div id="home-page" class="home-page">
+		<div class="home-inner">
+
+			<!-- Nav -->
+			<nav class="home-nav">
+				<div class="home-logo">
+					<img src="https://i.postimg.cc/4xkbRghj/DEKUPLE-Logos-RVB-Converteo-blanc-WEB.png" alt="Converteo" class="home-logo-img"/>
+				</div>
+			</nav>
+
+			<!-- Hero -->
+			<div class="home-hero">
+				<p class="home-eyebrow">Référentiel Product Management</p>
+				<h1 class="home-title">Product Skills<br><span class="home-title-accent">by Converteo</span></h1>
+				<p class="home-desc">Un panorama complet des compétences PM attendues aujourd'hui chez Converteo — de la découverte à la livraison. Explorez le catalogue ou évaluez votre propre profil.</p>
+			</div>
+
+			<!-- Entry cards -->
+			<div class="home-cards">
+				<button class="home-card" onclick="switchTab('explorer')">
+					<div class="home-card-top">
+						<div class="home-card-icon">
+							<svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+								<circle cx="11" cy="11" r="9" stroke="currentColor" stroke-width="1.7"/>
+								<path d="M7.5 14.5l2-5 5-2-2 5-5 2z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+							</svg>
+						</div>
+						<div class="home-card-arrow">
+							<svg width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true">
+								<path d="M3 7.5h9M8.5 4l3.5 3.5L8.5 11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+							</svg>
+						</div>
+					</div>
+					<h2 class="home-card-title">Skills Explorer</h2>
+					<p class="home-card-desc">Parcourez le catalogue complet des compétences Product Manager, organisées par domaine et catégorie.</p>
+				</button>
+
+				<button class="home-card" onclick="switchTab('test')">
+					<div class="home-card-top">
+						<div class="home-card-icon">
+							<svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+								<polygon points="11,2 20,7 20,15 11,20 2,15 2,7" stroke="currentColor" stroke-width="1.7" fill="none"/>
+								<polygon points="11,6.5 16,9.5 16,13.5 11,16.5 6,13.5 6,9.5" stroke="currentColor" stroke-width="1.7" fill="none" opacity="0.5"/>
+								<circle cx="11" cy="11" r="1.8" fill="currentColor"/>
+							</svg>
+						</div>
+						<div class="home-card-arrow">
+							<svg width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true">
+								<path d="M3 7.5h9M8.5 4l3.5 3.5L8.5 11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+							</svg>
+						</div>
+					</div>
+					<h2 class="home-card-title">Self Assessment</h2>
+					<p class="home-card-desc">Évaluez vos compétences PM question par question et obtenez une analyse complète de votre profil face à notre benchmark.</p>
+				</button>
+			</div>
+
+			<!-- Footer -->
+			<footer class="home-footer">
+				<p class="home-footer-text">© 2025 Converteo — Référentiel Product Skills</p>
+			</footer>
+		</div>
+	</div>
+
+	<!-- ===== APP SHELL (hidden until a view is selected) ===== -->
+	<div id="app-shell" class="app-shell is-hidden">
 		<header class="app-header">
 			<div class="page-frame header-row">
-				<h1 class="brand-title brand-title-compact">Product Skills by Converteo</h1>
+				<button class="header-logo-btn" onclick="switchTab('home')" title="Accueil">
+					<img src="https://i.postimg.cc/4xkbRghj/DEKUPLE-Logos-RVB-Converteo-blanc-WEB.png" alt="Converteo" class="header-logo-img"/>
+				</button>
 				<nav class="tabbar" aria-label="Navigation principale">
 					<button id="nav-explorer" class="tab-button is-active" onclick="switchTab('explorer')">Skills Explorer</button>
 					<button id="nav-test" class="tab-button" onclick="switchTab('test')">Self Assessment</button>
@@ -140,12 +209,20 @@
 				</div>
 
 				<div id="results-container" class="view-section is-hidden">
+					<div id="shared-view-banner" class="shared-banner is-hidden" aria-live="polite">
+						<svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.4"/><path d="M8 7v4M8 5.5v.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+						<span id="shared-banner-text">Vous consultez les résultats de …</span>
+						<button class="shared-banner-cta button button-primary" onclick="startOwnAssessment()">Faire mon évaluation</button>
+					</div>
 					<div class="section-header">
 						<div>
-							<h2 class="section-title">Vos résultats</h2>
-							<p class="section-copy">Découvrez votre profil de Product Manager par rapport aux profils de Converteo. Identifiez facilement vos points fortes et vos axes d'amélioration.</p>
+							<h2 id="results-title" class="section-title">Vos résultats</h2>
+							<p id="results-copy" class="section-copy">Découvrez votre profil de Product Manager par rapport aux profils de Converteo. Identifiez facilement vos points fortes et vos axes d'amélioration.</p>
 						</div>
-						<button class="button button-primary" onclick="restartTest()">Recommencer</button>
+						<button id="share-btn" class="button button-primary" onclick="copyShareUrl(this)">
+							<svg width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true"><circle cx="11" cy="2.5" r="1.5" stroke="currentColor" stroke-width="1.4"/><circle cx="4" cy="7.5" r="1.5" stroke="currentColor" stroke-width="1.4"/><circle cx="11" cy="12.5" r="1.5" stroke="currentColor" stroke-width="1.4"/><path d="M9.6 3.4L5.4 6.6M5.4 8.4l4.2 3.2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+							Partager mes résultats
+						</button>
 					</div>
 					<div class="export-actions">
 						<button class="button button-secondary export-btn" onclick="copyRadarPng(this)">
@@ -156,7 +233,7 @@
 							<svg width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true"><path d="M3 1.5h6.5L12 4v9.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-12A.5.5 0 0 1 3 1.5Z" stroke="currentColor" stroke-width="1.4"/><path d="M8.5 1.5V4H12M5 7.5h5M5 10h5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
 							Exporter les scores (Excel)
 						</button>
-						</div>
+					</div>
 					<div class="results-layout">
 						<div class="results-chart-card">
 							<div class="panel-header">
@@ -178,6 +255,9 @@
 						</div>
 					</div>
 					<div id="profile-summary-grid" class="results-summary-grid"></div>
+					<div class="results-bottom-bar">
+						<button id="restart-btn" class="button button-secondary" onclick="restartTest()">Recommencer</button>
+					</div>
 				</div>
 			</section>
 		</main>
@@ -196,10 +276,6 @@
 						</div>
 						<h3 id="modal-title" class="modal-title"></h3>
 					</div>
-					<div class="modal-tools-block">
-						<span class="detail-label">Outils</span>
-						<div id="modal-tools-tags" class="tag-list"></div>
-					</div>
 				</div>
 				<div class="modal-description-card">
 					<span class="detail-label">Description</span>
@@ -213,9 +289,13 @@
 					<span class="detail-label">Exemple de situation</span>
 					<p id="modal-situation" class="modal-story-copy"></p>
 				</div>
+				<div class="modal-tools-block">
+					<span class="detail-label">Outils</span>
+					<div id="modal-tools-tags" class="tag-list"></div>
+				</div>
 			</div>
 		</div>
-	</div>
+	</div><!-- end #app-shell -->
 
 	<script src="state.js"></script>
 	<script src="api.js"></script>

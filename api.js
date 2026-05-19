@@ -25,7 +25,7 @@ const ApiService = {
     },
 
     // 2. Post results to your Google Apps Script
-    async saveResults(name, scores, scriptURL) {
+    async saveResults(name, scores, scriptURL, extra = {}) {
         const strategyValue = scores["1. Stratégie & Vision Produit"] ?? scores["1. Strategie & Vision Produit"] ?? scores["Stratégie & Vision Produit"] ?? scores["1. Strategy & Vision Produit"] ?? scores["Strategy"] ?? scores["strategy"] ?? "";
         const aiValue = scores["8. AI Building"] ?? scores["8. AI building"] ?? scores["8. AI builder"] ?? scores["AI Builder"] ?? scores["AI builder"] ?? scores["aibuilder"] ?? "";
 
@@ -55,10 +55,13 @@ const ApiService = {
 
         const payload = {
             name,
+            date: new Date().toISOString(),
+            shareUrl: extra.shareUrl || '',
             // Keep backward compatibility inside the main object used by most scripts.
             scores: compatibilityAliases,
             rawScores: scores,
-            compactScores
+            compactScores,
+            detailedSkills: extra.detailedSkills || []
         };
 
         return fetch(scriptURL, {

@@ -556,13 +556,13 @@ const skillsData = explorerData;
 // Reference profile from aggregated assessments of successful PMs
 const averagePMProfile = {
     "1. Stratégie & Vision Produit": 2.0,
-    "2. Découverte (Discovery)": 2.3,
-    "3. Conception & Livraison (Delivery)": 2.7,
-    "4. Data Culture": 2.9,
-    "5. Socle Tech & Design": 2.3,
+    "2. Découverte (Discovery)": 2.0,
+    "3. Conception & Livraison (Delivery)": 2.0,
+    "4. Data Culture": 2.0,
+    "5. Socle Tech & Design": 2.0,
     "6. Product Ops": 2.0,
-    "7. Culture et Maîtrise de l'IA": 2.7,
-    "8. AI Building": 2
+    "7. Culture et Maîtrise de l'IA": 2.0,
+    "8. AI Building": 2.0
 };
 
 // ===== PM PROFILE ARCHETYPES =====
