@@ -193,11 +193,11 @@ const UI = {
                     {
                         label: 'Vous',
                         data: userValues,
-                        borderColor: '#075985',
-                        backgroundColor: 'rgba(7, 89, 133, 0.12)',
-                        pointBackgroundColor: '#075985',
+                        borderColor: '#2D2B6B',
+                        backgroundColor: 'rgba(45, 43, 107, 0.13)',
+                        pointBackgroundColor: '#2D2B6B',
                         pointBorderColor: '#ffffff',
-                        pointHoverBackgroundColor: '#0284c7'
+                        pointHoverBackgroundColor: '#00B2B2'
                     },
                     {
                         label: 'Moyenne PM',

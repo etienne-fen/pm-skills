@@ -16,6 +16,18 @@ async function loadSkillsFromSheet() {
 
 // --- 2. NAVIGATION & UI ---
 function switchTab(view) {
+    const homePage = document.getElementById('home-page');
+    const appShell = document.getElementById('app-shell');
+
+    if (view === 'home') {
+        homePage.classList.remove('is-hidden');
+        appShell.classList.add('is-hidden');
+        return;
+    }
+
+    homePage.classList.add('is-hidden');
+    appShell.classList.remove('is-hidden');
+
     UI.setActiveTab(view);
     document.getElementById('view-explorer').classList.toggle('is-hidden', view !== 'explorer');
     document.getElementById('view-test').classList.toggle('is-hidden', view !== 'test');
@@ -84,18 +96,25 @@ function goToPreviousQuestion() {
 
 // --- 4. RESULTS & DATA SUBMISSION ---
 async function finishAssessment() {
-    // Show loading screen
     document.getElementById('loading-screen').classList.remove('is-hidden');
-    
+
     const finalAverages = AppState.getCalculatedResults();
     AppState.latestResults = finalAverages;
 
-    // 2. Send to Google Sheets (POST)
-    try {
-        await ApiService.saveResults(AppState.userName, finalAverages, CONFIG.SCRIPT_URL);
-    } catch (e) { console.error("Save error:", e); }
+    const shareUrl = generateShareUrl();
 
-    // 3. Show Results UI
+    // Fire-and-forget: don't block the UI waiting for the Google Apps Script response
+    ApiService.saveResults(AppState.userName, finalAverages, CONFIG.SCRIPT_URL, {
+        shareUrl,
+        detailedSkills: AppState.explorerData.map(skill => ({
+            id: skill.id,
+            cat: AppState.normalizeCategoryKey(skill.cat),
+            sub: skill.sub.replace(/^[\d.]+\s/, ''),
+            skill: skill.skill.split(' ').slice(1).join(' '),
+            score: AppState.userRatings[skill.id] || 0
+        }))
+    }).catch(e => console.error("Save error:", e));
+
     showResultsPage(finalAverages);
 }
 
@@ -105,6 +124,17 @@ function showResultsPage(averages) {
     document.getElementById('loading-screen').classList.add('is-hidden');
     document.getElementById('results-container').classList.remove('is-hidden');
     document.getElementById('results-container').scrollIntoView({ behavior: 'smooth' });
+
+    const isShared = AppState.isSharedView;
+    const name = AppState.userName;
+    document.getElementById('results-title').textContent = isShared ? `Résultats de ${name}` : 'Vos résultats';
+    document.getElementById('results-copy').textContent = isShared
+        ? `Profil Product Manager de ${name} — comparaison avec le benchmark Converteo.`
+        : 'Découvrez votre profil de Product Manager par rapport aux profils de Converteo. Identifiez facilement vos points fortes et vos axes d\'amélioration.';
+    document.getElementById('shared-view-banner').classList.toggle('is-hidden', !isShared);
+    if (isShared) document.getElementById('shared-banner-text').textContent = `Vous consultez les résultats de ${name}.`;
+    document.getElementById('share-btn').classList.toggle('is-hidden', isShared);
+    document.getElementById('restart-btn').classList.toggle('is-hidden', isShared);
 
     const labels = Object.keys(averages);
     const dataValues = Object.values(averages);
@@ -165,13 +195,17 @@ function renderExplorer() {
     grid.innerHTML = data.map(item => `
         <button class="skill-card skill-card-flat" type="button" data-skill-id="${item.id}">
             <span class="skill-card-topline">
-                <span class="skill-card-id">${item.cat}</span>
+                <span class="skill-card-meta">
+                    <span class="skill-card-id">${item.cat}</span>
+                    <span class="skill-card-subcategory">${item.sub}</span>
+                </span>
+                <span class="skill-card-open-btn" data-tooltip="Fiche complète" aria-label="Fiche complète">
+                    <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M1.5 11.5L11.5 1.5M11.5 1.5H6.5M11.5 1.5V6.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
             </span>
             <div class="skill-card-body">
                 <h3 class="skill-card-title">${item.skill.split(' ').slice(1).join(' ')}</h3>
-                <p class="skill-card-subcategory">${item.sub}</p>
             </div>
-            <span class="skill-card-footer">Ouvrir la fiche complète</span>
         </button>
     `).join('');
 }
@@ -280,13 +314,53 @@ async function copyRadarPng(btn) {
     }
 }
 
+// --- SHARE LINK ---
+function generateShareUrl() {
+    const payload = { n: AppState.userName, r: AppState.userRatings };
+    const encoded = btoa(encodeURIComponent(JSON.stringify(payload)));
+    return window.location.origin + window.location.pathname + '?share=' + encoded;
+}
+
+async function copyShareUrl(btn) {
+    const url = generateShareUrl();
+    try {
+        await navigator.clipboard.writeText(url);
+        const orig = btn.innerHTML;
+        btn.textContent = 'Lien copié !';
+        setTimeout(() => { btn.innerHTML = orig; }, 2500);
+    } catch {
+        prompt('Copiez ce lien pour partager vos résultats :', url);
+    }
+}
+
+async function loadSharedResults(shareParam) {
+    try {
+        const payload = JSON.parse(decodeURIComponent(atob(shareParam)));
+        AppState.userName = payload.n || '';
+        AppState.userRatings = payload.r || {};
+        AppState.isSharedView = true;
+        AppState.latestResults = AppState.getCalculatedResults();
+        switchTab('test');
+        showResultsPage(AppState.latestResults);
+    } catch (e) {
+        console.warn('Lien de partage invalide :', e);
+    }
+}
+
+function startOwnAssessment() {
+    AppState.isSharedView = false;
+    restartTest();
+}
+
 function restartTest() {
     AppState.currentStep = 0;
     AppState.userRatings = {};
     AppState.userName = "";
     AppState.latestResults = null;
+    AppState.isSharedView = false;
     UI.setNameError("");
     document.getElementById('user-name-input').value = "";
+    history.replaceState(null, '', window.location.pathname);
     switchTab('test');
 }
 
@@ -300,4 +374,8 @@ document.getElementById('skills-grid').addEventListener('click', e => {
 
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
-loadSkillsFromSheet();
+(async () => {
+    await loadSkillsFromSheet();
+    const shareParam = new URLSearchParams(window.location.search).get('share');
+    if (shareParam) await loadSharedResults(shareParam);
+})();

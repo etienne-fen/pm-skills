@@ -8,6 +8,7 @@ const AppState = {
     latestResults: null,
     currentFilter: 'all',
     searchQuery: '',
+    isSharedView: false,
 
     // Canonical category keys used for scoring and export.
     categoryAliases: {
