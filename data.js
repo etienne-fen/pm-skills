@@ -565,6 +565,70 @@ const averagePMProfile = {
     "8. AI Building": 2.0
 };
 
+// ===== COMPARISON PROFILES =====
+const comparisonProfiles = [
+    {
+        id: 'converteo-avg',
+        label: 'Moyenne PM Converteo',
+        description: 'PM généraliste avec un socle équilibré dans toutes les compétences produit, base de référence Converteo.',
+        scores: {
+            "1. Stratégie & Vision Produit": 2.0,
+            "2. Découverte (Discovery)": 2.0,
+            "3. Conception & Livraison (Delivery)": 2.0,
+            "4. Data Culture": 2.0,
+            "5. Socle Tech & Design": 2.0,
+            "6. Product Ops": 2.0,
+            "7. Culture et Maîtrise de l'IA": 2.0,
+            "8. AI Building": 2.0
+        }
+    },
+    {
+        id: 'manager-ia',
+        label: 'Manager IA',
+        description: "Le Manager IA est capable de gérer un ensemble de produits IA en sachant où et comment créer de la valeur. Il sait identifier les opportunités, prioriser les cas d'usages et cadrer la gouvernance.",
+        scores: {
+            "1. Stratégie & Vision Produit": 3.2,
+            "2. Découverte (Discovery)": 3.0,
+            "3. Conception & Livraison (Delivery)": 3.0,
+            "4. Data Culture": 3.2,
+            "5. Socle Tech & Design": 3.2,
+            "6. Product Ops": 3.2,
+            "7. Culture et Maîtrise de l'IA": 3.5,
+            "8. AI Building": 2.5
+        }
+    },
+    {
+        id: 'product-owner-ia',
+        label: 'Product Owner IA',
+        description: "Le Product Owner IA sait transformer une vision en réalité. Il est capable de dérisquer rapidement des hypothèses en prototypant des solutions, d'accélérer le delivery en agentifiant des processus et anticiper les risques du passage à l'échelle.",
+        scores: {
+            "1. Stratégie & Vision Produit": 1.5,
+            "2. Découverte (Discovery)": 2.7,
+            "3. Conception & Livraison (Delivery)": 3.0,
+            "4. Data Culture": 3.0,
+            "5. Socle Tech & Design": 2.7,
+            "6. Product Ops": 1.5,
+            "7. Culture et Maîtrise de l'IA": 3.4,
+            "8. AI Building": 3.5
+        }
+    },
+    {
+        id: 'evangeliste-ia',
+        label: 'Évangéliste IA',
+        description: "L'évangéliste IA est capable de créer un mouvement autour de l'IA au sein d'une organisation. Capable de cartographier rapidement les rôles et priorités, il accompagne la transformation des équipes vers plus d'autonomie et d'adoption de l'IA.",
+        scores: {
+            "1. Stratégie & Vision Produit": 3.2,
+            "2. Découverte (Discovery)": 3.0,
+            "3. Conception & Livraison (Delivery)": 2.0,
+            "4. Data Culture": 2.8,
+            "5. Socle Tech & Design": 2.8,
+            "6. Product Ops": 3.5,
+            "7. Culture et Maîtrise de l'IA": 3.2,
+            "8. AI Building": 2.5
+        }
+    }
+];
+
 // ===== PM PROFILE ARCHETYPES =====
 const profileRules = [
   {
