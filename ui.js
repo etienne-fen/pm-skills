@@ -55,22 +55,41 @@ const UI = {
 
     renderScoreList(averages, skillsByCategory, userRatings, benchmarks) {
         const container = document.getElementById('results-score-list');
-        const entries = Object.entries(averages).sort((a, b) => Number(b[1]) - Number(a[1]));
+        const entries = Object.entries(averages).sort((a, b) => {
+            const bRef = benchmarks?.[b[0]] ?? Number(b[1]);
+            const aRef = benchmarks?.[a[0]] ?? Number(a[1]);
+            return bRef - aRef;
+        });
         const chevronSvg = `<svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+        const checkSvg = `<svg class="score-check-icon" width="13" height="13" viewBox="0 0 13 13" fill="none" aria-label="Objectif atteint"><circle cx="6.5" cy="6.5" r="6" stroke="currentColor" stroke-width="1.3"/><path d="M3.5 6.5L5.5 8.5L9.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
 
         container.innerHTML = entries.map(([label, value], index) => {
             const score = Number(value);
             const width = Math.max(4, Math.min(100, (score / 4) * 100));
             const shortLabel = label.replace(/^\d+\.\s*/, '');
-            const tier = score >= 3.5 ? 'top' : score >= 2.5 ? 'high' : score >= 1.5 ? 'mid' : 'low';
             const rowDelay = index * 65;
             const barDelay = rowDelay + 180;
 
             const benchScore = benchmarks?.[label] ?? null;
             const benchPct = benchScore !== null ? Math.max(0, Math.min(100, (benchScore / 4) * 100)) : null;
             const benchMark = benchPct !== null
-                ? `<span class="score-bar-bench" style="left:${benchPct}%" data-label="Moy. ${Number(benchScore).toFixed(1)}"></span>`
+                ? `<span class="score-bar-bench" style="left:${benchPct}%" data-label="Réf. ${Number(benchScore).toFixed(1)}"></span>`
                 : '';
+
+            // Delta-based tier when benchmark is available, absolute otherwise
+            let tier;
+            if (benchScore !== null) {
+                const delta = score - benchScore;
+                if (delta > 0.7)       tier = 'rel-great';
+                else if (delta > 0.2)  tier = 'rel-good';
+                else if (delta > -0.2) tier = 'rel-neutral';
+                else if (delta > -0.7) tier = 'rel-below';
+                else                   tier = 'rel-bad';
+            } else {
+                tier = score >= 3.5 ? 'top' : score >= 2.5 ? 'high' : score >= 1.5 ? 'mid' : 'low';
+            }
+
+            const meetsAverage = benchScore !== null && score >= benchScore;
 
             const skills = skillsByCategory?.[label] ?? [];
             const arrowIcon = `<svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 6h7M6.5 3l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
@@ -94,6 +113,7 @@ const UI = {
                     <div class="score-header">
                         <span class="score-name">${shortLabel}</span>
                         <div class="score-header-right">
+                            ${meetsAverage ? checkSvg : ''}
                             <span class="score-badge score-badge--${tier}">${score.toFixed(2)}<span class="score-denom"> / 4</span></span>
                             <span class="score-chevron">${chevronSvg}</span>
                         </div>
@@ -170,7 +190,7 @@ const UI = {
     },
 
     // Renders the Radar Chart (Logic moved from your old showResults)
-    renderChart(labels, userValues, benchmarkValues, existingChart = null) {
+    renderChart(labels, userValues, benchmarkValues, existingChart = null, benchmarkLabel = 'Référence') {
         const ctx = document.getElementById('radarChart').getContext('2d');
         if (existingChart) existingChart.destroy();
         
@@ -200,7 +220,7 @@ const UI = {
                         pointHoverBackgroundColor: '#00B2B2'
                     },
                     {
-                        label: 'Moyenne PM',
+                        label: benchmarkLabel,
                         data: benchmarkValues,
                         borderColor: '#94a3b8',
                         backgroundColor: 'rgba(148, 163, 184, 0.08)',

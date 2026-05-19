@@ -141,8 +141,12 @@
 						<input id="user-name-input" class="field-input" type="text" placeholder="Ex: Lea Martin" aria-describedby="user-name-error" />
 						<div id="user-name-error" class="error-text" role="alert"></div>
 					</div>
+					<label class="consent-block">
+						<input type="checkbox" id="consent-checkbox" class="consent-checkbox" onchange="document.getElementById('start-assessment-btn').disabled = !this.checked">
+						<span class="consent-text">En démarrant cette évaluation, j'accepte que <strong>Converteo</strong> collecte et traite mes données personnelles (nom et résultats d'évaluation) dans le but d'analyser mon profil Product Manager et de le comparer à des benchmarks internes. Ce traitement est fondé sur mon consentement, conformément au <strong>Règlement Général sur la Protection des Données (RGPD — Règlement UE 2016/679)</strong>. Je dispose d'un droit d'accès, de rectification, d'effacement et de portabilité de mes données, ainsi que d'un droit d'opposition, exerçables à tout moment auprès de Converteo.</span>
+					</label>
 					<div class="hero-actions">
-						<button class="button button-primary" onclick="startAssessment()">Commencer</button>
+						<button id="start-assessment-btn" class="button button-primary" onclick="startAssessment()" disabled>Commencer</button>
 						<button class="button button-tertiary" onclick="switchTab('explorer')">Retour au Skills Explorer</button>
 					</div>
 				</div>
@@ -239,7 +243,11 @@
 							<div class="panel-header">
 								<div>
 									<h3 class="panel-title">Radar des compétences</h3>
-									<p class="panel-copy">Votre score comparé au benchmark PM.</p>
+									<p class="panel-copy">Votre score comparé au profil sélectionné.</p>
+								</div>
+								<div class="comparison-selector-wrap">
+									<label for="comparison-profile-select" class="comparison-label">Comparer avec</label>
+									<select id="comparison-profile-select" class="comparison-select" onchange="updateComparisonProfile(this.value)"></select>
 								</div>
 							</div>
 							<canvas id="radarChart" height="100"></canvas>
@@ -252,6 +260,7 @@
 								</div>
 							</div>
 							<div id="results-score-list" class="score-list"></div>
+							<div id="comparison-profile-desc" class="comparison-profile-desc"></div>
 						</div>
 					</div>
 					<div id="profile-summary-grid" class="results-summary-grid"></div>
@@ -261,6 +270,10 @@
 				</div>
 			</section>
 		</main>
+
+		<footer class="app-footer">
+			<p class="app-footer-text">© 2025 Converteo — Référentiel Product Skills</p>
+		</footer>
 
 		<div id="modal" class="modal is-hidden" onclick="handleModalBackdrop(event)">
 			<div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modal-title">
