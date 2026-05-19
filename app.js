@@ -118,6 +118,43 @@ async function finishAssessment() {
     showResultsPage(finalAverages);
 }
 
+function populateComparisonSelect() {
+    const select = document.getElementById('comparison-profile-select');
+    if (!select) return;
+    select.innerHTML = comparisonProfiles.map(p =>
+        `<option value="${p.id}">${p.label}</option>`
+    ).join('');
+    select.value = AppState.selectedComparisonProfileId || 'converteo-avg';
+}
+
+function updateComparisonProfile(profileId) {
+    AppState.selectedComparisonProfileId = profileId;
+    const averages = AppState.currentAverages;
+    if (!averages) return;
+
+    const profile = comparisonProfiles.find(p => p.id === profileId) || comparisonProfiles[0];
+    const labels = Object.keys(averages);
+    const benchmarkData = labels.map(l => profile.scores[l] ?? 2.0);
+
+    AppState.myRadarChart = UI.renderChart(
+        labels.map(l => l.split('. ')[1] || l),
+        Object.values(averages),
+        benchmarkData,
+        AppState.myRadarChart,
+        profile.label
+    );
+
+    const skillsByCategory = {};
+    AppState.explorerData.forEach(skill => {
+        const cat = AppState.normalizeCategoryKey(skill.cat);
+        if (!skillsByCategory[cat]) skillsByCategory[cat] = [];
+        skillsByCategory[cat].push(skill);
+    });
+    UI.renderScoreList(averages, skillsByCategory, AppState.userRatings, profile.scores);
+    const descEl = document.getElementById('comparison-profile-desc');
+    if (descEl) descEl.textContent = profile.description || '';
+}
+
 function showResultsPage(averages) {
     document.getElementById('onboarding-screen').classList.add('is-hidden');
     document.getElementById('assessment-container').classList.add('is-hidden');
@@ -136,16 +173,23 @@ function showResultsPage(averages) {
     document.getElementById('share-btn').classList.toggle('is-hidden', isShared);
     document.getElementById('restart-btn').classList.toggle('is-hidden', isShared);
 
+    AppState.currentAverages = averages;
+    if (!AppState.selectedComparisonProfileId) AppState.selectedComparisonProfileId = 'converteo-avg';
+
+    populateComparisonSelect();
+
+    const activeProfile = comparisonProfiles.find(p => p.id === AppState.selectedComparisonProfileId) || comparisonProfiles[0];
     const labels = Object.keys(averages);
     const dataValues = Object.values(averages);
-    const benchmarkData = labels.map(l => averagePMProfile[l] || 2.0);
+    const benchmarkData = labels.map(l => activeProfile.scores[l] ?? 2.0);
 
     // Radar Chart
     AppState.myRadarChart = UI.renderChart(
         labels.map(l => l.split('. ')[1] || l),
         dataValues,
         benchmarkData,
-        AppState.myRadarChart
+        AppState.myRadarChart,
+        activeProfile.label
     );
 
     // Profile Descriptions
@@ -161,8 +205,10 @@ function showResultsPage(averages) {
         skillsByCategory[cat].push(skill);
     });
 
-    UI.renderScoreList(averages, skillsByCategory, AppState.userRatings, averagePMProfile);
+    UI.renderScoreList(averages, skillsByCategory, AppState.userRatings, activeProfile.scores);
     UI.renderProfileSummary([topProfileCard, secondProfileCard, lowestProfileCard]);
+    const descEl = document.getElementById('comparison-profile-desc');
+    if (descEl) descEl.textContent = activeProfile.description || '';
 }
 
 // --- 5. EXPLORER RENDERER ---
@@ -360,6 +406,8 @@ function restartTest() {
     AppState.isSharedView = false;
     UI.setNameError("");
     document.getElementById('user-name-input').value = "";
+    const cb = document.getElementById('consent-checkbox');
+    if (cb) { cb.checked = false; document.getElementById('start-assessment-btn').disabled = true; }
     history.replaceState(null, '', window.location.pathname);
     switchTab('test');
 }
